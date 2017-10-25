@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/elumpkin/WeddingWebsite/issues"
   },
-  "homepage": "https://github.com/elumpkin/WeddingWebsite#readme"
+  "homepage": "https://github.com/elumpkin/WeddingWebsite#readme",
+  "dependencies": {
+    "express": "^4.16.2",
+    "nodemon": "^1.12.1"
+  }
 }
