@@ -19,29 +19,26 @@
         </ul>
         </nav>
     </header>
-   <section class="hero">
-       <div class="hero-content">
-        <h2>
-            Welcome to our wedding website!
-        </h2>
-        <p>
-            Your go to place for all questions!
-        </p>
-        <a href="/" class="btn btn-lg btn-primary">Get Started</a>
-        <a href="/contact" class="btn btn-lg btn-primary">Contact</a>
-    </div>
-   </section>
-   <main>
-       <div class="container">
-           <div class="jumbotron text-center" >
-               Home Page
-           </div>
-       </div>
-   </main>
-   <footer>
-       Cobonie Wedding Website. Copyright Ebonie Lumpkin 2017.
-   </footer>
 
 
-</body>
-</html>
+<!-- Content Here -->
+
+<%- defineContent('hero') %>
+
+    <main>
+        <div class="container">
+            <div class="jumbotron text-center" >
+                <%- body %>
+            </div>
+        </div>
+    </main>
+ 
+
+
+    <footer>
+            Cobonie Wedding Website. Copyright Ebonie Lumpkin 2017.
+        </footer>
+     
+     
+     </body>
+     </html>
