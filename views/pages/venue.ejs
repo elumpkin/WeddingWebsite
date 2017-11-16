@@ -1,0 +1,95 @@
+<%- contentFor('hero')%>
+<section class="hero-venue">
+    <div id = 'headercontent' class="hero-content">
+     <h2>
+         Villa Antonia
+     </h2>
+     <p>
+        The beginning of our next chapter
+    </p>
+    
+ </div>
+</section>
+
+<%- contentFor('body')%>
+<section >
+        <div class="jumbotron text-center" >
+            <h2>
+               The Villa
+            </h2>
+            <p>
+                Villa Antonia sits on a hill in the midst of Texas Hill Country, surrounded by 
+                ornate foliage. It's beautiful architecture overlooking the incredible view of
+                 breathtaking canyons, transforms the villa into a castle-esque fantasy. 
+         
+            </p>
+
+            </div>
+ <div class="jumbotron text-center" >
+        <h2>
+                Chris Spady
+            </h2>
+        <div class="flex-container">
+           
+                <div  class="flex-item" >
+                        <img 
+                        id='venue-img'
+                        src="../img/chris-spady.jpg"
+                        align = 'center'      
+                        >
+                    </div>
+                <div class ="flex-item" >
+                      <p>
+                          Our venue coordinator and safe keeper of our sanity is Chris. She will be leading the 
+                          coordinaton of the vendors and ensuring that the tight schedule of the wedding is kept. 
+                          
+                          With her care, our wedding is sure to be seamless.
+                      </p>
+                </div>
+               
+    
+            </div>
+
+
+ </div>
+ <!-- <div class="jumbotron text-center" >
+    <h2>Map
+        </h2>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3438.909265716523!2d-97.9543276848749!3d30.467007981730493!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x865b300249c5f4a1%3A0xb5f55fc3132a0fee!2sVilla+Antonia!5e0!3m2!1sen!2sus!4v1510169024060"
+     width="800"
+     height="600" 
+     frameborder="0" 
+     style="border:0" 
+     allowfullscreen>
+    </iframe>
+</div>
+<div class="jumbotron text-center" >
+    Photo Gallery
+</div> -->
+</section>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>
+<script  type="text/javascript">
+$(window).load(function()
+{
+    document.getElementById('body').id = 'venue';
+    
+});
+       $(window).scroll(function() {
+
+        if ($(this).scrollTop()>0)
+        {
+           $('#headercontent').fadeOut();
+           $('#headerh2').removeClass("h1").addClass("h3");
+        }
+       else
+        {
+         $('#headercontent').fadeIn();
+         $('#headerh2').removeClass("h3").addClass("h1");
+        }
+
+ });
+    </script>
+
+    <script>
+    
+    </script>

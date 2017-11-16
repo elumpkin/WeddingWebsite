@@ -4,7 +4,10 @@
   "description": "Ebonie and Cody's wedding website",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "watchify app.js -o bundle.js",
+    "build": "browserify app.js -o bundle.js",
+    "start": "npm run watch & nodemon server.js"
   },
   "repository": {
     "type": "git",
@@ -17,9 +20,19 @@
   },
   "homepage": "https://github.com/elumpkin/WeddingWebsite#readme",
   "dependencies": {
+    "body-parser": "^1.18.2",
+    "bootstrap": "^3.3.7",
+    "browserify": "^14.5.0",
+    "browserify-middleware": "^8.0.0",
+    "d3": "^4.11.0",
     "ejs": "^2.5.7",
     "express": "^4.16.2",
     "express-ejs-layouts": "^2.3.1",
-    "nodemon": "^1.12.1"
+    "image-downloader": "^3.3.0",
+    "jquery": "^3.2.1",
+    "mssql": "^4.1.0",
+    "nodemon": "^1.12.1",
+    "scrollreveal": "^3.3.6",
+    "watchify": "^3.9.0"
   }
 }

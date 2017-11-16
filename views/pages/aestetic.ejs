@@ -1,0 +1,105 @@
+<%- contentFor('hero')%>
+<section class="hero-vendors-header">
+    <div class="hero-content">
+     <h2>
+       Wedding Aesthetic
+     </h2>
+     <p>
+         Ideas, dreams, and whimsy
+     </p>
+    
+    
+ </div>
+</section>
+
+<%- contentFor('body')%>
+<div id ="cake" class="jumbotron text-center" >
+   <div class="hero-vendors">
+        <div id="vendors-h2">
+     <h2>
+         Cake
+     </h2>
+        </div>
+     <p>
+            <a data-pin-do="embedBoard" data-pin-board-width="3000" data-pin-scale-height="500" data-pin-scale-width="600" href="https://www.pinterest.com/ointrovert/wedding-cake/"></a>
+    </p>
+ </div>
+</div> 
+<!-- section -->
+<!-- <section class="hero-cake">-->
+        <div id ="floral" class="jumbotron text-center" >                
+        <div class="hero-vendors">
+         <div id="vendors-h2">
+                <h2>
+                        Floral
+                </h2>
+         </div>
+        
+         <p>
+                <a data-pin-do="embedBoard" data-pin-board-width="3000" data-pin-scale-height="500" data-pin-scale-width="80" href="https://www.pinterest.com/ointrovert/wedding-floral/"></a>        
+        </p>
+     </div>
+     </div>
+     <div id ="floral" class="jumbotron text-center" >                
+            <div class="hero-vendors">
+                    <div id="vendors-h2">
+             <h2>
+                 Colors
+             </h2>
+                    </div>
+             <p>
+                    <a data-pin-do="embedBoard" data-pin-board-width="3000" data-pin-scale-height="500" data-pin-scale-width="80" href="https://www.pinterest.com/ointrovert/wedding-colors/"></a>         
+            </p>
+            </div>
+    </div>
+
+         <div id ="floral" class="jumbotron text-center" >                
+            <div class="hero-vendors">
+                    <div id="vendors-h2">
+                <h2>
+                    Head Pieces
+                </h2>
+                    </div>
+                <p>
+                <a data-pin-do="embedBoard" data-pin-board-width="3000" data-pin-scale-height="500" data-pin-scale-width="80" href="https://www.pinterest.com/ointrovert/bridal-headpiece/"></a>            
+                </p>
+            </div>
+        </div>
+
+    <div id ="floral" class="jumbotron text-center" >                
+            <div class="hero-vendors">
+                    <div id="vendors-h2">
+                <h2>
+                    Furniture
+                </h2>
+                    </div>
+                <p>
+                <a data-pin-do="embedBoard" data-pin-board-width="3000" data-pin-scale-height="500" data-pin-scale-width="80" href="https://www.pinterest.com/ointrovert/wedding-furniture/"></a>
+                </p>
+            </div>
+        </div>
+  <!--   </section> -->
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>
+  <script  type="text/javascript">
+  $(window).load(function()
+{
+    document.getElementById('body').id = 'vendors';
+    
+});
+         $(window).scroll(function() {
+  
+            if ($(this).scrollTop()>0)
+            {
+               $('#headercontent').fadeOut();
+               $('#headerh2').removeClass("h1").addClass("h3");
+            }
+           else
+            {
+             $('#headercontent').fadeIn();
+             $('#headerh2').removeClass("h3").addClass("h1");
+            }
+   });
+      </script>
+        <script async defer src="//assets.pinterest.com/js/pinit.js"></script>
+        
+

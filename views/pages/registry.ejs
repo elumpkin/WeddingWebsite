@@ -1,0 +1,43 @@
+<!-- Carousel copywright to Roland Warmerdam @ https://codepen.io/Rowno/pen/Afykb -->
+<%- contentFor('hero')%>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>
+<script  type="text/javascript">
+
+$(window).load(function()
+{
+    document.getElementById('body').id = 'registry';
+
+});
+       $(window).scroll(function() {
+
+        if ($(this).scrollTop()>0)
+        {
+           $('#headercontent').fadeOut();
+           $('#headerh2').removeClass("h1").addClass("h3");
+        }
+       else
+        {
+         $('#headercontent').fadeIn();
+         $('#headerh2').removeClass("h3").addClass("h1");
+        }
+ });
+    </script>
+
+<section class="hero" >
+        <div  id = 'headercontent' class="hero-content">
+         <h2>
+             Registry
+         </h2>
+         <p>
+             Where to buy gift 
+         </p>
+    
+     </div>
+    </section>
+<%- contentFor('body')%>
+<div style='display:table-cell; vertical-align:middle; text-align:center'>
+    <a href='https://www.amazon.com/wedding/ebonie-lumpkin-cody-cobb-jonestown-april-2018/registry/20IBICP92SN2C' target='_blank'>
+        <img src='https://s3-us-west-2.amazonaws.com/lambda-guestview-screenshots/screenshots/screenshots_guestview_ATVPDKIKX0DER_20IBICP92SN2C.png' 
+    width='90%' height='90%' border='1'>
+    </a>
+</div>

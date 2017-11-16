@@ -1,0 +1,82 @@
+
+<%- contentFor('slideshow')%>
+<ul class="cb-slideshow">
+  <li>
+    <span>Image 01</span>
+  </li>
+  <li> 
+    <span>Image 02</span>
+  </li>
+  <li>
+      <span>Image 03</span>
+  </li>
+</ul>
+
+<%- contentFor('hero')%>
+<section class="hero-cobonie-header">
+    <div id = 'headercontentcobonie' class="hero-cobonie-content">
+        <h2 class="strokeme">#cobonie2018</h2>
+        <p class="strokeme">Go to Instagram, add a public image with the hashtag "#cobonie2018", wait a few mintues, check it out below.
+    </br>
+      Click the image for a larger view.
+    </p>
+    
+    
+ </div>
+</section>
+
+<%- contentFor('body')%>
+
+<section class="hero-cake" >
+    
+    <div class="hero-vendors" >
+      <div id="overlay" onclick="off()"><img id ="expandedImg" > </div>
+      
+      <div style="padding:20px">
+          
+        </div>
+      <div class="foo"    >
+          
+      <% for (images of images) { %>
+                    <img id ="foo" 
+                    onclick= "on('<%= images.ExpandedURL%>')"
+                    src = <%= images.URL%> >  
+                     <% } %>
+                </div>
+                <div >
+
+         
+  <script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
+  <script>
+       window.sr = ScrollReveal({ reset: true });
+       
+       // Customizing a reveal set
+       sr.reveal('#foo', { duration: 500 });
+        // sr.reveal('.bar');
+  </script>
+  
+ 
+ <script src="app.js"></script>
+ <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>
+ <script  type="text/javascript">
+ $(window).load(function()
+{
+  document.getElementById('body').id = 'cobonie';
+  
+});
+        $(window).scroll(function() {
+ 
+          if ($(this).scrollTop()>0)
+          {
+             $('#headercontent').fadeOut();
+             $('#headerh2').removeClass("h1").addClass("h3");
+          }
+         else
+          {
+           $('#headercontent').fadeIn();
+           $('#headerh2').removeClass("h3").addClass("h1");
+          }
+  });
+     </script>
+ 
+
