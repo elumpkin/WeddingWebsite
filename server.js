@@ -1,7 +1,7 @@
 var express = require('express');
 var expressLayouts = require('express-ejs-layouts');
 var app =  express();
-var port = 8050;
+var port = 8090;
 const sql = require('mssql')
 var bodyParser = require('body-parser');
 

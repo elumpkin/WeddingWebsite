@@ -17,6 +17,7 @@ router.get('/', function(req,res){
     res.render('pages/');
     });
 
+
 router.post('/', function(req, res){
     /* res.render('pages/'); */
     var location = req.body.data;
@@ -24,10 +25,7 @@ router.post('/', function(req, res){
     var Longitude = location.substring(location.indexOf(',') + 1);
      if (req.body.button = 'YES'){
         var config = {
-            user: 'cobonie',
-            password: 'codyisabutthole',
-            server: 'weddingwebsitedb.civzgj8bgpoz.us-east-2.rds.amazonaws.com', 
-            database: 'WeddingDB'
+            
           };
       
           sql.connect(config, function (err) {
@@ -47,19 +45,12 @@ router.post('/', function(req, res){
             res.render('pages/');
         }
      });
-    /*
-     //   var x = document.getElementById("location");
-     res.send(req.body.data);
-      //  res.send(req.body.location);
-    }else if (req.body.button = 'NO'){
-        res.send('You clicked No!');
-    } */
+  
+
+  router.get('/hellotoyes', function(req,res){
     
-
-    /* */
-
-
-  // res.render('pages/');
+        res.render('pages/hellotoyes');
+    });
 
 router.get('/siteinfo', function(req,res){
     
@@ -127,10 +118,7 @@ router.post('/rsvp', function(req,res){
     
     
     var config = {
-        user: 'cobonie',
-        password: 'codyisabutthole',
-        server: 'weddingwebsitedb.civzgj8bgpoz.us-east-2.rds.amazonaws.com', 
-        database: 'WeddingDB'
+        
       };
   
       sql.connect(config, function (err) {
@@ -151,10 +139,7 @@ router.post('/rsvp', function(req,res){
 router.get('/cobonie2018', function(req,res){
     var images=[];
     var config = {
-        user: 'cobonie',
-        password: 'codyisabutthole',
-        server: 'weddingwebsitedb.civzgj8bgpoz.us-east-2.rds.amazonaws.com', 
-        database: 'WeddingDB'
+      
       };
   
     
@@ -184,10 +169,7 @@ router.get('/cobonie2018', function(req,res){
 router.get('/datageek', function(req,res){
     //watch the last video on getting data
     /* var config = {
-        user: 'cobonie',
-        password: 'codyisabutthole',
-        server: 'weddingwebsitedb.civzgj8bgpoz.us-east-2.rds.amazonaws.com', 
-        database: 'WeddingDB'
+      
       };
 
 

@@ -29,10 +29,7 @@
 
 <section class="hero">
        <div id= 'headercontentindex'  class="hero-content-index">
-        <h2>
-           Hello. Yes. I do.
-        </h2>
-       
+    
     </div>
    </section>
 
@@ -116,75 +113,4 @@
                 Yes
                 <img id = "mag2" src = "../img/Background/SmallMagnolia.png" />
             </div>
-<!-- 
-    <div id="indexoverlay" >
-        <div class='row'>
-            <div id = "locationform" class = "jumbotron text-center">
-<!--                 <div class='col-sm-6 col-sm-offset-3'>
- --                   
-                    <form id="form" action="/" method="POST">
-                        
-                            <p>
-                                Hi! Welcome to our wedding website! We created a map of all of our visitors and we'd love to add you to it!
-                            </p>
-                            <p>
-                                Do you mind sharing your location with us?
-                            </p>
-                            <p>
-                                We don't collect any other information about you, just where you're coming from. :)                                        
-                            </p>
-                            <input type="hidden" id="location"  name="data" value="1" >
-                            <div class="row">
-    <!--                        <div class="form-group text-right">
-    --                             <button id='yeslocation'value='YES' name="button" type="button" class="btn btn-primary btn-lg" onclick="indexoff('yes')">
-                                        Sure!
-                                        
-                                    </button>
-                        <!--    </div>
-                                <div class="form-group text-left"> --
-                                    <button value = 'NO' name = "button" type="submit" class="btn btn-primary btn-lg" onclick="indexoff('no')">
-                                        No, thanks!
-                                    </button>
-            <!--                </div>
-                   
-                        </div>
-                    </form>
-<!--                 </div>
-           </div>
-        </div>
-    </div> -->
-    <script>
-          function indexoff(response) {
-                    
-                   
 
-                        var x = document.getElementById("location");
-                        var v;
-                        function getLocation() {
-                            if (navigator.geolocation) {
-                                navigator.geolocation.getCurrentPosition(showLocation);
-                            } else { 
-                                x.innerHTML = "Geolocation is not supported by this browser.";
-                            }
-                        }
-                        
-                        function showLocation(position) {
-                            var latitude = position.coords.latitude;
-                            var longitude = position.coords.longitude;
-                           // alert("Latitude : " + latitude + " Longitude: " + longitude);
-
-                            x.value =[ latitude, longitude];
-                          //  alert("value: " + x.value);
-                           document.getElementById("form").submit();
-                         }
-                       
-                      //  x.value = v;
-                        getLocation();
-                       // alert(v );
-                       // alert('thanks');
-                       document.getElementById("indexoverlay").style.display = "none";
-                    }
-                
-
-           
-    </script>
