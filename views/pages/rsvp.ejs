@@ -1,9 +1,16 @@
 <%- contentFor('hero')%>
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>
 <script  type="text/javascript">
+    var test;
+
  $(window).load(function()
 {
+    test = 0;
     document.getElementById('body').id = 'index';
+    document.getElementById('hotel').style.display = "none";
+    document.getElementById('no').checked = true;
+    
+   
     
 });
     $(window).mousemove(function(){
@@ -23,11 +30,44 @@
          $('#headerh2').removeClass("h3").addClass("h1");
         }
     });
+    function formReveal(){
+        if (document.getElementById('yes').checked){
+            document.getElementById('hotel').style.display = 'block';
+        }else{
+            document.getElementById('hotel').style.display = 'none';
+            document.getElementById('roomAmount').options[0].selected = true;
+            document.getElementById('rooms').options[0].selected = true;
+
+            //$('#roomAmount option:first-child').attr("selected", "selected");        
+        }
+    }
+
+    function bye(){
+        if (document.getElementById("fn").innerText =="" || document.getElementById("ln").innerText =="" || document.getElementById("em").innerText ==""){
+           // window.alert("See you soon!");
+
+        }else{
+            window.alert("See you soon!");
+        }
+    }
+     
+    function formcheck(check){ 
+        if (test == 0){
+            if (check){
+            window.alert("Welcome back! \n\nWe found your information in our database. \n\nIf you would like to make change to your RSVP, please indicate you are updating your information below. \n\nThank you!");
+            test = 1;
+            }else{
+                test =1;
+            }
+        }
+        
+    }
 
     
     </script>
-
-<section class="hero">
+ 
+ 
+<section class="hero" >
         <div id= 'headercontent'  class="hero-content">
          <h2>
             RSVP
@@ -37,12 +77,13 @@
     </section>
  
  <%- contentFor('body')%>
-   
-<div class="jumbotron text-center" >
-        <h2>
+ 
+      
+<div onmouseover="formcheck('<%= results[0]%>')" class="jumbotron text-center" >
+        <h2 >
             RSVP
         </h2>      
-        <p>
+        <p  >
             Use the form below to let us know if you are coming and what accomadations you need.
             Even if you sent out your mailed RSVP note, feel free use the form below just in case. 
         </p>  
@@ -53,11 +94,15 @@
                 <form action="/rsvp" method="POST">
                 <div class="form-group">
                     <label>First Name</label>
-                    <input type="text" name="firstName" class="form-control">
+                    <input type="text" name="firstName" class="form-control" id="fn" required>
                 </div>
                 <div class="form-group">
                     <label>Last Name</label>
-                    <input type="text" name="lastName" class="form-control">
+                    <input type="text" name="lastName" class="form-control" id = "ln" required>
+                </div>
+                <div>
+                    <label>Phone Number </label>
+                    <input type="text" name="Phone" class= "form-control" >
                 </div>
                 <div class="form-group">
                     <label>Plus One Name</label>
@@ -66,27 +111,41 @@
                 
                 <div class="form-group">
                     <label>Email</label>
-                    <input type="text" name="email" class="form-control">
+                    <input type="text" name="email" class="form-control" id="em" required>
                 </div>
                 <div class="form-group">
                     <label>Do you need to be added to the hotel block?</label><br>
-                    <input type="radio" name="hotel" value="yes"> Yes
-                    <input type="radio" name="hotel" value="no"> No<br>
+                    <input type="radio" name="hotel" value="yes" id ="yes" onclick="formReveal()"> Yes
+                    <input type="radio" name="hotel" value="no" id="no" checked = "checked"     onclick="formReveal()"> No<br>
+                </div>
+                <div id = "hotel" style= "display: none">
+                    <label>How many rooms do you need?</label>
+                    <select class= "form-control" name="rooms" id="rooms">
+                        <option>0</option>
+                        <option>1</option>
+                        <option>2</option>
+                    </select>
+                    <label>What is the max number of beds needed per room?</label><br>
+                    <select class="form-control" name="roomAmount" id='roomAmount'>
+                        <option>0</option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                      </select>
                 </div>
                 <div class="form-group">
-                    <label>Food Allergies or Restrictions</label>
+                    <label>Food Allergies and Restrictions</label>
                     <input type="text" name="food" class="form-control">
                 </div>
-               <!--  <div class = "form-group">
-                    <label>Test entry</label>
-                    <input type="text" name="test" class="form-control">
-                </div> -->
                 <div class="form-group">
                     <label>Any thing you'd like us to know or consider?</label>
                     <input type="text" name="extra" class="form-control">
                 </div>
              <div class="form-group text-center">
-                 <button type="submit" class="btn btn-primary btn-lg">
+                 <label>Are you updating your information?</label>
+                 <input type="radio" name="update" value="yes"> Yes
+                 <input type="radio" name="update" value="no" checked="checked"> No<br>
+                 <button type="submit" class="btn btn-primary btn-lg" onclick="bye()">
                     Submit
                  </button>
              </div>

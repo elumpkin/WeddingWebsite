@@ -1,51 +1,43 @@
 <%- contentFor('hero')%>
-<section class="hero-venue">
+<section class="hero">
     <div id = 'headercontent' class="hero-content">
-     <h2>
-         Villa Antonia
-     </h2>
-     <p>
-        The beginning of our next chapter
-    </p>
+            <h2 id="mag">
+                    <img id ="mag3" src = "../img/Background/Magnolia.png" />
+                Villa Antonia
+                <img id ="mag4"  src = "../img/Background/Magnolia.png" />
+            </h2>
+           
     
  </div>
 </section>
 
 <%- contentFor('body')%>
 <section >
-        <div class="jumbotron text-center" >
+        <div id ="text" class="jumbotron text-center" >
             <h2>
                The Villa
             </h2>
             <p>
-                Villa Antonia sits on a hill in the midst of Texas Hill Country, surrounded by 
+                We are beginning our next chapter at a breathtaking venue that sits on a hill in the midst of 
+                Texas Hill Country, surrounded by 
                 ornate foliage. It's beautiful architecture overlooking the incredible view of
-                 breathtaking canyons, transforms the villa into a castle-esque fantasy. 
+                 rolling hills, transforms the villa into a castle-esque fantasy. 
          
             </p>
 
             </div>
- <div class="jumbotron text-center" >
+ <div id ="text" class="jumbotron text-center" >
         <h2>
                 Chris Spady
             </h2>
-        <div class="flex-container">
-           
-                <div  class="flex-item" >
-                        <img 
-                        id='venue-img'
-                        src="../img/chris-spady.jpg"
-                        align = 'center'      
-                        >
-                    </div>
-                <div class ="flex-item" >
+        
                       <p>
                           Our venue coordinator and safe keeper of our sanity is Chris. She will be leading the 
                           coordinaton of the vendors and ensuring that the tight schedule of the wedding is kept. 
                           
                           With her care, our wedding is sure to be seamless.
                       </p>
-                </div>
+                
                
     
             </div>
@@ -71,7 +63,7 @@
 <script  type="text/javascript">
 $(window).load(function()
 {
-    document.getElementById('body').id = 'venue';
+    document.getElementById('body').id = 'index';
     
 });
        $(window).scroll(function() {

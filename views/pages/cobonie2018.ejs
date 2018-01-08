@@ -1,6 +1,6 @@
 
 <%- contentFor('slideshow')%>
-<ul class="cb-slideshow">
+<!-- <ul class="cb-slideshow">
   <li>
     <span>Image 01</span>
   </li>
@@ -10,17 +10,27 @@
   <li>
       <span>Image 03</span>
   </li>
-</ul>
+</ul> -->
 
 <%- contentFor('hero')%>
-<section class="hero-cobonie-header">
-    <div id = 'headercontentcobonie' class="hero-cobonie-content">
-        <h2 class="strokeme">#cobonie2018</h2>
-        <p class="strokeme">Go to Instagram, add a public image with the hashtag "#cobonie2018", wait a few mintues, check it out below.
-    </br>
-      Click the image for a larger view.
-    </p>
-    
+<section class="hero">
+    <div id = 'headercontent' class="hero-content-index">
+        <h2 id="mag">
+            <img id ="mag3" src = "../img/Background/Magnolia.png" />
+            #cobonie2018
+        <img id ="mag4"  src = "../img/Background/Magnolia.png" />
+      </h2>
+      <div id ="text">
+          <p id ="coboniep">Go to Instagram, 
+            </br>
+            add a public image with the hashtag "#cobonie2018", 
+          </br>
+          wait a few mintues, then check it out below.
+            </br>
+              Click the image for a larger view.
+            </p>
+      </div>
+           
     
  </div>
 </section>
@@ -35,7 +45,7 @@
       <div style="padding:20px">
           
         </div>
-      <div class="foo"    >
+      <div class="foo" >
           
       <% for (images of images) { %>
                     <img id ="foo" 
@@ -61,7 +71,7 @@
  <script  type="text/javascript">
  $(window).load(function()
 {
-  document.getElementById('body').id = 'cobonie';
+  document.getElementById('body').id = 'index';
   
 });
         $(window).scroll(function() {
