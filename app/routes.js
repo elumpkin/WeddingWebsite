@@ -20,10 +20,9 @@ router.get('/', function(req,res){
     res.render('pages/');
     });
 
-
 router.post('/', function(req, res){
     /* res.render('pages/'); */
-    var location = req.body.data;
+    /* var location = req.body.data;
     var Latitude = location.substring(0, location.indexOf(','));
     var Longitude = location.substring(location.indexOf(',') + 1);
      if (req.body.button = 'YES'){
@@ -43,10 +42,10 @@ router.post('/', function(req, res){
                 });
         
                 //
-    
+     */
            // res.send(Latitude + " and " + Longitude);
             res.render('pages/');
-        }
+       // }
      });
   
 
@@ -54,6 +53,9 @@ router.post('/', function(req, res){
     
         res.render('pages/hellotoyes');
     });
+
+
+
 
 router.get('/siteinfo', function(req,res){
     
@@ -215,8 +217,10 @@ router.post('/rsvp', function(req,res){
                
         
         }catch(err){
-    
+            console.log("Error:" + err);
         }
+    }else{
+        sql.close();
     }
     
   //  res.send(JSON.stringify(result));
@@ -233,7 +237,7 @@ router.get('/cobonie2018', function(req,res){
   
     
         var sqlQuery = 'select URL, ExpandedURL from WeddingDB.dbo.Photos';
-
+      if (sql.close){
         sql.connect(config, err => {
             // ... error checks
          
@@ -252,6 +256,10 @@ router.get('/cobonie2018', function(req,res){
             })
         });
 
+      }else{
+        sql.close();
+    }
+       
 
 });
 

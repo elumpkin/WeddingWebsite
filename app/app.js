@@ -1,6 +1,9 @@
 //require expres
 var express = require('express');
 var path = require('path');
+//var compression = require('compression');
+//var app = express();
+
 
 //create out router object
 var utilities = express.Router();
@@ -13,6 +16,8 @@ utilities.get('/utilities/images', function(req,res){
  // return "HI!"
   res.render('pages/imageDownloader');
 });
+
+
 /* 
 function getImages(){
     
