@@ -1,7 +1,7 @@
 var express = require('express');
 var expressLayouts = require('express-ejs-layouts');
 var app =  express();
-var port = "cobonie2018.herokuapp.com";
+var port = process.env.PORT || 8090;
 const sql = require('mssql')
 var bodyParser = require('body-parser');
 //var helmet = require('helmet');
