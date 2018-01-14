@@ -1,3 +1,6 @@
+///import { parse } from 'querystring';
+//import { json } from '../../../../AppData/Local/Microsoft/TypeScript/2.6/node_modules/@types/body-parser';
+
 /* import { json } from '../../../../AppData/Local/Microsoft/TypeScript/2.6/node_modules/@types/body-parser';
  */
 //require expres
@@ -7,6 +10,8 @@ const sql = require('mssql');
 var fs = require('fs');
 //var navigator = new Navigator();
 var results=[];
+var guest = 'false';
+
 
 //create out router object
 var router = express.Router();
@@ -16,35 +21,76 @@ module.exports = router;
 
 //route our homepg
 router.get('/', function(req,res){
+    
 
-    res.render('pages/');
+    res.render('pages/', {guest: guest});
     });
 
 router.post('/', function(req, res){
-    /* res.render('pages/'); */
-    /* var location = req.body.data;
-    var Latitude = location.substring(0, location.indexOf(','));
-    var Longitude = location.substring(location.indexOf(',') + 1);
-     if (req.body.button = 'YES'){
-        var config = {
-            
-          };
-      
-          sql.connect(config, function (err) {
-            
-                if (err) console.log(err);
-                var sqlQuery = 'insert into WeddingDB.dbo.Locations("Latitude", "Longitude", "Date") values (\' ' + Latitude + '\', \'' + Longitude + '\', getDate())' ;
-                // create Request object
-                var request = new sql.Request();
-          
-                    request.query(sqlQuery).then(sql.close);
-                           
-                });
+
+    var guestResult =[];
+    var fn = JSON.stringify(req.body.firstNameLogin).replace(/'/gi,"''").toUpperCase();
+    var ln = JSON.stringify(req.body.lastNameLogin).replace(/'/gi,"''").toUpperCase();
+    var password =JSON.stringify(req.body.password).replace(/'/gi,"''"); 
+
+
+    if (sql.close){
+        try{
+            var config = {
+                user: 'cobonie',
+                password: 'codyisabutthole',
+                server: 'weddingwebsitedb.civzgj8bgpoz.us-east-2.rds.amazonaws.com', 
+                database: 'WeddingDB'
+              };
+
+
+              
+                var sqlQuery = `select firstname from WeddingDB.dbo.rsvp where
+                UPPER(firstname) = '` + fn + `' and 
+                UPPER(lastname) = '` + ln + `' and 
+                Password = '` + password + `'`;
         
-                //
-     */
-           // res.send(Latitude + " and " + Longitude);
-            res.render('pages/');
+                sql.connect(config, err => {
+                    // ... error checks
+                 
+                    const request = new sql.Request()
+                    request.stream = true // You can set streaming differently for each request
+                    request.query(sqlQuery) // or request.execute(procedure)
+                    request.on('row', row => {
+                        guestResult.push((row)); // Emitted for each row in a recordset
+                    //  res.render('pages/cobonie2018',{images:images});
+                    })
+                    request.on('done',  recordset => {
+                       // images = images.replace('undefined',"");
+                        console.log("guestResult " + JSON.stringify(guestResult[0]));
+                     //   res.render('pages/rsvp', {results:results});
+                       sql.close();
+                    
+                        if (guestResult[0]){
+                                
+                                guest = 'true';
+                                   /// request.query(sqlQuery).then(sql.close);
+                                   console.log("A Guest!");
+                                    res.render('pages/', {guest: guest});
+
+                        }
+                        else{
+                            guest = 'false';
+                            sql.close();
+                            console.log("Not a Guest!");
+                            res.render('pages/', {guest:guest});
+                        }
+                    })
+                });
+        }catch(err){
+            console.log("Error:" + err);
+        }
+    }else{
+        sql.close();
+        res.render('pages/', {guest:guest});
+        
+    }  
+   // res.render('pages/');
        // }
      });
   
@@ -105,24 +151,16 @@ router.post('/rsvp', function(req,res){
 
     if (req.body.firstName == null){}
     else{
-        var fn = JSON.stringify(req.body.firstName).replace(/'/gi,"''");
-        var ln = JSON.stringify(req.body.lastName).replace(/'/gi,"''");
+        var fn = JSON.stringify(req.body.firstName).replace(/'/gi,"''").toUpperCase();
+        var ln = JSON.stringify(req.body.lastName).replace(/'/gi,"''").toUpperCase();
         var en = JSON.stringify(req.body.extraName||"NA").replace(/'/gi,"''");
         var fd = JSON.stringify(req.body.food||"NA").replace(/'/gi,"''");
         var ex = JSON.stringify(req.body.extra||"NA").replace(/'/gi,"''");
-        var em = JSON.stringify(req.body.email).replace(/'/gi,"''");
+        var em = JSON.stringify(req.body.email).replace(/'/gi,"''").toUpperCase();
         var ht = JSON.stringify(req.body.hotel||"NA").replace(/'/gi,"''");
         var pn = JSON.stringify(req.body.Phone||"NA").replace(/'/gi,"''");
         var ra = req.body.roomAmount||0;
         var rm = req.body.rooms||0;
-    
-        /* fn = fn.replace(/'/gi,"''");
-        ln =  ln.replace(/'/gi,"''");
-         en =  en.replace(/'/gi,"''");
-         fd =  fd.replace(/'/gi,"''"); 
-         ex = ex.replace("I","''");*/
-        
-   // }
     }
         
     if (sql.close){
@@ -137,9 +175,9 @@ router.post('/rsvp', function(req,res){
 
               
                 var sqlQuery = `select firstname from WeddingDB.dbo.rsvp where
-                 firstname = '` + fn + `' and 
-                 lastname = '` + ln + `' and
-                 email = '` + em + `'`;
+                UPPER(firstname) = '` + fn + `' and 
+                UPPER(lastname) = '` + ln + `' and
+                UPPER(email) = '` + em + `'`;
         
                 sql.connect(config, err => {
                     // ... error checks
@@ -177,9 +215,9 @@ router.post('/rsvp', function(req,res){
                                 Phone = '` + pn + `',
                                 Date = getDate()
                                 WHERE 
-                                FirstName = '` + fn + `' and
-                                LastName = '` + ln + `' and
-                                Email = '` + em + `'
+                                UPPER(FirstName) = '` + fn + `' and
+                                UPPER(LastName) = '` + ln + `' and
+                                UPPER(Email) = '` + em + `'
                                 `;
                                 // create Request object
                                 var request = new sql.Request();
@@ -187,7 +225,8 @@ router.post('/rsvp', function(req,res){
                                     request.query(sqlQuery).then(sql.close);
                                // })
                                 
-                            }else{
+                            }
+                            else{
                                 res.render('pages/rsvp', {results:results});
                                 
                                 results = [];
@@ -197,18 +236,33 @@ router.post('/rsvp', function(req,res){
                             
                             
                         }else{
-                            /* sql.connect(config, function (err) {
-        
-                                if (err) console.log(err); */
+                     
                                 res.render('pages/rsvp', {results:results});
                                 
                             console.log("Here!");
-                            var sqlQuery = 'insert into WeddingDB.dbo.RSVP ("FirstName", "LastName","PlusOne", "Email", "FoodRestrictions", "Extra", "Hotel", "HotelAmount", "Rooms", "Phone",  "Date") values (\'' + fn + '\', \'' + ln + '\', \'' + en  + '\', \'' + em + '\', \'' + fd  + '\', \'' + ex + '\', \'' + ht  + '\', \'' + ra + '\', \'' + rm  + '\', \'' + pn + '\' , getDate())' ;
+                            var sqlQuery = 
+                            `UPDATE WeddingDB.dbo.RSVP
+                            SET
+                            FirstName = '` + fn + `',
+                            LastName = '` + ln + `',
+                            PlusOne = '` + en + `',
+                            Email = '` + em + `',
+                            FoodRestrictions = '` + fd + `',
+                            Extra = '` + ex + `',
+                            Hotel = '` + ht + `',
+                            HotelAmount = '` + ra + `',
+                            Rooms = '` + rm + `',
+                            Phone = '` + pn + `',
+                            Date = getDate()
+                            WHERE 
+                            UPPER(FirstName) = '` + fn + `' and
+                            UPPER(LastName) = '` + ln + `'
+                            ` 
                             var request = new sql.Request();
                       
                                 request.query(sqlQuery).then(sql.close);
                                   
-                           // })
+                   
                             results = [];
                         }
                     })
@@ -223,8 +277,6 @@ router.post('/rsvp', function(req,res){
         sql.close();
     }
     
-  //  res.send(JSON.stringify(result));
-    //res.render('pages/rsvp');
 });
 router.get('/cobonie2018', function(req,res){
     var images=[];

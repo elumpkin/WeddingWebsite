@@ -1,165 +1,230 @@
 <%- contentFor('hero')%>
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>
-<script  type="text/javascript">
- $(window).load(function()
-{
-    document.getElementById('body').id = 'index';
-    
-});
-    $(window).mousemove(function(){
-        indexon();
-    });
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>
+    <script type="text/json" src="freegeoip.net/json/github.com>"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+    <!-- <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script> -->
+    <script type="text/json">
+ 
+</script>
+    <script type="text/javascript">
+        var data2;
+        var count = 0;
 
-    $(window).scroll(function() {
+        $(window).load(function () {
+            if (document.getElementById("overlay").className == 'false') {
+                window.alert(document.getElementById("overlay").className);
+                document.getElementById("overlay").style.display = "block";
+            } else {
+                guestReveal("true");
+            }
 
-        if ($(this).scrollTop()>0)
-        {
-           $('#headercontent').fadeOut();
-           $('#headerh2').removeClass("h1").addClass("h3");
-        }
-       else
-        {
-         $('#headercontent').fadeIn();
-         $('#headerh2').removeClass("h3").addClass("h1");
-        }
-    });
 
-    
+
+        });
+        $(window).mousemove(function () {
+            indexon();
+        });
+
+
+
+        $(window).scroll(function () {
+
+            if ($(this).scrollTop() > 0) {
+                $('#headercontent').fadeOut();
+                $('#headerh2').removeClass("h1").addClass("h3");
+            }
+            else {
+                $('#headercontent').fadeIn();
+                $('#headerh2').removeClass("h3").addClass("h1");
+            }
+        });
+
     </script>
 
-<section class="hero">
-       <div id= 'headercontentindex'  class="hero-content-index">
-        
-        <h2 id="mag">
-                <img id ="mag3" src = "../img/Background/Magnolia.png" />
-            We're getting married!
-            <img id ="mag4"  src = "../img/Background/Magnolia.png" />
-        </h2>
-       
-    </div>
-   </section>
+    <section class="hero">
 
-   <%- contentFor('body')%>
-   <div id ="infocontainer" class="infocontainer2">
-        <img id = "vector" src = "../img/Background/rosegold-outline.png" />
-        
-        <div id ="divider">
-                -----
-                <img src = "../img/Background/LongMagnolia.png" />
-                -----
+
+        <!--        <div id= 'headercontentindex'   class="hero-content-index">
+ -->
+        <h2 id="mag">
+            <img id="mag3" src="../img/Background/Magnolia.png" /> We're getting married!
+            <img id="mag4" src="../img/Background/Magnolia.png" />
+        </h2>
+
+        <!--     </div>
+ -->
+    </section>
+
+    <%- contentFor('body')%>
+        <div id="overlay" style="display: none" class="<%= guest%>">
+
+            <div class="jumbotron text-center" id="login">
+                <p>
+                    Welcome! </br>
+                    Please enter your name below to help us be sure you're one of our invited guest.
+                </p>
+
+                <div class='row'>
+                    <div class='col-sm-6 col-sm-offset-3'>
+                        <form id="formLogin" action="/" method="POST">
+                            <div class="form-group">
+                                <label>First Name</label>
+                                <input type="text" name="firstNameLogin" class="form-control" id="fnl" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Last Name</label>
+                                <input type="text" name="lastNameLogin" class="form-control" id="lnl" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Password</label>
+                                <input type="text" name="password" class="form-control" id="pw" required>
+                            </div>
+                            <div class="form-group text-center">
+                                <button type="submit" id="btn2" class="btn btn-primary btn-lg" onclick="off()">
+                                    Submit
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
             </div>
-            <h2 id="mag">
+        </div>
+        <div id="infocontainer" class="infocontainer2">
+            <div id="infocontainer" >
+                <div id="section1">
+                    <img id="vector" src="../img/Background/rosegold-outline.png" />
+                </div>
+                <div id="divider">
+                    -----
+                    <img src="../img/Background/LongMagnolia.png" /> -----
+                </div>
+                <h2 id="mag">
                     Ceremony
                 </h2>
-                <img id = "vector2" src = "../img/Background/rosegold-outline.png" />
-                <div id ="text" class="jumbotron text-center" >
-                        
-                <p>
-                 This ceremony will be "unplugged". 
-                </br>
-                </br>
-                The bride kindly requests your fullest attention and open hearts 
-                as we share our love and most sacred moment together with you.
-                Professional pictures and video will be provided to the attendees as they become available.
-                
-                </br>
-                </br>      
-                  Late arrivals and those unwilling to part with their phones for a moment will be ushered to the chapel until the ceremony has ceased.       
-                </p>
-        <!--         </div>
-        -->    
-        
-        </div>
-                <div id ="divider">
-                        -----
-                        <img src = "../img/Background/LongMagnolia.png" />
-                        -----
-                    </div>
+                <div id="section2">
+                    <img id="vector2" src="../img/Background/rosegold-outline.png" />
+                </div>
+                <div id="text" class="jumbotron text-center">
+                    <p>
+                        This ceremony will be "unplugged".
+                        </br>
+                        </br>
+                        The bride kindly requests your fullest attention and open hearts as we share our love and most sacred moment together with
+                        you. Professional pictures and video will be provided to the attendees as they become available.
+                        </br>
+                        </br>
+                        Late arrivals and those unwilling to part with their phones for a moment will be ushered to the chapel until the ceremony
+                        has ceased.
+                    </p>
+                </div>
+                <div id="divider">
+                    -----
+                    <img src="../img/Background/LongMagnolia.png" /> -----
+                </div>
+                <div>
                     <h2 id="mag">
-                            Reception
-                        </h2>
-                        <img id = "vector2" src = "../img/Background/rosegold-outline.png" />
-                        
-                        <div id ="text" class="jumbotron text-center" >
-                                
-                        <p>
-                            Please enjoy the cocktail hour mingling with the other guest and enjoying hors d'oeuvres.
-                        </p>
+                        Reception
+                    </h2>
+                </div>
+                <div id="section3">
+                    <img id="vector2" src="../img/Background/rosegold-outline.png" />
+                </div>
+                <div id="text" class="jumbotron text-center">
+                    <p>
+                        Please enjoy the cocktail hour mingling with the other guest and enjoying hors d'oeuvres.
+                    </p>
+                </div>
+            </div>
+            <div id="infocontainer" >
+                <!--     <img id = "vector" src = "../img/Background/rosegold-outline.png" />
+ -->
+                <div id="info1">
+                    <div id="sectiona">
+                        <div id="text">
+
+                            Your presence is requested at
+                        </div>
+
+                        <div id="info">
+                            Villa Antonia
+                        </div>
+                        <div id="text">
+                            in
+                        </div>
+
+                        <div id="info">
+                            Jonestown, Texas
+                        </div>
+                        <div id="text">
+                            on
+                        </div>
+
+                        <div id="info">
+                            April 29th, 2018
+                        </div>
+
                     </div>
-    </div>
-   <div id ="infocontainer" class="infocontainer2">
-<!--     <img id = "vector" src = "../img/Background/rosegold-outline.png" />
- -->    <div id ="info1">
-            <div id = "text">
-                    
-                 Your presence is requested at
-           </div>
-           
-           <div id="info">
-                Villa Antonia
-            </div>
-            <div id = "text">
-                    in
-             </div>
-             
-             <div id="info">
-                  Jonestown, Texas
-                 </div>
-            <div id = "text">
-                   on
-            </div>
-            
-            <div id="info">
-                  April 29th, 2018
+                </div>
+                <!--     <div id ="infocontainer" class="infocontainer2"  >
+ -->
+                <div id="info1">
+                    <div id="sectionb">
+
+                        <div id="text">
+                            Please arrive to the terrace no later than
+                        </div>
+
+                        <div id="info">
+                            6:00 PM
+                        </div>
+                        <div id="text">
+                            The ceremony will begin promtly at
+                        </div>
+
+                        <div id="info">
+                            6:15 PM
+                        </div>
+
+                    </div>
                 </div>
 
-    </div>
-<!--     <div id ="infocontainer" class="infocontainer2"  >
- -->            <div id = "text">
-                Please arrive to the terrace no later than
-                </div>
-           
-           <div id="info">
-                6:00 PM
-            </div>
-            <div id = "text">
-                  The ceremony will begin promtly at
-            </div>
-            
-            <div id="info">
-                  6:15 PM
-                </div>
-            </div>
-            <div id ="infocontainer2">
-                    <div id = "text">
-                        Will begin at
-                   </div>
-                   
-                   <div id="info">
-                        7:30 PM
-                    </div>
-                    <div id = "text">
-                          in the 
-                    </div>
-                    <div id="info">
+                <!--             <div id ="infocontainer2">
+ -->
+                <div id="info1">
+                    <div id="sectionc">
+                        <div id="text">
+                            Will begin at
+                        </div>
+
+                        <div id="info">
+                            7:30 PM
+                        </div>
+                        <div id="text">
+                            in the
+                        </div>
+                        <div id="info">
                             Wine Cellar
                         </div>
-                    
-            
+                    </div>
+                </div>
+            </div>
+        </div>
 
 
 
-<!-- <div id ="divider">
+        <!-- <div id ="divider">
         -----
         <img src = "../img/Background/LongMagnolia.png" />
         -----
     </div> -->
-    
-        
-               
 
-  
-<!-- 
+
+
+
+
+        <!-- 
     <div id="indexoverlay" >
         <div class='row'>
             <div id = "locationform" class = "jumbotron text-center">
@@ -196,38 +261,35 @@
            </div>
         </div>
     </div> -->
-    <script>
-          function indexoff(response) {
-                    
-                   
-
-                        var x = document.getElementById("location");
-                        var v;
-                        function getLocation() {
-                            if (navigator.geolocation) {
-                                navigator.geolocation.getCurrentPosition(showLocation);
-                            } else { 
-                                x.innerHTML = "Geolocation is not supported by this browser.";
-                            }
-                        }
-                        
-                        function showLocation(position) {
-                            var latitude = position.coords.latitude;
-                            var longitude = position.coords.longitude;
-                           // alert("Latitude : " + latitude + " Longitude: " + longitude);
-
-                            x.value =[ latitude, longitude];
-                          //  alert("value: " + x.value);
-                           document.getElementById("form").submit();
-                         }
-                       
-                      //  x.value = v;
-                        getLocation();
-                       // alert(v );
-                       // alert('thanks');
-                       document.getElementById("indexoverlay").style.display = "none";
+        <script>
+            function indexoff(response) {
+                var x = document.getElementById("location");
+                var v;
+                function getLocation() {
+                    if (navigator.geolocation) {
+                        navigator.geolocation.getCurrentPosition(showLocation);
+                    } else {
+                        x.innerHTML = "Geolocation is not supported by this browser.";
                     }
-                
+                }
 
-           
-    </script>
+                function showLocation(position) {
+                    var latitude = position.coords.latitude;
+                    var longitude = position.coords.longitude;
+                    // alert("Latitude : " + latitude + " Longitude: " + longitude);
+
+                    x.value = [latitude, longitude];
+                    //  alert("value: " + x.value);
+                    document.getElementById("form").submit();
+                }
+
+                //  x.value = v;
+                getLocation();
+                // alert(v );
+                // alert('thanks');
+                document.getElementById("indexoverlay").style.display = "none";
+            }
+
+
+
+        </script>

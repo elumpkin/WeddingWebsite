@@ -1,111 +1,147 @@
 <!DOCTYPE html>
 <html lang="en" class="mdc-typography">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Cobonie 2018</title>
-    <link rel="stylesheet" href = "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/styles.css">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">    <link href='https://fonts.googleapis.com/css?family=Catamaran:300,400,100' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Catamaran:300,400,100' rel='stylesheet' type='text/css'>
     <link href="https://fonts.googleapis.com/css?family=Pinyon+Script" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Forum" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--Import materialize.css-->
-    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
-    <link rel="stylesheet"  href="node_modules/material-components-web/dist/material-components-web.css">
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
+    <link rel="stylesheet" href="node_modules/material-components-web/dist/material-components-web.css">
 
     <!--Let browser know website is optimized for mobile-->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 
 </head>
-<body id = 'body'>
-    
-    <header>
-        <nav class="navbar navbar-inverse navbar-fixed-top ">
-                <span class="right">   Jonestown, TX    </span>
-                <span class="left">    April 29th, 2018   </span>​
 
-            <h1 id = "headerh2" class=" text-center" >
+    <body id='body'>
+        <script>
+            //var guest = 'false';
+            function guestReveal(gst) {
+                if (gst == 'false') {
+                    document.getElementById("guestEyesOnly").style.display = "none";
+
+                }
+            }
+        </script>
+        <header>
+            <nav class="navbar navbar-inverse navbar-fixed-top ">
+                <span class="right"> Jonestown, TX </span>
+                <span class="left"> April 29th, 2018 </span>​
+
+                <h1 id="headerh2" class=" text-center">
                     Ebonie & Cody 2018
-            </h1>
-        
-<!--         <a href="/" class="navbar-brand"></a>
- -->      
-             <ul id= "nav" class="nav navbar-nav">
-                <li><a href="/">Home</a></li>
-                <li><a href="/hellotoyes">From Hello to Yes</a></li>
-                <li><a href="/about">About Us</a></li>
-<!--                 <li><a href="/schedule">Schedule</a></li>
- -->                <li><a href="/venue">Venue</a></li>
-            
-                <li><a href="/cobonie2018">#cobonie2018</a></li>
-<!--                 <li><a href="/registry">Registry</a></li>
- -->               <!--  <li><a href="/faq">FAQs</a></li> -->
-                 <li><a href="/rsvp">RSVP</a></li> 
-                <li><a href="/aestetic">Aesthetic</a></li>
-    <!--             <li><a href="/games">Games</a></li>
-    -->            <!-- <li><a href="/datageek">Data Geek</a></li> -->
-               <!--  <li><a href="/contact">Contact</a></li> -->
-                <!-- <li><a href="/siteinfo">Site Info</a></li> -->
-    <!--             <li><a href="/vendorpage">Vendor Access Page</a></li>
- -->        </ul>
-        </nav>
-    </header>
+                </h1>
+
+                <!--         <a href="/" class="navbar-brand"></a>
+ -->
+                <ul id="nav" class="nav navbar-nav">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                    <li id="guestEyesOnly">
+                        <a href="/hellotoyes">From Hello to Yes</a>
+                    </li>
+                    <li>
+                        <a href="/about">About Us</a>
+                    </li>
+                    <!--                 <li><a href="/schedule">Schedule</a></li>
+ -->
+                    <li id="guestEyesOnly">
+                        <a href="/venue">Venue</a>
+                    </li>
+
+                    <li>
+                        <a href="/cobonie2018">#cobonie2018</a>
+                    </li>
+                    <!--                 <li><a href="/registry">Registry</a></li>
+ -->
+                    <!--  <li><a href="/faq">FAQs</a></li> -->
+
+                    <li id="guestEyesOnly">
+                        <a href="/rsvp">RSVP</a>
+                    </li>
+                    <li>
+                        <a href="/aestetic">Aesthetic</a>
+                    </li>
+                    <!--             <li><a href="/games">Games</a></li>
+    -->
+                    <!-- <li><a href="/datageek">Data Geek</a></li> -->
+                    <!--  <li><a href="/contact">Contact</a></li> -->
+                    <!-- <li><a href="/siteinfo">Site Info</a></li> -->
+                    <!--             <li><a href="/vendorpage">Vendor Access Page</a></li>
+ -->
+                </ul>
+            </nav>
+        </header>
 
 
-<!-- Content Here -->
-<%- defineContent('slideshow') %>
-<%- defineContent('hero') %>
+        <!-- Content Here -->
+        <%- defineContent('slideshow') %>
+            <%- defineContent('hero') %>
 
-    <main id ='main' >
-        <div class="container">
-                <div class="verticalLine">
-                     
-                <%- defineContent('body') %>
-            <!-- <div class="jumbotron text-center" >
+                <main id='main'>
+                    <div class="container">
+                        <div class="verticalLine">
+
+                            <%- defineContent('body') %>
+                                <!-- <div class="jumbotron text-center" >
                
             </div> -->
-        </div>
-        </div>
-    </main>
- 
+                        </div>
+                    </div>
+                </main>
 
 
-    <footer>
-            Cobonie Wedding Website. Copyright Ebonie Lumpkin 2017.
-        </footer>
-     
-        <script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
-       
-        <script src="app.js"></script>
-        <script>
-                function on(expandedImageURL) {
-                    document.getElementById("overlay").style.display = "block";
-                    document.getElementById("expandedImg").src = expandedImageURL;
-                }
-                
-                function off() {
-                    document.getElementById("overlay").style.display = "none";
-                }
 
-                function indexon() {
-                    document.getElementById("indexoverlay").style.display = "block";
-                    
-                }
+                <footer>
+                    Cobonie Wedding Website. Copyright Ebonie Lumpkin 2017.
+                </footer>
+
+                <script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
+
+                <script src="app.js"></script>
+                <script>
+                    function on(expandedImageURL) {
+                        document.getElementById("overlay").style.display = "block";
+                        document.getElementById("expandedImg").src = expandedImageURL;
+                    }
+                    function on2() {
+                        document.getElementById("overlay").style.display = "block";
+                    }
+
+                    function off() {
+                        document.getElementById("overlay").style.display = "none";
+                    }
+
+                    function indexon() {
+                        document.getElementById("indexoverlay").style.display = "block";
+
+                    }
+
 
                /*  function indexoff() {
                     document.getElementById("overlay").style.display = "none";
                 } */
 
 
-            
+
                 </script>
 
-  
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-        <script src="node_modules/material-components-web/dist/material-components-web.js"></script>
-        <script>mdc.autoInit()</script>
-     </body>
-     </html>
+
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+                <script src="node_modules/material-components-web/dist/material-components-web.js"></script>
+                <script>mdc.autoInit()</script>
+    </body>
+
+
+</html>
