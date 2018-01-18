@@ -1,8 +1,3 @@
-///import { parse } from 'querystring';
-//import { json } from '../../../../AppData/Local/Microsoft/TypeScript/2.6/node_modules/@types/body-parser';
-
-/* import { json } from '../../../../AppData/Local/Microsoft/TypeScript/2.6/node_modules/@types/body-parser';
- */
 //require expres
 var express = require('express');
 var path = require('path');
@@ -10,20 +5,26 @@ const sql = require('mssql');
 var fs = require('fs');
 //var navigator = new Navigator();
 var results=[];
-var guest = 'false';
-
+var guest = 'none';
+var count = 0;
 
 //create out router object
 var router = express.Router();
-//var results = [];
+
 //export our router
 module.exports = router;
 
 //route our homepg
+
+router.post('/notGuest', function(req,res){
+    count = req.body.count;
+    res.render('pages/', {guest: guest, count:count});
+    
+})
 router.get('/', function(req,res){
     
 
-    res.render('pages/', {guest: guest});
+    res.render('pages/', {guest: guest, count:count});
     });
 
 router.post('/', function(req, res){
@@ -71,14 +72,14 @@ router.post('/', function(req, res){
                                 guest = 'true';
                                    /// request.query(sqlQuery).then(sql.close);
                                    console.log("A Guest!");
-                                    res.render('pages/', {guest: guest});
+                                    res.render('pages/', {guest: guest, count:count});
 
                         }
                         else{
                             guest = 'false';
                             sql.close();
                             console.log("Not a Guest!");
-                            res.render('pages/', {guest:guest});
+                            res.render('pages/', {guest:guest, count:count});
                         }
                     })
                 });
@@ -87,7 +88,8 @@ router.post('/', function(req, res){
         }
     }else{
         sql.close();
-        res.render('pages/', {guest:guest});
+        guest = guest;
+        res.render('pages/', {guest:guest, count:count});
         
     }  
    // res.render('pages/');
@@ -97,7 +99,7 @@ router.post('/', function(req, res){
 
   router.get('/hellotoyes', function(req,res){
     
-        res.render('pages/hellotoyes');
+        res.render('pages/hellotoyes', {guest:guest});
     });
 
 
@@ -116,20 +118,25 @@ router.get('/about', function(req,res){
         {name: 'Ebonie', email:'ebonie.b.lumpkin@gmail.com'}
     ]
 
-    res.render('pages/about', {users: users});
+    res.render('pages/about', {users: users, guest:guest});
 });
 
 
 
 router.get('/venue', function(req,res){
-    res.render('pages/venue');
+    res.render('pages/venue', {guest:guest} );
 });
 router.get('/registry', function(req,res){
-    res.render('pages/registry');
+    res.render('pages/registry',{guest:guest});
 });
 
 router.get('/aestetic', function(req,res){
-    res.render('pages/aestetic');
+    if (guest== 'true'){
+        res.render('pages/aestetic',{guest:"true"});
+    }else if (guest== 'false'){
+        res.render('pages/aestetic',{guest:"false"});
+    }
+   
 });
 
 router.get('/games', function(req,res){
@@ -137,13 +144,13 @@ router.get('/games', function(req,res){
 });
 
 router.get('/schedule', function(req,res){
-    res.render('pages/schedule');
+    res.render('pages/schedule', {guest:guest});
 });
 router.get('/faq', function(req,res){
     res.render('pages/faq');
 });
 router.get('/rsvp', function(req,res){
-    res.render('pages/rsvp',{results:results});
+    res.render('pages/rsvp',{results:results, guest:guest});
 });
 
 
@@ -227,7 +234,7 @@ router.post('/rsvp', function(req,res){
                                 
                             }
                             else{
-                                res.render('pages/rsvp', {results:results});
+                                res.render('pages/rsvp', {results:results, guest:guest});
                                 
                                 results = [];
                                 sql.close();
@@ -237,7 +244,7 @@ router.post('/rsvp', function(req,res){
                             
                         }else{
                      
-                                res.render('pages/rsvp', {results:results});
+                                res.render('pages/rsvp', {results:results, guest:guest});
                                 
                             console.log("Here!");
                             var sqlQuery = 
@@ -303,7 +310,7 @@ router.get('/cobonie2018', function(req,res){
             request.on('done',  recordset => {
                // images = images.replace('undefined',"");
                 
-                res.render('pages/cobonie2018',{images:images});
+                res.render('pages/cobonie2018',{images:images, guest:guest});
                 sql.close();
             })
         });

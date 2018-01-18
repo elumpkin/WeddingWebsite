@@ -1,295 +1,251 @@
-<%- contentFor('hero')%>
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>
-    <script type="text/json" src="freegeoip.net/json/github.com>"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
-    <!-- <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+<%- contentFor('header')%>
+    <header>
+        <nav class="navbar navbar-inverse navbar-fixed-top ">
+            <span class="right"> Jonestown, TX </span>
+            <span class="left"> April 29th, 2018 </span>​
+
+            <h1 id="headerh2" class=" text-center">
+                Ebonie & Cody 2018
+            </h1>
+
+            <!--         <a href="/" class="navbar-brand"></a>
+-->
+            <div id="loginFirst">
+                <ul id="nav" class="nav navbar-nav">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                    <div id="guestEyesOnly" style="display:none">
+                        <li>
+                            <a href="/schedule">Schedule</a>
+                        </li>
+                        <li>
+                            <a href="/hellotoyes">From Hello to Yes</a>
+                        </li>
+                        <li>
+                            <a href="/rsvp">RSVP</a>
+                        </li>
+                        <li>
+                            <a href="/venue">Venue</a>
+                        </li>
+                    </div>
+                    <li>
+                        <a href="/about">About Us</a>
+                    </li>
+                    <!--                 <li><a href="/schedule">Schedule</a></li>
+-->
+
+
+                    <li>
+                        <a href="/cobonie2018">#cobonie2018</a>
+                    </li>
+                    <!--                 <li><a href="/registry">Registry</a></li>
+-->
+                    <!--  <li><a href="/faq">FAQs</a></li> -->
+
+
+                    <li>
+                        <a href="/aestetic">Aesthetic</a>
+                    </li>
+                    <!--             <li><a href="/games">Games</a></li>
+-->
+                    <!-- <li><a href="/datageek">Data Geek</a></li> -->
+                    <!--  <li><a href="/contact">Contact</a></li> -->
+                    <!-- <li><a href="/siteinfo">Site Info</a></li> -->
+                    <!--             <li><a href="/vendorpage">Vendor Access Page</a></li>
+-->
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <%- contentFor('hero')%>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>
+        <script type="text/json" src="freegeoip.net/json/github.com>"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+        <!-- <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
 <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script> -->
-    <script type="text/json">
- 
-</script>
-    <script type="text/javascript">
-        var data2;
-        var count = 0;
-
-        $(window).load(function () {
-            if (document.getElementById("overlay").className == 'false') {
-               // window.alert(document.getElementById("overlay").className);
-                document.getElementById("overlay").style.display = "block";
-            } else {
-                guestReveal("true");
-            }
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 
 
-        });
-        $(window).mousemove(function () {
-            indexon();
-        });
+        <script type="text/javascript">
+            var data2;
+          //   count = 0 + count;
+
+            $(window).load(function () {
+
+                if (document.getElementById("overlay").className == 'false' ) {
+                    // window.alert(document.getElementById("overlay").className);
+                    //   document.getElementById("overlay").style.display = "block";
+                    document.getElementById("guestEyesOnly").style.display = "none";
+                   // window.alert("!!!count: " + "<%= count%>");
+                    if ("<%= count%>" == "0"){
+                        document.getElementById("hero").style.display = "none";
+
+                            document.getElementById("overlay2").style.display = "block";
+                    }else{
+                        document.getElementById("hero").style.display = "block";
+                        document.getElementById("overlay2").style.display = "none";
+
+
+                    }
+                  
+
+                } else if (document.getElementById("overlay").className == 'true') {
+
+                    //guestReveal("true");
+                    document.getElementById("loginFirst").style.display = "block";
+                    document.getElementById("guestEyesOnly").style.display = "inline";
+                    document.getElementById("hero").style.display = "block";
+                    //window.alert("<%= guest%>");
+                } else {
+                    document.getElementById("hero").style.display = "none";
+
+                    document.getElementById("overlay").style.display = "block";
+                    document.getElementById("loginFirst").style.display = "none";
+                    //count =1;
+
+
+                } 
+
+
+            });
+            $(window).mousemove(function () {
+                indexon();
 
 
 
-        $(window).scroll(function () {
 
-            if ($(this).scrollTop() > 0) {
-                $('#headercontent').fadeOut();
-                $('#headerh2').removeClass("h1").addClass("h3");
-            }
-            else {
-                $('#headercontent').fadeIn();
-                $('#headerh2').removeClass("h3").addClass("h1");
-            }
-        });
+            });
+            function on3() {
+                        document.getElementById("overlay").style.display = "block";
+                        document.getElementById("overlay2").style.display = "none";
+                        
 
-    </script>
+                    }
+            
 
-    <section class="hero">
+            $(window).scroll(function () {
 
+                if ($(this).scrollTop() > 0) {
+                    $('#headercontent').fadeOut();
+                    $('#headerh2').removeClass("h1").addClass("h3");
+                } else {
+                    $('#headercontent').fadeIn();
+                    $('#headerh2').removeClass("h3").addClass("h1");
+                }
+            });
+        </script>
+        <!--   <section class="hero">
 
+ -->
         <!--        <div id= 'headercontentindex'   class="hero-content-index">
  -->
-        <h2 id="mag">
-            <img id="mag3" src="../img/Background/Magnolia.png" /> We're getting married!
-            <img id="mag4" src="../img/Background/Magnolia.png" />
-        </h2>
 
         <!--     </div>
  -->
-    </section>
+        <!--    </section> -->
 
-    <%- contentFor('body')%>
-        <div id="overlay" style="display: none" class="<%= guest%>">
 
-            <div class="jumbotron text-center" id="login">
-                <p>
-                    Welcome! </br>
-                    Please enter your name below to help us be sure you're one of our invited guest.
-                </p>
 
-                <div class='row'>
-                    <div class='col-sm-6 col-sm-offset-3'>
-                        <form id="formLogin" action="/" method="POST">
-                            <div class="form-group">
-                                <label>First Name</label>
-                                <input type="text" name="firstNameLogin" class="form-control" id="fnl" required>
-                            </div>
-                            <div class="form-group">
-                                <label>Last Name</label>
-                                <input type="text" name="lastNameLogin" class="form-control" id="lnl" required>
-                            </div>
-                            <div class="form-group">
-                                <label>Password</label>
-                                <input type="text" name="password" class="form-control" id="pw" required>
-                            </div>
-                            <div class="form-group text-center">
-                                <button type="submit" id="btn2" class="btn btn-primary btn-lg" onclick="off()">
-                                    Submit
-                                </button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div id="infocontainer" class="infocontainer2">
-            <div id="infocontainer" >
-                <div id="section1">
-                    <img id="vector" src="../img/Background/rosegold-outline.png" />
-                </div>
-                <div id="divider">
-                    -----
-                    <img src="../img/Background/LongMagnolia.png" /> -----
-                </div>
-                <h2 id="mag">
-                    Ceremony
-                </h2>
-                <div id="section2">
-                    <img id="vector2" src="../img/Background/rosegold-outline.png" />
-                </div>
-                <div id="text" class="jumbotron text-center">
+
+        <%- contentFor('body')%>
+
+            <div id="overlay" style="display: none" class="<%= guest%>">
+
+                <div class="jumbotron text-center" id="login">
                     <p>
-                        This ceremony will be "unplugged".
-                        </br>
-                        </br>
-                        The bride kindly requests your fullest attention and open hearts as we share our love and most sacred moment together with
-                        you. Professional pictures and video will be provided to the attendees as they become available.
-                        </br>
-                        </br>
-                        Late arrivals and those unwilling to part with their phones for a moment will be ushered to the chapel until the ceremony
-                        has ceased.
+                        Welcome! </br>
+                        Please enter your name below to help us be sure you're one of our invited guest.
                     </p>
+
+                    <div class='row'>
+                        <div class='col-sm-6 col-sm-offset-3'>
+                            <form id="formLogin" action="/" method="POST">
+                                <div class="form-group">
+                                    <label>First Name</label>
+                                    <input type="text" name="firstNameLogin" class="form-control" id="fnl" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Last Name</label>
+                                    <input type="text" name="lastNameLogin" class="form-control" id="lnl" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Password</label>
+                                    <input type="text" name="password" class="form-control" id="pw" required>
+                                </div>
+                                <div class="form-group text-center">
+                                    <button type="submit" id="btn2" class="btn btn-primary btn-lg" onclick="off()">
+                                        Submit
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
                 </div>
-                <div id="divider">
-                    -----
-                    <img src="../img/Background/LongMagnolia.png" /> -----
-                </div>
-                <div>
-                    <h2 id="mag">
-                        Reception
-                    </h2>
-                </div>
-                <div id="section3">
-                    <img id="vector2" src="../img/Background/rosegold-outline.png" />
-                </div>
-                <div id="text" class="jumbotron text-center">
+            </div>
+            <div id="overlay2" style="display: none" class="<%= guest%>">
+
+                <div class="jumbotron text-center" id="login">
                     <p>
-                        Please enjoy the cocktail hour mingling with the other guest and enjoying hors d'oeuvres.
+                        Looks like you're not a guest. </br>
+                        You're still more than welcome to have a look around the site.
                     </p>
-                </div>
-            </div>
-            <div id="infocontainer" >
-                <!--     <img id = "vector" src = "../img/Background/rosegold-outline.png" />
- -->
-                <div id="info1">
-                    <div id="sectiona">
-                        <div id="text">
-
-                            Your presence is requested at
-                        </div>
-
-                        <div id="info">
-                            Villa Antonia
-                        </div>
-                        <div id="text">
-                            in
-                        </div>
-
-                        <div id="info">
-                            Jonestown, Texas
-                        </div>
-                        <div id="text">
-                            on
-                        </div>
-
-                        <div id="info">
-                            April 29th, 2018
-                        </div>
-
+                    <form id="notGuest" action="/notGuest" method="POST">
+                    <div class="form-group">
+                        <input type="hidden" name="count" class="form-control" id="count" value="1">
                     </div>
-                </div>
-                <!--     <div id ="infocontainer" class="infocontainer2"  >
- -->
-                <div id="info1">
-                    <div id="sectionb">
-
-                        <div id="text">
-                            Please arrive to the terrace no later than
-                        </div>
-
-                        <div id="info">
-                            6:00 PM
-                        </div>
-                        <div id="text">
-                            The ceremony will begin promtly at
-                        </div>
-
-                        <div id="info">
-                            6:15 PM
-                        </div>
-
-                    </div>
-                </div>
-
-                <!--             <div id ="infocontainer2">
- -->
-                <div id="info1">
-                    <div id="sectionc">
-                        <div id="text">
-                            Will begin at
-                        </div>
-
-                        <div id="info">
-                            7:30 PM
-                        </div>
-                        <div id="text">
-                            in the
-                        </div>
-                        <div id="info">
-                            Wine Cellar
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-
-        <!-- <div id ="divider">
-        -----
-        <img src = "../img/Background/LongMagnolia.png" />
-        -----
-    </div> -->
-
-
-
-
-
-        <!-- 
-    <div id="indexoverlay" >
-        <div class='row'>
-            <div id = "locationform" class = "jumbotron text-center">
-<!--                 <div class='col-sm-6 col-sm-offset-3'>
- --                   
-                    <form id="form" action="/" method="POST">
-                        
-                            <p>
-                                Hi! Welcome to our wedding website! We created a map of all of our visitors and we'd love to add you to it!
-                            </p>
-                            <p>
-                                Do you mind sharing your location with us?
-                            </p>
-                            <p>
-                                We don't collect any other information about you, just where you're coming from. :)                                        
-                            </p>
-                            <input type="hidden" id="location"  name="data" value="1" >
-                            <div class="row">
-    <!--                        <div class="form-group text-right">
-    --                             <button id='yeslocation'value='YES' name="button" type="button" class="btn btn-primary btn-lg" onclick="indexoff('yes')">
-                                        Sure!
-                                        
-                                    </button>
-                        <!--    </div>
-                                <div class="form-group text-left"> --
-                                    <button value = 'NO' name = "button" type="submit" class="btn btn-primary btn-lg" onclick="indexoff('no')">
-                                        No, thanks!
-                                    </button>
-            <!--                </div>
-                   
-                        </div>
+                    <button type="submit" id="btn3" class="btn btn-primary btn-lg" onclick="off2()">
+                        Thanks! I'll poke around a bit more.
+                    </button>
                     </form>
-<!--                 </div>
-           </div>
-        </div>
-    </div> -->
-        <script>
-            function indexoff(response) {
-                var x = document.getElementById("location");
-                var v;
-                function getLocation() {
-                    if (navigator.geolocation) {
-                        navigator.geolocation.getCurrentPosition(showLocation);
-                    } else {
-                        x.innerHTML = "Geolocation is not supported by this browser.";
-                    }
-                }
+                    <button type="button" id="btn4" class="btn btn-primary btn-lg" onclick="on3()">
+                            Wait! I'm a guest I need to try to log in again!
+                    </button>
 
-                function showLocation(position) {
-                    var latitude = position.coords.latitude;
-                    var longitude = position.coords.longitude;
-                    // alert("Latitude : " + latitude + " Longitude: " + longitude);
-
-                    x.value = [latitude, longitude];
-                    //  alert("value: " + x.value);
-                    document.getElementById("form").submit();
-                }
-
-                //  x.value = v;
-                getLocation();
-                // alert(v );
-                // alert('thanks');
-                document.getElementById("indexoverlay").style.display = "none";
-            }
-
-
-
-        </script>
+                </div>
+            </div>
+            <div id="body-content">
+            <div class="hero" id = "hero" style="display: none" >
+                <ul class="cb-slideshow">
+                    <li>
+                        <span>Image 01</span>
+                        <div>
+                            <h3>We're Getting Married!</h3>
+                        </div>
+                    </li>
+                    <li>
+                        <span>Image 02</span>
+                        <div>
+                            <h3>Join Us</h3>
+                        </div>
+                    </li>
+                    <li>
+                        <span>Image 03</span>
+                        <div>
+                            <h3>On April 29th</h3>
+                        </div>
+                    </li>
+                    <li>
+                        <span>Image 04</span>
+                        <div>
+                            <h3>As We Start </h3>
+                        </div>
+                    </li>
+                    <li>
+                        <span>Image 05</span>
+                        <div>
+                            <h3>The Next Chapter</h3>
+                        </div>
+                    </li>
+                    <li>
+                        <span>Image 06</span>
+                        <div>
+                            <h3>Of Our Lives</h3>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            </div>

@@ -1,104 +1,201 @@
-<%- contentFor('hero')%>
-<section class="hero">
-    <div class="hero-content">
-            <h2 id="mag">
-                    <img id ="mag3" src = "../img/Background/Magnolia.png" />
-                    Ideas, Dreams, Whims
-                <img id ="mag4"  src = "../img/Background/Magnolia.png" />
-            </h2>
-    
-    
- </div>
-</section>
+<%- contentFor('header')%>
+    <header>
+        <nav class="navbar navbar-inverse navbar-fixed-top ">
+            <span class="right"> Jonestown, TX </span>
+            <span class="left"> April 29th, 2018 </span>​
 
-<%- contentFor('body')%>
-<div id ="floral" class="jumbotron text-center" >
-   <div class="hero-vendors">
-        <div id="vendors-h2">
-     <h2 >
-         Cake
-     </h2>
-        </div>
-     <p>
-            <a data-pin-do="embedBoard" data-pin-board-width="3000" data-pin-scale-height="500" data-pin-scale-width="600" href="https://www.pinterest.com/ointrovert/wedding-cake/"></a>
-    </p>
- </div>
-</div> 
-<!-- section -->
-<!-- <section class="hero-cake">-->
-        <div id ="floral" class="jumbotron text-center" >                
-        <div class="hero-vendors">
-         <div id="vendors-h2">
-                <h2 >
-                        Floral
-                </h2>
-         </div>
-        
-         <p>
-                <a data-pin-do="embedBoard" data-pin-board-width="3000" data-pin-scale-height="500" data-pin-scale-width="80" href="https://www.pinterest.com/ointrovert/wedding-floral/"></a>        
-        </p>
-     </div>
-     </div>
-     <div id ="floral" class="jumbotron text-center" >                
-            <div class="hero-vendors">
-                    <div id="vendors-h2">
-             <h2 >
-                 Colors
-             </h2>
+            <h1 id="headerh2" class=" text-center">
+                Ebonie & Cody 2018
+            </h1>
+
+            <!--         <a href="/" class="navbar-brand"></a>
+-->
+            <div id="loginFirst" class="<%= guest%>">
+                <ul id="nav" class="nav navbar-nav">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                    <div id="guestEyesOnly" style="display:none">
+                        <li>
+                            <a href="/schedule">Schedule</a>
+                        </li>
+                        <li>
+                            <a href="/hellotoyes">From Hello to Yes</a>
+                        </li>
+                        <li>
+                            <a href="/venue">Venue</a>
+                        </li>
+                        <li>
+                            <a href="/rsvp">RSVP</a>
+                        </li>
                     </div>
-             <p>
-                    <a data-pin-do="embedBoard" data-pin-board-width="3000" data-pin-scale-height="500" data-pin-scale-width="80" href="https://www.pinterest.com/ointrovert/wedding-colors/"></a>         
-            </p>
-            </div>
-    </div>
+                    <li>
+                        <a href="/about">About Us</a>
+                    </li>
+                    <li>
+                        <a href="/cobonie2018">#cobonie2018</a>
+                    </li>
+                    <li>
+                        <a href="/aestetic">Aesthetic</a>
+                    </li>
+                </ul>
+                <!--                 <li><a href="/schedule">Schedule</a></li>
+-->
 
-         <div id ="floral" class="jumbotron text-center" >                
-            <div class="hero-vendors">
-                    <div id="vendors-h2">
-                <h2>
-                    Head Pieces
+
+
+                <!--                 <li><a href="/registry">Registry</a></li>
+-->
+                <!--  <li><a href="/faq">FAQs</a></li> -->
+
+
+
+                <!--             <li><a href="/games">Games</a></li>
+-->
+                <!-- <li><a href="/datageek">Data Geek</a></li> -->
+                <!--  <li><a href="/contact">Contact</a></li> -->
+                <!-- <li><a href="/siteinfo">Site Info</a></li> -->
+                <!--             <li><a href="/vendorpage">Vendor Access Page</a></li>
+-->
+
+            </div>
+        </nav>
+    </header>
+
+    <%- contentFor('hero')%>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>
+        <script type="text/json" src="freegeoip.net/json/github.com>"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+        <!-- <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script> -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+        <script type="text/javascript">
+            $(window).load(function () {
+                //window.alert("<%= guest%>");
+
+                console.log("<%= guest%>");
+                console.log(document.getElementById("loginFirst").className);
+
+
+                if ("<%= guest%>" == 'false') {
+                    // window.alert(document.getElementById("overlay").className);
+                    //  document.getElementById("loginFirst").style.display = "inline";
+                    document.getElementById("guestEyesOnly").style.display = "none";
+                    //window.alert("<%= guest%>");
+
+                } else if ("<%= guest%>" == 'none') {
+                    document.getElementById("loginFirst").style.display = "none";
+                    document.getElementById("guestEyesOnly").style.display = "none";
+                    //window.alert("<%= guest%>");
+
+                } else {
+                    // document.getElementById("loginFirst").style.display = "block";
+                    document.getElementById("guestEyesOnly").style.display = "inline";
+                    //window.alert("<%= guest%>");
+                }
+
+
+
+
+            });
+        </script>
+        <section class="hero">
+            <div class="hero-content">
+                <h2 id="mag">
+                    <img id="mag3" src="../img/Background/Magnolia.png" /> Ideas, Dreams, Whims
+                    <img id="mag4" src="../img/Background/Magnolia.png" />
                 </h2>
+
+
+            </div>
+        </section>
+
+        <%- contentFor('body')%>
+        <div id="body-content">
+            <div id="floral" class="jumbotron text-center">
+                <div class="hero-vendors">
+                    <div id="vendors-h2">
+                        <h2>
+                            Cake
+                        </h2>
                     </div>
-                <p>
-                <a data-pin-do="embedBoard" data-pin-board-width="3000" data-pin-scale-height="500" data-pin-scale-width="80" href="https://www.pinterest.com/ointrovert/bridal-headpiece/"></a>            
-                </p>
+                    <p>
+                        <a data-pin-do="embedBoard" data-pin-board-width="3000" data-pin-scale-height="500" data-pin-scale-width="600" href="https://www.pinterest.com/ointrovert/wedding-cake/"></a>
+                    </p>
+                </div>
+            </div>
+            <!-- section -->
+            <!-- <section class="hero-cake">-->
+            <div id="floral" class="jumbotron text-center">
+                <div class="hero-vendors">
+                    <div id="vendors-h2">
+                        <h2>
+                            Floral
+                        </h2>
+                    </div>
+
+                    <p>
+                        <a data-pin-do="embedBoard" data-pin-board-width="3000" data-pin-scale-height="500" data-pin-scale-width="80" href="https://www.pinterest.com/ointrovert/wedding-floral/"></a>
+                    </p>
+                </div>
+            </div>
+            <div id="floral" class="jumbotron text-center">
+                <div class="hero-vendors">
+                    <div id="vendors-h2">
+                        <h2>
+                            Colors
+                        </h2>
+                    </div>
+                    <p>
+                        <a data-pin-do="embedBoard" data-pin-board-width="3000" data-pin-scale-height="500" data-pin-scale-width="80" href="https://www.pinterest.com/ointrovert/wedding-colors/"></a>
+                    </p>
+                </div>
+            </div>
+
+            <div id="floral" class="jumbotron text-center">
+                <div class="hero-vendors">
+                    <div id="vendors-h2">
+                        <h2>
+                            Head Pieces
+                        </h2>
+                    </div>
+                    <p>
+                        <a data-pin-do="embedBoard" data-pin-board-width="3000" data-pin-scale-height="500" data-pin-scale-width="80" href="https://www.pinterest.com/ointrovert/bridal-headpiece/"></a>
+                    </p>
+                </div>
+            </div>
+
+            <div id="floral" class="jumbotron text-center">
+                <div class="hero-vendors">
+                    <div id="vendors-h2">
+                        <h2>
+                            Furniture
+                        </h2>
+                    </div>
+                    <p>
+                        <a data-pin-do="embedBoard" data-pin-board-width="3000" data-pin-scale-height="500" data-pin-scale-width="80" href="https://www.pinterest.com/ointrovert/wedding-furniture/"></a>
+                    </p>
+                </div>
             </div>
         </div>
+            <!--   </section> -->
+            <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>
+            <script type="text/javascript">
+                $(window).load(function () {
+                    document.getElementById('body').id = 'index';
 
-    <div id ="floral" class="jumbotron text-center" >                
-            <div class="hero-vendors">
-                    <div id="vendors-h2">
-                <h2 >
-                    Furniture
-                </h2>
-                    </div>
-                <p>
-                <a data-pin-do="embedBoard" data-pin-board-width="3000" data-pin-scale-height="500" data-pin-scale-width="80" href="https://www.pinterest.com/ointrovert/wedding-furniture/"></a>
-                </p>
-            </div>
-        </div>
-  <!--   </section> -->
-  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>
-  <script  type="text/javascript">
-  $(window).load(function()
-{
-    document.getElementById('body').id = 'index';
-    
-});
-         $(window).scroll(function() {
-  
-            if ($(this).scrollTop()>0)
-            {
-               $('#headercontent').fadeOut();
-               $('#headerh2').removeClass("h1").addClass("h3");
-            }
-           else
-            {
-             $('#headercontent').fadeIn();
-             $('#headerh2').removeClass("h3").addClass("h1");
-            }
-   });
-      </script>
-        <script async defer src="//assets.pinterest.com/js/pinit.js"></script>
-        
+                });
+                $(window).scroll(function () {
 
+                    if ($(this).scrollTop() > 0) {
+                        $('#headercontent').fadeOut();
+                        $('#headerh2').removeClass("h1").addClass("h3");
+                    } else {
+                        $('#headercontent').fadeIn();
+                        $('#headerh2').removeClass("h3").addClass("h1");
+                    }
+                });
+            </script>
+            <script async defer src="//assets.pinterest.com/js/pinit.js"></script>

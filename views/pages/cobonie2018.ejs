@@ -1,18 +1,112 @@
+<%- contentFor('header')%>
+<header>
+  <nav class="navbar navbar-inverse navbar-fixed-top ">
+      <span class="right"> Jonestown, TX </span>
+      <span class="left"> April 29th, 2018 </span>​
 
-<%- contentFor('slideshow')%>
-<!-- <ul class="cb-slideshow">
-  <li>
-    <span>Image 01</span>
-  </li>
-  <li> 
-    <span>Image 02</span>
-  </li>
-  <li>
-      <span>Image 03</span>
-  </li>
-</ul> -->
+      <h1 id="headerh2" class=" text-center">
+          Ebonie & Cody 2018
+      </h1>
+
+      <!--         <a href="/" class="navbar-brand"></a>
+-->
+<div id="loginFirst" class="<%= guest%>">
+      <ul id="nav" class="nav navbar-nav">
+          <li>
+              <a href="/">Home</a>
+          </li>
+          <div id="guestEyesOnly" style="display:none">
+            <li>
+                <a href="/schedule">Schedule</a>
+            </li>
+          <li  >
+              <a href="/hellotoyes">From Hello to Yes</a>
+          </li>
+          <li >
+            <a href="/venue">Venue</a>
+        </li>
+          <li >
+            <a href="/rsvp">RSVP</a>
+        </li>
+        </div>
+          <li>
+              <a href="/about">About Us</a>
+          </li>
+          <li>
+            <a href="/cobonie2018">#cobonie2018</a>
+        </li>
+          <li>
+            <a href="/aestetic">Aesthetic</a>
+        </li>
+    </ul>
+          <!--                 
+-->
+          
+
+         
+          <!--                 <li><a href="/registry">Registry</a></li>
+-->
+          <!--  <li><a href="/faq">FAQs</a></li> -->
+
+        
+         
+          <!--             <li><a href="/games">Games</a></li>
+-->
+          <!-- <li><a href="/datageek">Data Geek</a></li> -->
+          <!--  <li><a href="/contact">Contact</a></li> -->
+          <!-- <li><a href="/siteinfo">Site Info</a></li> -->
+          <!--             <li><a href="/vendorpage">Vendor Access Page</a></li>
+-->
+  
+  </div>
+  </nav>
+</header>
 
 <%- contentFor('hero')%>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>
+<script type="text/json" src="freegeoip.net/json/github.com>"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+<!-- <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script> -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<script type="text/javascript">
+    
+
+    $(window).load(function () {
+        //window.alert("<%= guest%>");
+
+        console.log("<%= guest%>");
+        console.log(document.getElementById("loginFirst").className);
+
+
+          if ("<%= guest%>" == 'false') {
+           // window.alert(document.getElementById("overlay").className);
+          //  document.getElementById("loginFirst").style.display = "inline";
+            document.getElementById("guestEyesOnly").style.display = "none";
+            //window.alert("<%= guest%>");
+
+        }else if ("<%= guest%>" == 'none'){
+            document.getElementById("loginFirst").style.display = "none";
+            document.getElementById("guestEyesOnly").style.display = "none";
+            //window.alert("<%= guest%>");
+
+        }
+        else{
+           // document.getElementById("loginFirst").style.display = "block";
+            document.getElementById("guestEyesOnly").style.display = "inline";
+            //window.alert("<%= guest%>");
+        }
+ 
+
+
+       
+    });
+   
+
+</script>
+
 <section class="hero">
     <div id = 'headercontent' class="hero-content-index">
         <h2 id="mag">
@@ -36,11 +130,12 @@
 </section>
 
 <%- contentFor('body')%>
-
+<div id="body-content">
 <section class="hero-cake" >
     
     <div class="hero-vendors" >
-      <div id="overlay" onclick="off()"><img id ="expandedImg" > </div>
+      <div id="overlay" onclick="off()"><img id ="expandedImg" > 
+    </div>
       
       <div style="padding:20px">
           
@@ -54,8 +149,8 @@
                      <% } %>
                 </div>
                 <div >
-
-         
+                </section>
+            </div>      
   <script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
   <script>
        window.sr = ScrollReveal({ reset: true });

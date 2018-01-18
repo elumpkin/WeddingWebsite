@@ -1,134 +1,180 @@
-<%- contentFor('hero')%>
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>
-<script  type="text/javascript">
-$(window).load(function()
-{
-    document.getElementById('body').id = 'index';
-    
-});
-       $(window).scroll(function() {
+<%- contentFor('header')%>
+    <header>
+        <nav class="navbar navbar-inverse navbar-fixed-top ">
+            <span class="right"> Jonestown, TX </span>
+            <span class="left"> April 29th, 2018 </span>​
 
-    if ($(this).scrollTop()>0)
-     {
-        $('#headercontent').fadeOut();
-        $('#headerh2').removeClass("h1").addClass("h3");
-     }
-    else
-     {
-      $('#headercontent').fadeIn();
-      $('#headerh2').removeClass("h3").addClass("h1");
-     }
- });
-    </script>
+            <h1 id="headerh2" class=" text-center">
+                Ebonie & Cody 2018
+            </h1>
 
-<section class="hero" >
-    <div  id = 'headercontent' class="hero-content">
-            <h2 id="mag">
-                    <img id ="mag3" src = "../img/Background/Magnolia.png" />
-                    The Two Before the One
-                    <img id ="mag4"  src = "../img/Background/Magnolia.png" />
-            </h2>
-           
-
- </div>
-</section>
-
-<%- contentFor('body')%>
- <div class="jumbotron text-center" id ='about-div'>
-        <div class="hero-vendors">
-            <div class="flex-container">
-                
-                <div class ="flex-item" >
-                        Lorem ipsum dolor sit amet, in idque euripidis persequeris eos. His ne saperet hendrerit. An qui mundi aperiam maluisset, illum prompta no nec, everti probatus pro ad. Ne mel tacimates accusamus, oratio assentior eum ea.
-                        
-                        Vel dico principes ad. No copiosae indoctum qualisque mel, nostro eligendi vix et. Est et etiam admodum tincidunt, viris nobis possim ut usu, te usu falli definiebas. Cu habeo choro eum, eam mandamus volutpat te. Debitis veritus electram ius te. Eam ea augue affert, duo aliquid pertinax ad.
-                </div>
-                <div  class="flex-item" >
-                        <img 
-                        id='about-img'
-                        src="../img/cobonie2018/ebonie-nyc-2385.jpg"
-                                   
-                        >
+            <!--         <a href="/" class="navbar-brand"></a>
+-->
+            <div id="loginFirst" class="<%= guest%>">
+                <ul id="nav" class="nav navbar-nav">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                    <div id="guestEyesOnly" style="display:none">
+                        <li>
+                            <a href="/schedule">Schedule</a>
+                        </li>
+                        <li>
+                            <a href="/hellotoyes">From Hello to Yes</a>
+                        </li>
+                        <li>
+                            <a href="/venue">Venue</a>
+                        </li>
+                        <li>
+                            <a href="/rsvp">RSVP</a>
+                        </li>
                     </div>
-    
+                    <li>
+                        <a href="/about">About Us</a>
+                    </li>
+                    <li>
+                        <a href="/cobonie2018">#cobonie2018</a>
+                    </li>
+                    <li>
+                        <a href="/aestetic">Aesthetic</a>
+                    </li>
+                </ul>
+                <!--                 <li><a href="/schedule">Schedule</a></li>
+-->
+
+
+
+                <!--                 <li><a href="/registry">Registry</a></li>
+-->
+                <!--  <li><a href="/faq">FAQs</a></li> -->
+
+
+
+                <!--             <li><a href="/games">Games</a></li>
+-->
+                <!-- <li><a href="/datageek">Data Geek</a></li> -->
+                <!--  <li><a href="/contact">Contact</a></li> -->
+                <!-- <li><a href="/siteinfo">Site Info</a></li> -->
+                <!--             <li><a href="/vendorpage">Vendor Access Page</a></li>
+-->
+
             </div>
-        </div>
-</div>
-    <div class="jumbotron text-center" >
-            
-        <div class="hero-vendors">
-                <div class="flex-container">                        
-                <div class="flex-item">
-                    <img 
-                    id='about-img'
-                    src="../img/cobonie2018/Cody-austin-smaller.jpg"
-                    >
-                    
+        </nav>
+    </header>
+
+    <%- contentFor('hero')%>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>
+        <script type="text/json" src="freegeoip.net/json/github.com>"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+        <!-- <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script> -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+        <script type="text/javascript">
+            $(window).load(function () {
+                document.getElementById('body').id = 'index';
+
+                //window.alert("<%= guest%>");
+
+                console.log("<%= guest%>");
+                console.log(document.getElementById("loginFirst").className);
+
+                if ("<%= guest%>" == 'false') {
+                    // window.alert(document.getElementById("overlay").className);
+                    //  document.getElementById("loginFirst").style.display = "inline";
+                    document.getElementById("guestEyesOnly").style.display = "none";
+                    //window.alert("<%= guest%>");
+
+                } else if ("<%= guest%>" == 'none') {
+                    document.getElementById("loginFirst").style.display = "none";
+                    document.getElementById("guestEyesOnly").style.display = "none";
+                    //window.alert("<%= guest%>");
+
+                } else {
+                    // document.getElementById("loginFirst").style.display = "block";
+                    document.getElementById("guestEyesOnly").style.display = "inline";
+                    //window.alert("<%= guest%>");
+                }
+
+
+
+
+            });
+            $(window).scroll(function () {
+
+                if ($(this).scrollTop() > 0) {
+                    $('#headercontent').fadeOut();
+                    $('#headerh2').removeClass("h1").addClass("h3");
+                } else {
+                    $('#headercontent').fadeIn();
+                    $('#headerh2').removeClass("h3").addClass("h1");
+                }
+            });
+        </script>
+
+
+
+
+
+        <section class="hero">
+            <div id='headercontent' class="hero-content">
+                <h2 id="mag">
+                    <img id="mag3" src="../img/Background/Magnolia.png" /> The Two Before the One
+                    <img id="mag4" src="../img/Background/Magnolia.png" />
+                </h2>
+
+
+            </div>
+        </section>
+
+
+
+
+        <%- contentFor('body')%>
+            <div id="body-content">
+                <div class="jumbotron text-center" id='about-div'>
+                    <div class="hero-vendors">
+                        <div class="flex-container">
+
+                            <div class="flex-item">
+                                Lorem ipsum dolor sit amet, in idque euripidis persequeris eos. His ne saperet hendrerit. An qui mundi aperiam maluisset,
+                                illum prompta no nec, everti probatus pro ad. Ne mel tacimates accusamus, oratio assentior
+                                eum ea. Vel dico principes ad. No copiosae indoctum qualisque mel, nostro eligendi vix et.
+                                Est et etiam admodum tincidunt, viris nobis possim ut usu, te usu falli definiebas. Cu habeo
+                                choro eum, eam mandamus volutpat te. Debitis veritus electram ius te. Eam ea augue affert,
+                                duo aliquid pertinax ad.
+                            </div>
+                            <div class="flex-item">
+                                <img id='about-img' src="../img/cobonie2018/ebonie-nyc-2385.jpg">
+                            </div>
+
+                        </div>
+                    </div>
                 </div>
-        
-                <div class ="flex-item">
-                        Lorem ipsum dolor sit amet, in idque euripidis persequeris eos. His ne saperet hendrerit. An qui mundi aperiam maluisset, illum prompta no nec, everti probatus pro ad. Ne mel tacimates accusamus, oratio assentior eum ea.
-                        
-                        Vel dico principes ad. No copiosae indoctum qualisque mel, nostro eligendi vix et. Est et etiam admodum tincidunt, viris nobis possim ut usu, te usu falli definiebas. Cu habeo choro eum, eam mandamus volutpat te. Debitis veritus electram ius te. Eam ea augue affert, duo aliquid pertinax ad.
+                <div class="jumbotron text-center">
+
+                    <div class="hero-vendors">
+                        <div class="flex-container">
+                            <div class="flex-item">
+                                <img id='about-img' src="../img/cobonie2018/Cody-austin-smaller.jpg">
+
+                            </div>
+
+                            <div class="flex-item">
+                                Lorem ipsum dolor sit amet, in idque euripidis persequeris eos. His ne saperet hendrerit. An qui mundi aperiam maluisset,
+                                illum prompta no nec, everti probatus pro ad. Ne mel tacimates accusamus, oratio assentior
+                                eum ea. Vel dico principes ad. No copiosae indoctum qualisque mel, nostro eligendi vix et.
+                                Est et etiam admodum tincidunt, viris nobis possim ut usu, te usu falli definiebas. Cu habeo
+                                choro eum, eam mandamus volutpat te. Debitis veritus electram ius te. Eam ea augue affert,
+                                duo aliquid pertinax ad.
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-</div>
 
-<!-- <div class="jumbotron text-center" >
-        
-    <div class="hero-vendors">
-            <div id="carousel" class="carousel slide carousel-fade" data-ride="carousel">
-        <ol class="carousel-indicators">
-            <li data-target="#carousel" data-slide-to="0" class="active"></li>
-            <li data-target="#carousel" data-slide-to="1"></li>
-            <li data-target="#carousel" data-slide-to="2"></li>
-        </ol> -->
-<!--          Carousel items
- -->      <!--   <div class="carousel-inner" role="listbox">
-            <div class="item active">
-                <a href="https://www.amazon.com/dp/B00IGNMUNI?colid=&coliid=I3FDRJJLPRABA2&ref_=">
-                <img class="d-block img-fluid" 
-                src="https://images-na.ssl-images-amazon.com/images/I/7151zSjPqvL._SL1500_.jpg"
-                href="https://www.amazon.com/dp/B00IGNMUNI?colid=&coliid=I3FDRJJLPRABA2&ref_="
-               alt="First 
-                slide">
-                </a>
-            </div>
-            <div class="item">
-                <a href="#">
-                <img class="d-block img-fluid" 
-                src="../img/Background/rose.png"
-                 alt="Second 
-                slide">
-                </a>
-            </div>
-            <div class="item">
-                <a href="#">
-                <img class="d-block img-fluid" 
-                src="../img/Background/gray.png">
-                </a>
-            </div>
-            <div class="item">
-                <a href="#">
-                <img class="d-block img-fluid" 
-                src="../img/Background/wine.png"
-                 alt="Third 
-                slide">
-                </a>
-            </div>
-        </div> -->
-<!--         Carousel nav 
- -->       <!--  <a class="carousel-control left" href="#carousel" data-slide="prev">&lsaquo;</a>
-        <a class="carousel-control right" href="#carousel" data-slide="next">&rsaquo;</a>
-    </div> -->
-<!--         jQuery (necessary for Bootstrap's JavaScript plugins) 
- -->        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-<!--          Include all compiled plugins (below), or include individual files as needed 
- -->        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script> 
-    </div>
-</div>
-
-
-
- 
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+            <!--          Include all compiled plugins (below), or include individual files as needed 
+ -->
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
