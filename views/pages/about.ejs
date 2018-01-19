@@ -1,47 +1,74 @@
 <%- contentFor('header')%>
-    <header>
-        <nav class="navbar navbar-inverse navbar-fixed-top ">
-            <span class="right"> Jonestown, TX </span>
-            <span class="left"> April 29th, 2018 </span>​
+<header>
+    <nav class="navbar navbar-inverse navbar-fixed-top scrolling-navbar justify-content-center">
 
-            <h1 id="headerh2" class=" text-center">
-                Ebonie & Cody 2018
-            </h1>
-
-            <!--         <a href="/" class="navbar-brand"></a>
+        <span class="text-left"> April 29th, 2018 </span>​
+        
+        <h1 id="headerh2" class=" text-center">
+            Ebonie & Cody 2018
+        </h1>
+        <span class="text-right"> Jonestown, TX </span>
+        <!--         <a href="/" class="navbar-brand"></a>
 -->
-            <div id="loginFirst" class="<%= guest%>">
-                <ul id="nav" class="nav navbar-nav">
-                    <li>
-                        <a href="/">Home</a>
-                    </li>
-                    <div id="guestEyesOnly" style="display:none">
-                        <li>
-                            <a href="/schedule">Schedule</a>
-                        </li>
-                        <li>
-                            <a href="/hellotoyes">From Hello to Yes</a>
-                        </li>
-                        <li>
-                            <a href="/venue">Venue</a>
-                        </li>
-                        <li>
-                            <a href="/rsvp">RSVP</a>
-                        </li>
+
+        <div id="loginFirst" class="<%= guest%>">
+       
+            <ul id="nav" class="nav justify-content-center" >
+                <li class="navbar-text">
+                    <a class="nav-link" href="/">Home</a>
+                </li>
+                <div id="guestEyesOnly" style="display:none">
+                <li class="navbar-text">
+                     
+                    <a class="nav-link" href="/schedule">Schedule</a>
+                </li>
+                <li class="navbar-text">
+                    <a class="nav-link" href="/hellotoyes">From Hello to Yes</a>
+                </li>
+                <li class="navbar-text">
+                    <a class="nav-link" href="/rsvp">RSVP</a>
+                </li>
+                <li class="navbar-text">
+                    <a class="nav-link" href="/venue">Venue</a>
+                </li>
+            </div>
+                <li class="navbar-text">
+                    <a class="nav-link" href="/about">About Us</a>
+                </li>
+                
+                <li class="navbar-text">
+                    <a class="nav-link" href="/cobonie2018">#cobonie2018</a>
+                </li>
+                <li class="navbar-text">
+                    <a class="nav-link" href="/aestetic">Aesthetic</a>
+                </li>
+            </ul>
+
+            <div id="mobile" class="btn-group" style="display:none" >
+            </br>
+                    <button id= "links" class="btn btn-danger btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                       Site Links
+                    </button>
+                    <div class="dropdown-menu">
+                            <a class="nav-link" href="/">Home</a>
+                            <div id="guestEyesOnly" style="display:none">
+                            <a class="nav-link" href="/schedule">Schedule</a>
+                            <a class="nav-link" href="/hellotoyes">From Hello to Yes</a>
+                            <a class="nav-link" href="/rsvp">RSVP</a>
+                            <a class="nav-link" href="/venue">Venue</a>
+                            </div>
+                            <a class="nav-link" href="/about">About Us</a>
+                            <a class="nav-link" href="/cobonie2018">#cobonie2018</a>
+                            <a class="nav-link" href="/aestetic">Aesthetic</a>
                     </div>
-                    <li>
-                        <a href="/about">About Us</a>
-                    </li>
-                    <li>
-                        <a href="/cobonie2018">#cobonie2018</a>
-                    </li>
-                    <li>
-                        <a href="/aestetic">Aesthetic</a>
-                    </li>
-                </ul>
+                </div>
+
+        </div>
+    </nav>
+</header>
+
                 <!--                 <li><a href="/schedule">Schedule</a></li>
 -->
-
 
 
                 <!--                 <li><a href="/registry">Registry</a></li>
@@ -49,7 +76,7 @@
                 <!--  <li><a href="/faq">FAQs</a></li> -->
 
 
-
+                
                 <!--             <li><a href="/games">Games</a></li>
 -->
                 <!-- <li><a href="/datageek">Data Geek</a></li> -->
@@ -57,10 +84,8 @@
                 <!-- <li><a href="/siteinfo">Site Info</a></li> -->
                 <!--             <li><a href="/vendorpage">Vendor Access Page</a></li>
 -->
-
-            </div>
-        </nav>
-    </header>
+            
+  
 
     <%- contentFor('hero')%>
         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>
@@ -74,29 +99,55 @@
         <script type="text/javascript">
             $(window).load(function () {
                 document.getElementById('body').id = 'index';
+                
+                
 
-                //window.alert("<%= guest%>");
+
+                ////window.alert("<%= guest%>");
 
                 console.log("<%= guest%>");
                 console.log(document.getElementById("loginFirst").className);
 
                 if ("<%= guest%>" == 'false') {
-                    // window.alert(document.getElementById("overlay").className);
+                    // //window.alert(document.getElementById("overlay").className);
                     //  document.getElementById("loginFirst").style.display = "inline";
                     document.getElementById("guestEyesOnly").style.display = "none";
-                    //window.alert("<%= guest%>");
+                    ////window.alert("<%= guest%>");
 
                 } else if ("<%= guest%>" == 'none') {
                     document.getElementById("loginFirst").style.display = "none";
                     document.getElementById("guestEyesOnly").style.display = "none";
-                    //window.alert("<%= guest%>");
+                    ////window.alert("<%= guest%>");
 
                 } else {
                     // document.getElementById("loginFirst").style.display = "block";
                     document.getElementById("guestEyesOnly").style.display = "inline";
-                    //window.alert("<%= guest%>");
+                    ////window.alert("<%= guest%>");
                 }
 
+                function getBootstrapDeviceSize() {
+                    return $('#users-device-size').find('div:visible').first().attr('id');
+                    }
+                    if (getBootstrapDeviceSize() == ("xs")){
+                        document.getElementById("mobile").style = "display:block";
+                        document.getElementById("nav").style = "display:none";
+                        //window.alert("xs");
+                    }else if(getBootstrapDeviceSize() == ("sm")){
+                        document.getElementById("mobile").style = "display:block";
+                        document.getElementById("nav").style = "display:none";
+                        //window.alert("sm");
+
+                    }else if(getBootstrapDeviceSize() == ("md")){
+                        document.getElementById("mobile").style = "display:block";
+                        document.getElementById("nav").style = "display:none";
+                        //window.alert("md");
+
+                    }else{
+                        document.getElementById("mobile").style = "display:block";
+                        document.getElementById("nav").style = "display:block";
+                        //window.alert(getBootstrapDeviceSize());
+
+                    }
 
 
 
@@ -132,12 +183,18 @@
 
 
         <%- contentFor('body')%>
+        <div id="users-device-size">
+                <div id="xs" class="visible-xs"></div>
+                <div id="sm" class="visible-sm"></div>
+                <div id="md" class="visible-md"></div>
+                <div id="lg" class="visible-lg"></div>
+              </div>
             <div id="body-content">
                 <div class="jumbotron text-center" id='about-div'>
                     <div class="hero-vendors">
-                        <div class="flex-container">
+                        <div class="card">
 
-                            <div class="flex-item">
+                            <div class="card-body">
                                 Lorem ipsum dolor sit amet, in idque euripidis persequeris eos. His ne saperet hendrerit. An qui mundi aperiam maluisset,
                                 illum prompta no nec, everti probatus pro ad. Ne mel tacimates accusamus, oratio assentior
                                 eum ea. Vel dico principes ad. No copiosae indoctum qualisque mel, nostro eligendi vix et.
@@ -145,7 +202,7 @@
                                 choro eum, eam mandamus volutpat te. Debitis veritus electram ius te. Eam ea augue affert,
                                 duo aliquid pertinax ad.
                             </div>
-                            <div class="flex-item">
+                            <div class="card-body">
                                 <img id='about-img' src="../img/cobonie2018/ebonie-nyc-2385.jpg">
                             </div>
 

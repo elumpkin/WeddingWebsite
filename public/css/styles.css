@@ -359,20 +359,25 @@
  background-position: center center;
         
     }
-    .right{
+    .text-right{
         font-family: 'Forum', cursive;  
         font-size: 18px;
-        margin-top: 10px;
-        margin-right: 10px;
-        float:right;
+        
+    }
+    #spacer{
+        margin:0 5% 0 5%;
     }
 
-    .left{
+    .text-left{
         font-family: 'Forum', cursive; 
         font-size: 18px; 
-        margin-top: 10px;
-        margin-left: 10px;
-            float:left;
+       
+    }
+    #welcome{
+        font-family: 'Pinyon Script', cursive;
+        font-size: 50px; 
+        margin:5%;
+        
     }
     .nav.navbar-nav{
         border:1px solid #ccc;
@@ -383,17 +388,48 @@
         align-content: center;
         text-align:center;
         float: none;
+        
+      
     }
-    .nav.navbar-nav li{
+    .nav.justify-content-center {
+        align-content: center;
+        text-align:center;
+        
+    }
+    .nav.justify-content-center li{
+        float: none;
+        display: inline-block;
+    }
+    .navbar-text{
         font-family: 'Forum', cursive;  
         font-size: 18px;
         float: none;
-        display:inline-block;
+/*         display:inline-block;
+ */        align-content: center;
+        text-align:center;
+        
     }
     .nav.navbar-nav a{
-        display:inline-block;
-        padding:10px;
-    } 
+/*         display:inline-block;
+/*         padding:10px;
+ */   } 
+ #links{
+    color: black;
+    font-family: 'Forum', cursive;
+ }
+    .nav-link{
+        color: black;
+        align-content: center;
+        text-align:center;
+        
+        
+    }
+
+    .loginFirst{
+        align-content: center;
+        text-align:center;
+        
+    }
     .strokeme
     {
         color: black;
