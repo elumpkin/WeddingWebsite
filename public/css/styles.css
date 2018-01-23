@@ -214,8 +214,7 @@
        margin: 10% 0 0% 0;
          text-align: center;
         font-family: 'Pinyon Script', cursive;
-/*         font-size: 90px;
- */        font-size: 90px;
+         font-size: 90px;      
       color: #222
         
     }
@@ -324,6 +323,23 @@
         border-radius: 2px;
         padding: 20px 30px;
     }
+    #btn2{
+        font-family: 'Forum', cursive;   
+        color: black;
+        
+    }
+    #btn3{
+        font-family: 'Forum', cursive;   
+        color: black;
+        
+    }
+
+    #btn4{
+        font-family: 'Forum', cursive;   
+        color: black;
+        
+    }
+
 
     .verticalLine {
 /*         border-left: thick solid #685b49;
@@ -339,8 +355,8 @@
         background-size: cover;
         background-position: center center;
     
-        padding: 30px 0 50px;
-        margin: 30px 0 30px;
+        padding: 30px 0;
+        margin: 30px 0;
         min-height: 150px;
         position: relative;
     }
@@ -348,6 +364,11 @@
         margin: 300px 0 30px;
 /*         padding: 0 0 150px;
         bottom: 30px; */
+    }
+    #cobonie-body-content{
+        margin: 50px 0 100px;
+        padding: 0 0 150px;
+        bottom: 30px;
     }
     .navbar{
 
@@ -359,24 +380,21 @@
  background-position: center center;
         
     }
-    .text-right{
-        font-family: 'Forum', cursive;  
-        font-size: 18px;
-        
-    }
+    
     #spacer{
         margin:0 5% 0 5%;
     }
 
-    .text-left{
+    #headerinfo{
         font-family: 'Forum', cursive; 
         font-size: 18px; 
        
     }
+  
     #welcome{
         font-family: 'Pinyon Script', cursive;
-        font-size: 50px; 
-        margin:5%;
+/*         font-size: 50px; 
+ */        margin:5%;
         
     }
     .nav.navbar-nav{
@@ -409,13 +427,13 @@
         text-align:center;
         
     }
-    .nav.navbar-nav a{
-/*         display:inline-block;
-/*         padding:10px;
- */   } 
+ 
  #links{
     color: black;
     font-family: 'Forum', cursive;
+    align-content: center;
+    text-align:center;
+    float: none;
  }
     .nav-link{
         color: black;
@@ -495,11 +513,14 @@
             animation: titleAnimation 36s linear infinite 0s; 
         }
         .cb-slideshow li div h3 { 
-            font-family: 'BebasNeueRegular', 'Arial Narrow', Arial, sans-serif;
-            font-size: 100px;
-            padding: 0;
+/*             font-family: 'BebasNeueRegular', 'Arial Narrow', Arial, sans-serif;
+ */            
+            font-family: 'Forum', cursive;  
+/*             
+ */            padding: 0;
             line-height: 200px; 
         }
+      
         
         .cb-slideshow li:nth-child(1) span { 
             background-image: url(../img/cobonie2018/MeAndCodyEngagment.jpg); 
@@ -713,10 +734,13 @@
         }
 
         @media screen and (max-width: 1140px) { 
-            .cb-slideshow li div h3 { font-size: 140px }
+            .cb-slideshow li div h3 { 
+/*                 font-size: 140px 
+ */              font:  'Forum', cursive;  }
         }
         @media screen and (max-width: 600px) { 
-            .cb-slideshow li div h3 { font-size: 80px }
+            .cb-slideshow li div h3 { font-size: 80px 
+                'Forum', cursive;  }
         }
 
 

@@ -1,19 +1,38 @@
 <%- contentFor('header')%>
 <header>
-        <div id="users-device-size">
-                <div id="xs" class="visible-xs"></div>
-                <div id="sm" class="visible-sm"></div>
-                <div id="md" class="visible-md"></div>
-                <div id="lg" class="visible-lg"></div>
-              </div>
         <nav class="navbar navbar-inverse navbar-fixed-top scrolling-navbar justify-content-center">
-    
-            <span class="text-left"> April 29th, 2018 </span>​
-            <h1 id="headerh2" class=" text-center">
+
+            <div class="center-center " style="text-align:center" id="headerinfo"> April 29th, 2018 </div>​
+        </br>
+            
+            <h1 class="h1-responsive" id = "headerh2" >
                 Ebonie & Cody 2018
             </h1>
-            <span class="text-right"> Jonestown, TX </span>
+            <div id="headerinfo" class="text-center"> Jonestown, TX </div>
+
+            <div  id="mobile" class="row btn-group " style="display:none" >
+                <div style="display:block">
+                    ________________________________
+                </div>
             
+                    <button id= "links" class="btn btn-unique btn-block btn-md dropdown-toggle " type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                       Site Links
+                    </button>
+                    <div class="dropdown-menu">
+                            <a class="nav-link" href="/">Home</a>
+                            <div id="guestEyesOnly2" style="display:none">
+                            <a class="nav-link" href="/schedule">Schedule</a>
+                            <a class="nav-link" href="/hellotoyes">From Hello to Yes</a>
+                            <a class="nav-link" href="/rsvp">RSVP</a>
+                            <a class="nav-link" href="/venue">Venue</a>
+                            </div>
+                            <a class="nav-link" href="/about">About Us</a>
+                            <a class="nav-link" href="/cobonie2018">#cobonie2018</a>
+                            <a class="nav-link" href="/aestetic">Aesthetic</a>
+                    </div>
+                </div>
+        
+    </div>
             <!--         <a href="/" class="navbar-brand"></a>
     -->
             <div id="loginFirst" class="<%= guest%>">
@@ -23,24 +42,24 @@
                         <a class="nav-link" href="/">Home</a>
                     </li>
                     <div id="guestEyesOnly" style="display:none">
-                    <li class="navbar-text">
-                         
-                        <a class="nav-link" href="/schedule">Schedule</a>
-                    </li>
-                    <li class="navbar-text">
-                        <a class="nav-link" href="/hellotoyes">From Hello to Yes</a>
-                    </li>
-                    <li class="navbar-text">
-                        <a class="nav-link" href="/rsvp">RSVP</a>
-                    </li>
-                    <li class="navbar-text">
-                        <a class="nav-link" href="/venue">Venue</a>
-                    </li>
-                </div>
+                        <li class="navbar-text">
+
+                            <a class="nav-link" href="/schedule">Schedule</a>
+                        </li>
+                        <li class="navbar-text">
+                            <a class="nav-link" href="/hellotoyes">From Hello to Yes</a>
+                        </li>
+                        <li class="navbar-text">
+                            <a class="nav-link" href="/rsvp">RSVP</a>
+                        </li>
+                        <li class="navbar-text">
+                            <a class="nav-link" href="/venue">Venue</a>
+                        </li>
+                    </div>
                     <li class="navbar-text">
                         <a class="nav-link" href="/about">About Us</a>
                     </li>
-                    
+
                     <li class="navbar-text">
                         <a class="nav-link" href="/cobonie2018">#cobonie2018</a>
                     </li>
@@ -48,47 +67,28 @@
                         <a class="nav-link" href="/aestetic">Aesthetic</a>
                     </li>
                 </ul>
-                <div class="btn-group" style="display:none" >
-                    </br>
-                        <button id= "links" class="btn btn-danger btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                           Site Links
-                        </button>
-                        <div class="dropdown-menu">
-                                <a class="nav-link" href="/">Home</a>
-                                <div id="guestEyesOnly" style="display:none">
-                                <a class="nav-link" href="/schedule">Schedule</a>
-                                <a class="nav-link" href="/hellotoyes">From Hello to Yes</a>
-                                <a class="nav-link" href="/rsvp">RSVP</a>
-                                <a class="nav-link" href="/venue">Venue</a>
-                                </div>
-                                <a class="nav-link" href="/about">About Us</a>
-                                <a class="nav-link" href="/cobonie2018">#cobonie2018</a>
-                                <a class="nav-link" href="/aestetic">Aesthetic</a>
-                        </div>
-                    </div>
-
+            
             </div>
         </nav>
+         <!--                 <li><a href="/schedule">Schedule</a></li>
+    -->
+
+
+    <!--                 <li><a href="/registry">Registry</a></li>
+    -->
+    <!--  <li><a href="/faq">FAQs</a></li> -->
+
+
+
+    <!--             <li><a href="/games">Games</a></li>
+    -->
+    <!-- <li><a href="/datageek">Data Geek</a></li> -->
+    <!--  <li><a href="/contact">Contact</a></li> -->
+    <!-- <li><a href="/siteinfo">Site Info</a></li> -->
+    <!--             <li><a href="/vendorpage">Vendor Access Page</a></li>
+    -->
     </header>
-                    <!--                 <li><a href="/schedule">Schedule</a></li>
-    -->
-    
-    
-                    <!--                 <li><a href="/registry">Registry</a></li>
-    -->
-                    <!--  <li><a href="/faq">FAQs</a></li> -->
-    
-    
-                    
-                    <!--             <li><a href="/games">Games</a></li>
-    -->
-                    <!-- <li><a href="/datageek">Data Geek</a></li> -->
-                    <!--  <li><a href="/contact">Contact</a></li> -->
-                    <!-- <li><a href="/siteinfo">Site Info</a></li> -->
-                    <!--             <li><a href="/vendorpage">Vendor Access Page</a></li>
-    -->
-                
-      
+     
     <%- contentFor('hero')%>
         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>
         <script type="text/json" src="freegeoip.net/json/github.com>"></script>
@@ -107,9 +107,7 @@
 
                 console.log("<%= guest%>");
                 console.log(document.getElementById("loginFirst").className);
-                function getBootstrapDeviceSize() {
-                return $('#users-device-size').find('div:visible').first().attr('id');
-                    }
+               
 
                 if ("<%= guest%>" == 'false') {
                     // //window.alert(document.getElementById("overlay").className);
@@ -125,6 +123,8 @@
                 } else {
                     // document.getElementById("loginFirst").style.display = "block";
                     document.getElementById("guestEyesOnly").style.display = "inline";
+                    document.getElementById("guestEyesOnly2").style.display = "block";
+
                     ////window.alert("<%= guest%>");
                 }
 
@@ -134,21 +134,18 @@
                     if (getBootstrapDeviceSize() == ("xs")){
                         document.getElementById("mobile").style = "display:block";
                         document.getElementById("nav").style = "display:none";
-                        //window.alert("xs");
+                 
                     }else if(getBootstrapDeviceSize() == ("sm")){
                         document.getElementById("mobile").style = "display:block";
                         document.getElementById("nav").style = "display:none";
-                        //window.alert("sm");
 
                     }else if(getBootstrapDeviceSize() == ("md")){
                         document.getElementById("mobile").style = "display:block";
                         document.getElementById("nav").style = "display:none";
-                        //window.alert("md");
 
                     }else{
-                        document.getElementById("mobile").style = "display:block";
+                        document.getElementById("mobile").style = "display:none";
                         document.getElementById("nav").style = "display:block";
-                        //window.alert(getBootstrapDeviceSize());
 
                     }
 
@@ -167,6 +164,12 @@
         </section>
 
         <%- contentFor('body')%>
+        <div id="users-device-size">
+                <div id="xs" class="visible-xs"></div>
+                <div id="sm" class="visible-sm"></div>
+                <div id="md" class="visible-md"></div>
+                <div id="lg" class="visible-lg"></div>
+              </div>
         <div id="body-content">
             <div id="floral" class="jumbotron text-center">
                 <div class="hero-vendors">
@@ -245,11 +248,11 @@
 
                     if ($(this).scrollTop() > 0) {
                         $('#headercontent').fadeOut();
-                        $('#headerh2').removeClass("h1").addClass("h3");
-                    } else {
+/*                         $('#headerh2').removeClass("h1").addClass("h3");
+ */                    } else {
                         $('#headercontent').fadeIn();
-                        $('#headerh2').removeClass("h3").addClass("h1");
-                    }
+/*                         $('#headerh2').removeClass("h3").addClass("h1");
+ */                    }
                 });
             </script>
             <script async defer src="//assets.pinterest.com/js/pinit.js"></script>
