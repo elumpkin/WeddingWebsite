@@ -3,16 +3,16 @@
         <nav class="navbar navbar-inverse navbar-fixed-top scrolling-navbar justify-content-center">
 
             <div class="center-center " style="text-align:center" id="headerinfo"> April 29th, 2018 </div>​
-        </br>
             
             <h1 class="h1-responsive" id = "headerh2" >
                 Ebonie & Cody 2018
             </h1>
-            <div id="headerinfo" class="text-center"> Jonestown, TX </div>
+            <div id="headerinfo" class="text-center" > Jonestown, TX </div>
 
             <div  id="mobile" class="row btn-group " style="display:none" >
-                <div style="display:block">
-                    ______________________________________
+        
+                <div  id="mobileDivider" >
+                    ________________________________
                 </div>
             
                     <button id= "links" class="btn btn-unique btn-block btn-md dropdown-toggle " type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -110,10 +110,8 @@
 
 
                 if (document.getElementById("overlay").className == 'false') {
-                    // //window.alert(document.getElementById("overlay").className);
-                    //   document.getElementById("overlay").style.display = "block";
+                  
                     document.getElementById("guestEyesOnly").style.display = "none";
-                    // //window.alert("!!!count: " + "<%= count%>");
                     if ("<%= count%>" == "0") {
                         document.getElementById("hero").style.display = "none";
 
@@ -179,6 +177,7 @@
                         document.getElementById("intro3").style = "font-size:50px";
                         document.getElementById("intro4").style = "font-size:50px";
                         document.getElementById("intro5").style = "font-size:50px";
+                        document.getElementById("mobileDivider").innerHTML = "________________________________________________"
 
 
                     }else{

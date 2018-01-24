@@ -11,7 +11,7 @@
             <div id="headerinfo" class="text-center"> Jonestown, TX </div>
 
             <div  id="mobile" class="row btn-group " style="display:none" >
-                <div style="display:block">
+                <div id="mobileDivider">
                     ________________________________
                 </div>
             
@@ -100,6 +100,12 @@
 </section>
 
 <%- contentFor('body')%>
+<div id="users-device-size">
+    <div id="xs" class="visible-xs"></div>
+    <div id="sm" class="visible-sm"></div>
+    <div id="md" class="visible-md"></div>
+    <div id="lg" class="visible-lg"></div>
+  </div>
 
 <div id="body-content">
 <section >
@@ -171,6 +177,8 @@ $(window).load(function()
         }else if(getBootstrapDeviceSize() == ("md")){
             document.getElementById("mobile").style = "display:block";
             document.getElementById("nav").style = "display:none";
+            document.getElementById("mobileDivider").innerHTML = "________________________________________________"
+
 
         }else{
             document.getElementById("mobile").style = "display:none";

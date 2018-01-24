@@ -11,7 +11,7 @@
             <div id="headerinfo" class="text-center"> Jonestown, TX </div>
 
             <div  id="mobile" class="row btn-group " style="display:none" >
-                <div style="display:block">
+                <div id="mobileDivider">
                     ________________________________
                 </div>
             
@@ -117,6 +117,8 @@
                     }else if(getBootstrapDeviceSize() == ("md")){
                         document.getElementById("mobile").style = "display:block";
                         document.getElementById("nav").style = "display:none";
+                        document.getElementById("mobileDivider").innerHTML = "________________________________________________"
+
 
                     }else{
                         document.getElementById("mobile").style = "display:none";
