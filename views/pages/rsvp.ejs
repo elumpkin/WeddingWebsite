@@ -94,34 +94,18 @@
 <!-- <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
 <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script> -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+
+
+
 <script  type="text/javascript">
 
     var test;
 
  $(window).load(function()
 {
-    function getBootstrapDeviceSize() {
-        return $('#users-device-size').find('div:visible').first().attr('id');
-        }
-        if (getBootstrapDeviceSize() == ("xs")){
-            document.getElementById("mobile").style = "display:block";
-            document.getElementById("nav").style = "display:none";
-     
-        }else if(getBootstrapDeviceSize() == ("sm")){
-            document.getElementById("mobile").style = "display:block";
-            document.getElementById("nav").style = "display:none";
-
-        }else if(getBootstrapDeviceSize() == ("md")){
-            document.getElementById("mobile").style = "display:block";
-            document.getElementById("nav").style = "display:none";
-            document.getElementById("mobileDivider").innerHTML = "________________________________________________"
-
-
-        }else{
-            document.getElementById("mobile").style = "display:none";
-            document.getElementById("nav").style = "display:block";
-
-        }
+    getBootstrapDeviceSize();
 
 
     test = 0;
@@ -188,7 +172,9 @@
 <section class="hero" >
         <div id= 'headercontent'  class="hero-content">
          <h2 id="mag">
-            RSVP
+                <img  style ="display:none" id ="mag3" src = "../img/Background/Magnolia.png" />
+                RSVP
+                <img  style ="display:none" id ="mag4"  src = "../img/Background/Magnolia.png" />
          </h2>
         
      </div>
@@ -202,6 +188,7 @@
         <div id="lg" class="visible-lg"></div>
       </div>
  <div id="body-content">
+        
       
 <div onmouseover="formcheck('<%= results[0]%>')" class="jumbotron text-center" >
 <!--         <p class="h5 text-center mb-4"> RSVP</p>
@@ -213,10 +200,16 @@
             Even if you sent out your mailed RSVP note, feel free use the form below just in case. 
         </strong>
         </p>  
-        <div class='row'>
+        <section class="form-elegant">
+                
+                    <!--Form without header-->
+                    <div class="card">
+                
+                        <div class="card-body mx-4">
+                                   <!--  <div class='row'>
             <div class='col-sm-6 col-sm-offset-3'>
                 
-    
+     -->
                 <form action="/rsvp" method="POST">
                 <div class="md-form">
                     <label  for="form3">First Name</label>
@@ -239,20 +232,30 @@
                     <label>Email</label>
                     <input type="text" name="email" class="form-control" id="em" required>
                 </div>
-                <div class="form-group">
+                <div class="md-form">
                     <label>Do you need to be added to the hotel block?</label><br>
-                    <input type="radio" name="hotel" value="yes" id ="yes" onclick="formReveal()"> Yes
-                    <input type="radio" name="hotel" value="no" id="no" checked = "checked"     onclick="formReveal()"> No<br>
+                    <div class="form-group">
+                        <input type="radio" name="hotel" value="yes" id ="yes" onclick="formReveal()">                             
+                        <label for="yes">Yes</label>
+                    </div>
+                
+                    <div class="form-group">
+                            <input type="radio" name="hotel" value="no" id="no" checked = "checked"     onclick="formReveal()">
+                            <label for="no">No</label>
+                    </div>
+                   
                 </div>
-                <div class="form-group" id = "hotel" style= "display: none">
+                <br>
+                <div class="md-form" id = "hotel" style= "display: none">
                     <label>How many rooms do you need?</label>
-                    <select class="form-group" name="rooms" id="rooms">
+                    <select class="md-form" name="rooms" id="rooms">
                         <option>0</option>
                         <option>1</option>
                         <option>2</option>
                     </select>
+                    <br>
                     <label>What is the max number of beds needed per room?</label><br>
-                    <select class="form-group " name="roomAmount" id='roomAmount'>
+                    <select class="md-form" name="roomAmount" id='roomAmount'>
                         <option>0</option>
                         <option>1</option>
                         <option>2</option>
@@ -267,17 +270,19 @@
                     <label>Any thing you'd like us to know or consider?</label>
                     <input type="text" name="extra" class="form-control">
                 </div>
-             <div class="form-group text-center">
+             <div class="form-group">
                  <label>Are you updating your information?</label>
                  <input type="radio" name="update" value="yes"> Yes
                  <input type="radio" name="update" value="no" checked="checked"> No<br>
-                 <button type="submit" class="btn btn-unique" onclick="bye()">
+                 
+             </div>
+             <button type="submit" class="btn btn-unique" onclick="bye()">
                     Submit
                  </button>
-             </div>
                 </form>
             </div>
         </div>
            
-</div>
+</section>
+
 </div>

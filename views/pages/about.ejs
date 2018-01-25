@@ -11,10 +11,10 @@
             <div id="headerinfo" class="text-center"> Jonestown, TX </div>
 
             <div  id="mobile" class="row btn-group " style="display:none" >
-                <div id="mobileDivider">
+               <div id="mobileDivider">
                     ________________________________
                 </div>
-            
+             
                     <button id= "links" class="btn btn-unique btn-block btn-md dropdown-toggle " type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                        Site Links
                     </button>
@@ -36,12 +36,11 @@
             <!--         <a href="/" class="navbar-brand"></a>
     -->
             <div id="loginFirst" class="<%= guest%>">
-                    
                 <ul id="nav" class="nav justify-content-center">
                     <li class="navbar-text">
                         <a class="nav-link" href="/">Home</a>
                     </li>
-                    <div id="guestEyesOnly" style="display:none">
+                    <div id="guestEyesOnly" style="display:none;">
                         <li class="navbar-text">
 
                             <a class="nav-link" href="/schedule">Schedule</a>
@@ -103,53 +102,24 @@
             $(window).load(function () {
                 document.getElementById('body').id = 'index';
                 
-                function getBootstrapDeviceSize() {
-                    return $('#users-device-size').find('div:visible').first().attr('id');
-                    }
-                    if (getBootstrapDeviceSize() == ("xs")){
-                        document.getElementById("mobile").style = "display:block";
-                        document.getElementById("nav").style = "display:none";
-                 
-                    }else if(getBootstrapDeviceSize() == ("sm")){
-                        document.getElementById("mobile").style = "display:block";
-                        document.getElementById("nav").style = "display:none";
-
-                    }else if(getBootstrapDeviceSize() == ("md")){
-                        document.getElementById("mobile").style = "display:block";
-                        document.getElementById("nav").style = "display:none";
-                        document.getElementById("mobileDivider").innerHTML = "________________________________________________"
-
-
-                    }else{
-                        document.getElementById("mobile").style = "display:none";
-                        document.getElementById("nav").style = "display:block";
-
-                    }
+                getBootstrapDeviceSize();
 
 
 
-                ////window.alert("<%= guest%>");
 
                 console.log("<%= guest%>");
                 console.log(document.getElementById("loginFirst").className);
 
                 if ("<%= guest%>" == 'false') {
-                    // //window.alert(document.getElementById("overlay").className);
-                    //  document.getElementById("loginFirst").style.display = "inline";
                     document.getElementById("guestEyesOnly").style.display = "none";
-                    ////window.alert("<%= guest%>");
 
                 } else if ("<%= guest%>" == 'none') {
                     document.getElementById("loginFirst").style.display = "none";
                     document.getElementById("guestEyesOnly").style.display = "none";
-                    ////window.alert("<%= guest%>");
 
                 } else {
-                    // document.getElementById("loginFirst").style.display = "block";
                     document.getElementById("guestEyesOnly").style.display = "inline";
                     document.getElementById("guestEyesOnly2").style.display = "block";
-
-                    ////window.alert("<%= guest%>");
                 }
 
                
@@ -175,11 +145,11 @@
 
         <section class="hero">
             <div id='headercontent' class="hero-content">
-                <h2 class="h2-responsive" id="mag">
-                    <img id="mag3" src="../img/Background/Magnolia.png" /> 
+                <div id="mag">
+                    <img style ="display:none" id="mag3" src="../img/Background/Magnolia.png" /> 
                     The Two Before the One
-                    <img id="mag4" src="../img/Background/Magnolia.png" />
-                </h2>
+                    <img style ="display:none" id="mag4" src="../img/Background/Magnolia.png" />
+                </div>
 
 
             </div>

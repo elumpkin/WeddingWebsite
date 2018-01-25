@@ -96,29 +96,7 @@
         $(window).load(function () {
             document.getElementById('body').id = 'index';
 
-            function getBootstrapDeviceSize() {
-                return $('#users-device-size').find('div:visible').first().attr('id');
-                }
-                if (getBootstrapDeviceSize() == ("xs")){
-                    document.getElementById("mobile").style = "display:block";
-                    document.getElementById("nav").style = "display:none";
-             
-                }else if(getBootstrapDeviceSize() == ("sm")){
-                    document.getElementById("mobile").style = "display:block";
-                    document.getElementById("nav").style = "display:none";
-
-                }else if(getBootstrapDeviceSize() == ("md")){
-                    document.getElementById("mobile").style = "display:block";
-                    document.getElementById("nav").style = "display:none";
-                    document.getElementById("mobileDivider").innerHTML = "________________________________________________"
-
-
-                }else{
-                    document.getElementById("mobile").style = "display:none";
-                    document.getElementById("nav").style = "display:block";
-
-                }
-
+            getBootstrapDeviceSize();
 
         });
         $(window).mousemove(function () {

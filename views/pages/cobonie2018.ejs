@@ -103,30 +103,22 @@
     
 
     $(window).load(function () {
-        ////window.alert("<%= guest%>");
 
         console.log("<%= guest%>");
         console.log(document.getElementById("loginFirst").className);
 
 
           if ("<%= guest%>" == 'false') {
-           // //window.alert(document.getElementById("overlay").className);
-          //  document.getElementById("loginFirst").style.display = "inline";
             document.getElementById("guestEyesOnly").style.display = "none";
-            ////window.alert("<%= guest%>");
 
         }else if ("<%= guest%>" == 'none'){
             document.getElementById("loginFirst").style.display = "none";
             document.getElementById("guestEyesOnly").style.display = "none";
-            ////window.alert("<%= guest%>");
 
         }
         else{
-           // document.getElementById("loginFirst").style.display = "block";
             document.getElementById("guestEyesOnly").style.display = "inline";
             document.getElementById("guestEyesOnly2").style.display = "block";
-
-            ////window.alert("<%= guest%>");
         }
  
 
@@ -140,9 +132,9 @@
 <section class="hero">
     <div id = 'headercontent' class="hero-content-index">
         <h1 id="mag">
-            <img id ="mag3" src = "../img/Background/Magnolia.png" />
+            <img style ="display:none" id ="mag3" src = "../img/Background/Magnolia.png" />
             #cobonie2018
-        <img id ="mag4"  src = "../img/Background/Magnolia.png" />
+        <img  style ="display:none" id ="mag4"  src = "../img/Background/Magnolia.png" />
       </h1>
       <div id ="text">
           <p id ="coboniep">Go to Instagram, 
@@ -173,9 +165,7 @@
       <div id="overlay" onclick="off()"><img id ="expandedImg" > 
         </div>
       
-   <!--    <div style="padding:20px">
-          
-        </div> -->
+
       <div class="foo" >
           
       <% for (images of images) { %>
@@ -193,7 +183,6 @@
        
        // Customizing a reveal set
        sr.reveal('#foo', { duration: 500 });
-        // sr.reveal('.bar');
   </script>
   
  
@@ -203,28 +192,7 @@
  $(window).load(function()
 {
   document.getElementById('body').id = 'index';
-  function getBootstrapDeviceSize() {
-    return $('#users-device-size').find('div:visible').first().attr('id');
-    }
-    if (getBootstrapDeviceSize() == ("xs")){
-        document.getElementById("mobile").style = "display:block";
-        document.getElementById("nav").style = "display:none";
- 
-    }else if(getBootstrapDeviceSize() == ("sm")){
-        document.getElementById("mobile").style = "display:block";
-        document.getElementById("nav").style = "display:none";
-
-    }else if(getBootstrapDeviceSize() == ("md")){
-        document.getElementById("mobile").style = "display:block";
-        document.getElementById("nav").style = "display:none";
-        document.getElementById("mobileDivider").innerHTML = "________________________________________________"
-
-
-    }else{
-        document.getElementById("mobile").style = "display:none";
-        document.getElementById("nav").style = "display:block";
-
-    }
+   getBootstrapDeviceSize();
 
 });
 
@@ -233,13 +201,11 @@
           if ($(this).scrollTop()>0)
           {
              $('#headercontent').fadeOut();
-/*              $('#headerh2').removeClass("h1").addClass("h3");
- */          }
+        }
          else
           {
            $('#headercontent').fadeIn();
-/*            $('#headerh2').removeClass("h3").addClass("h1");
- */          }
+          }
   });
      </script>
  

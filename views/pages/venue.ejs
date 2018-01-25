@@ -90,9 +90,9 @@
 <section class="hero">
     <div id = 'headercontent' class="hero-content">
             <h2 id="mag">
-                    <img id ="mag3" src = "../img/Background/Magnolia.png" />
+                    <img  style ="display:none" id ="mag3" src = "../img/Background/Magnolia.png" />
                 Villa Antonia
-                <img id ="mag4"  src = "../img/Background/Magnolia.png" />
+                <img  style ="display:none" id ="mag4"  src = "../img/Background/Magnolia.png" />
             </h2>
            
     
@@ -163,28 +163,7 @@
 <script  type="text/javascript">
 $(window).load(function()
 {
-    function getBootstrapDeviceSize() {
-        return $('#users-device-size').find('div:visible').first().attr('id');
-        }
-        if (getBootstrapDeviceSize() == ("xs")){
-            document.getElementById("mobile").style = "display:block";
-            document.getElementById("nav").style = "display:none";
-     
-        }else if(getBootstrapDeviceSize() == ("sm")){
-            document.getElementById("mobile").style = "display:block";
-            document.getElementById("nav").style = "display:none";
-
-        }else if(getBootstrapDeviceSize() == ("md")){
-            document.getElementById("mobile").style = "display:block";
-            document.getElementById("nav").style = "display:none";
-            document.getElementById("mobileDivider").innerHTML = "________________________________________________"
-
-
-        }else{
-            document.getElementById("mobile").style = "display:none";
-            document.getElementById("nav").style = "display:block";
-
-        }
+    getBootstrapDeviceSize();
 
     document.getElementById('body').id = 'index';
     

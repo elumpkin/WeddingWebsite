@@ -2,6 +2,15 @@
 <html lang="en" class="mdc-typography">
 
 <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <!-- Bootstrap core CSS -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <!-- Material Design Bootstrap -->
+        <link href="css/mdb.min.css" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -80,13 +89,30 @@
                     }
 
 
-                 /*   document.getElementById("btn3").onclick = function (){
-                    document.getElementById("overlay2").style.display = "none";
-                        document.getElementById("hero").style.display = "block";
-                 //   count +=1;
-                   // //window.alert("count: " + count);
-                   }
- */
+                    function getBootstrapDeviceSize() {
+                        return $('#users-device-size').find('div:visible').first().attr('id');
+                        }
+                        if (getBootstrapDeviceSize() == ("xs")){
+                            document.getElementById("mobile").style = "display:block";
+                            document.getElementById("nav").style = "display:none";
+                            document.getElementById("mag").style = "font-size: 40px";
+    
+                        }else if(getBootstrapDeviceSize() == ("sm")){
+                            document.getElementById("mobile").style = "display:block";
+                            document.getElementById("nav").style = "display:none";
+                            document.getElementById("mag").style = "font-size: 45px";
+    
+                        }else if(getBootstrapDeviceSize() == ("md")){
+                            document.getElementById("mobile").style = "display:block";
+                            document.getElementById("nav").style = "display:none";
+                            document.getElementById("mag").style = "font-size: 50px";
+                        }else{
+                            document.getElementById("mobile").style = "display:none";
+                            document.getElementById("nav").style = "display:block";
+                            document.getElementById("mag").style = "font-size: 90px";
+                            document.getElementById("mag3").style = "display:inline";
+                            document.getElementById("mag4").style = "display:inline";
+                        }
 
                     function indexon() {
                         document.getElementById("indexoverlay").style.display = "block";
@@ -115,6 +141,15 @@
                 <script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js" integrity="sha384-fA23ZRQ3G/J53mElWqVJEGJzU0sTs+SvzG8fXVWP+kJQ1lwFAOkcUOysnlKJC33U" crossorigin="anonymous"></script>
                 <script src="https://unpkg.com/bootstrap-material-design@4.0.0-beta.4/dist/js/bootstrap-material-design.js" integrity="sha384-3xciOSDAlaXneEmyOo0ME/2grfpqzhhTcM4cE32Ce9+8DW/04AGoTACzQpphYGYe" crossorigin="anonymous"></script>
                 <script>$(document).ready(function() { $('body').bootstrapMaterialDesign(); });</script>
+                  <!-- SCRIPTS -->
+                <!-- JQuery -->
+                <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+                <!-- Bootstrap tooltips -->
+                <script type="text/javascript" src="js/popper.min.js"></script>
+                <!-- Bootstrap core JavaScript -->
+                <script type="text/javascript" src="js/bootstrap.min.js"></script>
+                <!-- MDB core JavaScript -->
+                <script type="text/javascript" src="js/mdb.min.js"></script>
     
             </body>
 

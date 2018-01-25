@@ -110,17 +110,13 @@
 
 
                 if (document.getElementById("overlay").className == 'false') {
-                  
                     document.getElementById("guestEyesOnly").style.display = "none";
                     if ("<%= count%>" == "0") {
                         document.getElementById("hero").style.display = "none";
-
                         document.getElementById("overlay2").style.display = "block";
                     } else {
                         document.getElementById("hero").style.display = "block";
                         document.getElementById("overlay2").style.display = "none";
-
-
                     }
 
 
@@ -177,8 +173,6 @@
                         document.getElementById("intro3").style = "font-size:50px";
                         document.getElementById("intro4").style = "font-size:50px";
                         document.getElementById("intro5").style = "font-size:50px";
-                        document.getElementById("mobileDivider").innerHTML = "________________________________________________"
-
 
                     }else{
                         document.getElementById("mobile").style = "display:none";
@@ -274,7 +268,7 @@
                                             <input type="text" name="password" class="form-control" id="pw" required>
                                         </div>
                                         <div class="form-group text-center">
-                                            <button type="submit" id="btn2" class="btn btn-primary btn-lg" onclick="off()">
+                                            <button type="submit" id="btn2" class="btn btn-unique btn-lg" onclick="off()">
                                                 Submit
                                             </button>
                                         </div>

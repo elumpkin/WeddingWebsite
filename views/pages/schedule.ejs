@@ -103,52 +103,22 @@
 
             $(window).load(function () {
 
-                function getBootstrapDeviceSize() {
-                    return $('#users-device-size').find('div:visible').first().attr('id');
-                    }
-                    if (getBootstrapDeviceSize() == ("xs")){
-                        document.getElementById("mobile").style = "display:block";
-                        document.getElementById("nav").style = "display:none";
-                 
-                    }else if(getBootstrapDeviceSize() == ("sm")){
-                        document.getElementById("mobile").style = "display:block";
-                        document.getElementById("nav").style = "display:none";
+                getBootstrapDeviceSize();
 
-                    }else if(getBootstrapDeviceSize() == ("md")){
-                        document.getElementById("mobile").style = "display:block";
-                        document.getElementById("nav").style = "display:none";
-                        document.getElementById("mobileDivider").innerHTML = "________________________________________________"
-
-                    }else{
-                        document.getElementById("mobile").style = "display:none";
-                        document.getElementById("nav").style = "display:block";
-
-                    }
-
-                if (document.getElementById("overlay").className == 'false') {
-                    // //window.alert(document.getElementById("overlay").className);
-                    //   document.getElementById("overlay").style.display = "block";
+                /* if (document.getElementById("overlay").className == 'false') {
                     document.getElementById("guestEyesOnly").style.display = "none";
-
-                    // guestReveal("false");
-
                 } else if (document.getElementById("overlay").className == 'true') {
-
-                    //guestReveal("true");
                     document.getElementById("loginFirst").style.display = "block";
                     document.getElementById("guestEyesOnly").style.display = "inline";
-                    ////window.alert("<%= guest%>");
                 } else {
                     document.getElementById("overlay").style.display = "block";
 
-                }
+                } */
 
 
                 if ("<%= guest%>" == 'false') {
-                    // //window.alert(document.getElementById("overlay").className);
                     document.getElementById("loginFirst").style.display = "inline";
                     document.getElementById("guestEyesOnly").style.display = "none";
-                    ////window.alert("<%= guest%>");
 
                 } else if ("<%= guest%>" == 'none') {
                     document.getElementById("loginFirst").style.display = "none";
