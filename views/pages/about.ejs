@@ -1,38 +1,39 @@
 <%- contentFor('header')%>
-<header>
+    <header>
         <nav class="navbar navbar-inverse navbar-fixed-top scrolling-navbar justify-content-center">
 
             <div class="text-center" id="headerinfo"> April 29th, 2018 </div>​
-     
-            
-            <h1 class="h1-responsive" id = "headerh2" >
+
+
+            <h1 class="h1-responsive" id="headerh2">
                 Ebonie & Cody 2018
             </h1>
             <div id="headerinfo" class="text-center"> Jonestown, TX </div>
 
-            <div  id="mobile" class="row btn-group " style="display:none" >
-               <div id="mobileDivider">
+            <div id="mobile" class="row btn-group " style="display:none">
+                <div id="mobileDivider">
                     ________________________________
                 </div>
-             
-                    <button id= "links" class="btn btn-flat btn-block btn-md dropdown-toggle " type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                       Site Links
-                    </button>
-                    <div class="dropdown-menu">
-                            <a class="nav-link" href="/">Home</a>
-                            <div id="guestEyesOnly2" style="display:none">
-                            <a class="nav-link" href="/schedule">Schedule</a>
-                            <a class="nav-link" href="/hellotoyes">From Hello to Yes</a>
-                            <a class="nav-link" href="/rsvp">RSVP</a>
-                            <a class="nav-link" href="/venue">Venue</a>
-                            </div>
-                            <a class="nav-link" href="/about">About Us</a>
-                            <a class="nav-link" href="/cobonie2018">#cobonie2018</a>
-                            <a class="nav-link" href="/aestetic">Aesthetic</a>
+
+                <button id="links" class="btn btn-flat btn-block btn-md dropdown-toggle " type="button" data-toggle="dropdown" aria-haspopup="true"
+                    aria-expanded="false">
+                    Site Links
+                </button>
+                <div class="dropdown-menu">
+                    <a class="nav-link" href="/">Home</a>
+                    <div id="guestEyesOnly2" style="display:none">
+                        <a class="nav-link" href="/schedule">Schedule</a>
+                        <a class="nav-link" href="/hellotoyes">From Hello to Yes</a>
+                        <a class="nav-link" href="/rsvp">RSVP</a>
+                        <a class="nav-link" href="/venue">Venue</a>
                     </div>
+                    <a class="nav-link" href="/about">About Us</a>
+                    <a class="nav-link" href="/cobonie2018">#cobonie2018</a>
+                    <a class="nav-link" href="/aestetic">Aesthetic</a>
                 </div>
-        
-    </div>
+            </div>
+
+            </div>
             <!--         <a href="/" class="navbar-brand"></a>
     -->
             <div id="loginFirst" class="<%= guest%>">
@@ -65,29 +66,30 @@
                     <li class="navbar-text">
                         <a class="nav-link" href="/aestetic">Aesthetic</a>
                     </li>
+                   
                 </ul>
-            
+
             </div>
         </nav>
-         <!--                 <li><a href="/schedule">Schedule</a></li>
+        <!--                 <li><a href="/schedule">Schedule</a></li> <li><a href="/games">Games</a></li>
     -->
 
 
-    <!--                 <li><a href="/registry">Registry</a></li>
+        <!--                 <li><a href="/registry">Registry</a></li>
     -->
-    <!--  <li><a href="/faq">FAQs</a></li> -->
+        <!--  <li><a href="/faq">FAQs</a></li> -->
 
 
 
-    <!--             <li><a href="/games">Games</a></li>
+        <!--             
     -->
-    <!-- <li><a href="/datageek">Data Geek</a></li> -->
-    <!--  <li><a href="/contact">Contact</a></li> -->
-    <!-- <li><a href="/siteinfo">Site Info</a></li> -->
-    <!--             <li><a href="/vendorpage">Vendor Access Page</a></li>
+        <!-- <li><a href="/datageek">Data Geek</a></li> -->
+        <!--  <li><a href="/contact">Contact</a></li> -->
+        <!-- <li><a href="/siteinfo">Site Info</a></li> -->
+        <!--             <li><a href="/vendorpage">Vendor Access Page</a></li>
     -->
     </header>
-   
+
 
     <%- contentFor('hero')%>
         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>
@@ -101,7 +103,7 @@
         <script type="text/javascript">
             $(window).load(function () {
                 document.getElementById('body').id = 'index';
-                
+
                 getBootstrapDeviceSize();
 
 
@@ -122,7 +124,7 @@
                     document.getElementById("guestEyesOnly2").style.display = "block";
                 }
 
-               
+
 
 
 
@@ -131,11 +133,13 @@
 
                 if ($(this).scrollTop() > 0) {
                     $('#headercontent').fadeOut();
-/*                     $('#headerh2').removeClass("h1").addClass("h3");
- */                } else {
+                    /*                     $('#headerh2').removeClass("h1").addClass("h3");
+                     */
+                } else {
                     $('#headercontent').fadeIn();
-/*                     $('#headerh2').removeClass("h3").addClass("h1");
- */                }
+                    /*                     $('#headerh2').removeClass("h3").addClass("h1");
+                     */
+                }
             });
         </script>
 
@@ -146,9 +150,10 @@
         <section class="hero">
             <div id='headercontent' class="hero-content">
                 <div id="mag">
-                    <img style ="display:none" id="mag3" src="../img/Background/Magnolia.png" /> 
-                    The Two Before the One
-                    <img style ="display:none" id="mag4" src="../img/Background/Magnolia.png" />
+                    <!--                     <img style ="display:none" id="mag3" src="../img/Background/Magnolia.png" /> 
+ -->The Two Before the One
+                    <!--                     <img style ="display:none" id="mag4" src="../img/Background/Magnolia.png" />
+ -->
                 </div>
 
 
@@ -159,55 +164,83 @@
 
 
         <%- contentFor('body')%>
-        <div id="users-device-size">
+            <div id="users-device-size">
                 <div id="xs" class="visible-xs"></div>
                 <div id="sm" class="visible-sm"></div>
                 <div id="md" class="visible-md"></div>
                 <div id="lg" class="visible-lg"></div>
-              </div>
+            </div>
             <div id="body-content">
                 <div class="jumbotron text-center" id='about-div'>
                     <div class="hero-vendors">
-                        <div class="card">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="card card-cascade regular">
+                                        <div class="view overlay hm-white-slight view hm-zoom">
+                                            <img class="img-fluid" id='about-img' src="../img/cobonie2018/ebonie-nyc-2385.jpg">
+                                        </div>
 
-                            <div class="card-body">
-                                Lorem ipsum dolor sit amet, in idque euripidis persequeris eos. His ne saperet hendrerit. An qui mundi aperiam maluisset,
-                                illum prompta no nec, everti probatus pro ad. Ne mel tacimates accusamus, oratio assentior
-                                eum ea. Vel dico principes ad. No copiosae indoctum qualisque mel, nostro eligendi vix et.
-                                Est et etiam admodum tincidunt, viris nobis possim ut usu, te usu falli definiebas. Cu habeo
-                                choro eum, eam mandamus volutpat te. Debitis veritus electram ius te. Eam ea augue affert,
-                                duo aliquid pertinax ad.
+                                        <div class="card-body text-center">
+                                                <h4 class="card-title"><strong>Ebonie Lumpkin</strong></h4>
+                                                <br>
+                                            Lorem ipsum dolor sit amet, in idque euripidis persequeris eos. His ne saperet hendrerit. An qui mundi aperiam maluisset,
+                                            illum prompta no nec, everti probatus pro ad. Ne mel tacimates accusamus, oratio
+                                            assentior eum ea. Vel dico principes ad. No copiosae indoctum qualisque mel,
+                                            nostro eligendi vix et. Est et etiam admodum tincidunt, viris nobis possim ut
+                                            usu, te usu falli definiebas. Cu habeo choro eum, eam mandamus volutpat te. Debitis
+                                            veritus electram ius te. Eam ea augue affert, duo aliquid pertinax ad.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="card card-cascade narrower">
+                                        <div class="view overlay hm-white-slight view hm-zoom">
+                                            <img id='about-img' class="img-fluid" src="../img/cobonie2018/Cody-austin-smaller.jpg">
+                                        </div>
+                                        <div>
+                                            <div class="card-body text-center">
+                                                    <h4 class="card-title"><strong>Cody Cobb</strong></h4>
+                                                    <br>
+                                                Lorem ipsum dolor sit amet, in idque euripidis persequeris eos. His ne saperet hendrerit. An qui mundi aperiam maluisset,
+                                                illum prompta no nec, everti probatus pro ad. Ne mel tacimates accusamus,
+                                                oratio assentior eum ea. Vel dico principes ad. No copiosae indoctum qualisque
+                                                mel, nostro eligendi vix et. Est et etiam admodum tincidunt, viris nobis
+                                                possim ut usu, te usu falli definiebas. Cu habeo choro eum, eam mandamus
+                                                volutpat te. Debitis veritus electram ius te. Eam ea augue affert, duo aliquid
+                                                pertinax ad.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="card-body">
-                                <img id='about-img' class="img-fluid" src="../img/cobonie2018/ebonie-nyc-2385.jpg">
-                            </div>
-
                         </div>
                     </div>
                 </div>
-                <div class="jumbotron text-center">
 
-                    <div class="hero-vendors">
-                        <div class="flex-container">
-                            <div class="flex-item">
-                                <img id='about-img' src="../img/cobonie2018/Cody-austin-smaller.jpg">
 
-                            </div>
 
-                            <div class="flex-item">
-                                Lorem ipsum dolor sit amet, in idque euripidis persequeris eos. His ne saperet hendrerit. An qui mundi aperiam maluisset,
-                                illum prompta no nec, everti probatus pro ad. Ne mel tacimates accusamus, oratio assentior
-                                eum ea. Vel dico principes ad. No copiosae indoctum qualisque mel, nostro eligendi vix et.
-                                Est et etiam admodum tincidunt, viris nobis possim ut usu, te usu falli definiebas. Cu habeo
-                                choro eum, eam mandamus volutpat te. Debitis veritus electram ius te. Eam ea augue affert,
-                                duo aliquid pertinax ad.
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-            <!--          Include all compiled plugins (below), or include individual files as needed 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+                <!--          Include all compiled plugins (below), or include individual files as needed 
  -->
-            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>

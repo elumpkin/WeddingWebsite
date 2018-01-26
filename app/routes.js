@@ -18,7 +18,7 @@ module.exports = router;
 
 router.post('/notGuest', function(req,res){
     count = req.body.count;
-    res.render('pages/', {guest: guest, count:count});
+    res.render('pages/', {guest: 'false', count:count});
     
 })
 router.get('/', function(req,res){

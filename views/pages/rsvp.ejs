@@ -1,4 +1,6 @@
 <%- contentFor('header')%>
+
+
 <header>
         <nav class="navbar navbar-inverse navbar-fixed-top scrolling-navbar justify-content-center">
 
@@ -86,21 +88,26 @@
 
 <%- contentFor('hero')%>
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>
-<script type="text/json" src="freegeoip.net/json/github.com>"></script>
+<!-- <script type="text/json" src="freegeoip.net/json/github.com>"></script> -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
 <!-- <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
 <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script> -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-
+<!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+ -->
+<script type="text/javascript">
+    // Material Select Initialization
+ $(document).ready(function() {
+    $('.mdb-select').material_select();
+  });
+</script>
 
 
 
 <script  type="text/javascript">
 
     var test;
-
+ 
  $(window).load(function()
 {
     getBootstrapDeviceSize();
@@ -143,14 +150,14 @@
         }
     }
 
-    function bye(){
+  /*   function bye(){
         if (document.getElementById("fn").innerText =="" || document.getElementById("ln").innerText =="" || document.getElementById("em").innerText ==""){
            // //window.alert("See you soon!");
 
         }else{
             //window.alert("See you soon!");
         }
-    }
+    } */
      
     function formcheck(check){ 
         if (test == 0){
@@ -245,21 +252,50 @@
                 </div>
                 <br>
                 <div class="md-form" id = "hotel" style= "display: none">
+
+                <select class="mdb-select colorful-select dropdown-primary" name="rooms" id="rooms">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                    </select>
                     <label>How many rooms do you need?</label>
-                    <select class="md-form" name="rooms" id="rooms">
+
+                  <!--   <label>How many rooms do you need?</label>
+                    
+                    <select class="form-group" name="rooms" id="rooms">
                         <option>0</option>
                         <option>1</option>
                         <option>2</option>
-                    </select>
+                    </select> -->
                     <br>
-                    <label>What is the max number of beds needed per room?</label><br>
-                    <select class="md-form" name="roomAmount" id='roomAmount'>
+                    <!-- <select class="mdb-select colorful-select dropdown-primary form-group"  name="roomAmount" id='roomAmount'>
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                        </select>
+                        <label>What is the max number of beds needed per room?</label> -->
+
+                  <!--   <label>What is the max number of beds needed per room?</label><br>
+                    <select class="form-group" name="roomAmount" id='roomAmount'>
                         <option>0</option>
                         <option>1</option>
                         <option>2</option>
                         <option>3</option>
-                      </select>
+                      </select> -->
                 </div>
+                <!--Blue select-->
+    <select class="mdb-select colorful-select dropdown-primary">
+        <option value="1">Option 1</option>
+        <option value="2">Option 2</option>
+        <option value="3">Option 3</option>
+        <option value="4">Option 4</option>
+        <option value="5">Option 5</option>
+    </select>
+    <label>Blue select</label>
+   
+    <!--/Blue select-->
+                    
                 <div class="md-form">
                     <label>Food Allergies and Restrictions</label>
                     <input type="text" name="food" class="form-control">
@@ -284,3 +320,12 @@
 </section>
 
 </div>
+<div>
+        <select class="mdb-select">
+                <option value="" disabled selected>Choose your option</option>
+                <option value="1">Option 1</option>
+                <option value="2">Option 2</option>
+                <option value="3">Option 3</option>
+            </select>
+            <label>Example label</label>
+        </div>
