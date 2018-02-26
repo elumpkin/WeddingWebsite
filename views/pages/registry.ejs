@@ -1,43 +1,204 @@
-<!-- Carousel copywright to Roland Warmerdam @ https://codepen.io/Rowno/pen/Afykb -->
+<%- contentFor('header')%>
+    <header>
+        <script>
+            //changing the footer to stay at the very bottom on the page, removes sticky footer
+            $(document).ready(function () {
+                // document.getElementById("footer").style = "display:block;";
+            });
+        </script>
+
+        <nav id="navBar" class="navbar navbar-inverse navbar-fixed-top scrolling-navbar justify-content-center">
+
+                <div class="text-left  d-none d-lg-block d-xl-block" id="headerinfo"> April 29th, 2018 </div>​
+                <h1 class="h1-responsive  d-none d-lg-block d-xl-block" id="headerh2">
+                        Ebonie 
+                        &
+                        
+                        Cody 2018
+                    </h1>
+        
+                    
+                    <div id="headerinfo" class="text-right d-none d-lg-block d-xl-block"> Jonestown, TX </div>
+
+                <div class="d-lg-none d-xl-none"  style="width:100%">
+                        <h1 class="h1-responsive " id="headerh2">
+                                Ebonie & Cody 2018
+                </h1>
+                </div>
+            <div id="mobile" class="row btn-group " style="display:none">
+                <div id="mobileDivider">
+                    ________________________________
+                </div>
+
+                <div class="dropdown">
+                    <button id="links" class="btn btn-flat btn-block btn-md dropdown-toggle " type="button" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false">
+                        Site Links
+                    </button>
+                    <div class="dropdown-menu dropdown-primary">
+                            <a class="dropdown-item" href="/">
+                                <h4>Home</h4>
+                            </a>
+                            <a class="dropdown-item" href="/schedule">
+                                <h4>Schedule</h4>
+                            </a>
+                           
+                            <a class="dropdown-item" href="/rsvp">
+                                <h4>RSVP</h4>
+                            </a>
+                            <a class="dropdown-item" href="/venue">
+                                <h4>Logistics</h4>
+                            </a>
+                            <a class="dropdown-item" href="/registry">
+                                <h4>Registry</h4>
+                            </a>
+                            <a class="dropdown-item" href="/faq">
+                                <h4>FAQ</h4>
+                            </a>
+                            <a class="dropdown-item" href="/venue">
+                                <h4>Venue</h4>
+                            </a>
+                            <a class="dropdown-item" href="/about">
+                                <h4>About Us</h4>
+                            </a>
+                            <a class="dropdown-item" href="/cobonie2018">
+                                <h4>#cobonie2018</h4>
+                            </a>
+                            <a class="dropdown-item" href="/aestetic">
+                                <h4>Aesthetic</h4>
+                            </a>
+                    </div>
+                </div>
+            </div>
+
+            <div id="loginFirst" class="<%= guest%>" style="display:none">
+
+                <ul id="nav" class="nav justify-content-center">
+                    <li class="navbar-text">
+                        <a class="nav-link" href="/">
+                            <h3> Home</h3>
+                        </a>
+                    </li>
+                    <li class="navbar-text">
+
+                        <a class="nav-link" href="/schedule">
+                            <h3>Schedule</h3>
+                        </a>
+                    </li>
+                   
+                    <li class="navbar-text">
+                        <a class="nav-link" href="/rsvp">
+                            <h3> RSVP</h3>
+                        </a>
+                    </li>
+                    <li class="navbar-text">
+                        <a class="nav-link" href="/venue">
+                            <h3>Logistics</h3>
+                        </a>
+                    </li>
+                    <li class="navbar-text">
+                        <a class="nav-link" href="/registry">
+                            <h3>Registry</h3>
+                        </a>
+                    </li>
+                    <li class="navbar-text">
+                        <a class="nav-link" href="/faq">
+                            <h3>FAQ</h3>
+                        </a>
+                    </li>
+                    <li class="navbar-text">
+                        <a class="nav-link" href="/about">
+                            <h3> About Us</h3>
+                        </a>
+                    </li>
+
+                    <li class="navbar-text">
+                        <a class="nav-link" href="/cobonie2018">
+                            <h3>#cobonie2018</h3>
+                        </a>
+                    </li>
+                    <li class="navbar-text">
+                        <a class="nav-link" href="/aestetic">
+                            <h3>Aesthetic</h3>
+                        </a>
+                    </li>
+                </ul>
+
+            </div>
+        </nav>
+
+    </header>
+
 <%- contentFor('hero')%>
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>
-<script  type="text/javascript">
+<script type="text/javascript">
+    $(window).load(function () {
+        document.getElementById('body').id = 'index';
 
-$(window).load(function()
-{
-    document.getElementById('body').id = 'registry';
+        getBootstrapDeviceSize();
 
-});
-       $(window).scroll(function() {
+    });
+    //toggling nav bar on desktop to save header space
+    $('#navBar').mouseenter(function () {
+        document.getElementById("loginFirst").style.display = "inline";
+    })
 
-        if ($(this).scrollTop()>0)
-        {
-           $('#headercontent').fadeOut();
-           $('#headerh2').removeClass("h1").addClass("h3");
-        }
-       else
-        {
-         $('#headercontent').fadeIn();
-         $('#headerh2').removeClass("h3").addClass("h1");
-        }
- });
-    </script>
+    $('#navBar').mouseleave(function () {
+        document.getElementById("loginFirst").style.display = "none";
+    })
+</script>
 
-<section class="hero" >
-        <div  id = 'headercontent' class="hero-content">
-         <h2>
-             Registry
-         </h2>
-         <p>
-             Where to buy gift 
-         </p>
+
+    <%- contentFor('body')%>
+    <div id="users-device-size">
+        <div id="xs" class="visible-xs"></div>
+        <div id="sm" class="visible-sm"></div>
+        <div id="md" class="visible-md"></div>
+        <div id="lg" class="visible-lg"></div>
+    </div>
+    <div id="body-content">
+            <div class="container">
+                    <div class="animated fadeInUp">
+                        <h2 id="magAs">
+                            Our Wish Lists
+                        </h2>
+                    </div>
+                </div>
+   
+
+    <ul class="nav nav-tabs nav-justified primary"  role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" data-toggle="tab" href="#panel1" role="tab">Zola</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#panel2" role="tab"> Amazon</a>
+            </li>
+        </ul>
+        <!-- Tab panels -->
+        <div class="tab-content card">
+            <!--Panel 1-->
+            <div class="tab-pane  fade in show active" id="panel1" role="tabpanel">
+                    <a class="zola-registry-embed" href="https://www.zola.com/registry/cobonie" data-registry-key="cobonie">Our Zola Wedding Registry</a><script>!function(e,t,n){var s,a=e.getElementsByTagName(t)[0];e.getElementById(n)||(s=e.createElement(t),s.id=n,s.async=!0,s.src="https://widget.zola.com/js/widget.js",a.parentNode.insertBefore(s,a))}(document,"script","zola-wjs");</script>
+
+                         </div>
+            <!--/.Panel 1-->
+            <!--Panel 2-->
+            <div class="tab-pane fade" id="panel2" role="tabpanel">
+                <br>
+                <div style='display:table-cell; vertical-align:middle; text-align:center'>
+                        <a href='https://www.amazon.com/wedding/ebonie-lumpkin-cody-cobb-jonestown-april-2018/registry/20IBICP92SN2C' target='_blank'>
+                            <img src='https://s3-us-west-2.amazonaws.com/lambda-guestview-screenshots/screenshots/screenshots_guestview_ATVPDKIKX0DER_20IBICP92SN2C.png' 
+                        width='90%' height='90%' border='1'>
+                        </a>
+                        </div>
+            
+            
+            </div>
+
+
+
+            <!--/.Panel 2-->
+            
+        </div>
     
-     </div>
-    </section>
-<%- contentFor('body')%>
-<div style='display:table-cell; vertical-align:middle; text-align:center'>
-    <a href='https://www.amazon.com/wedding/ebonie-lumpkin-cody-cobb-jonestown-april-2018/registry/20IBICP92SN2C' target='_blank'>
-        <img src='https://s3-us-west-2.amazonaws.com/lambda-guestview-screenshots/screenshots/screenshots_guestview_ATVPDKIKX0DER_20IBICP92SN2C.png' 
-    width='90%' height='90%' border='1'>
-    </a>
+</div>
 </div>

@@ -1,165 +1,139 @@
 <!DOCTYPE html>
-<html lang="en" class="mdc-typography">
+<html lang="en">
 
 <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <!-- Font Awesome -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-        <!-- Bootstrap core CSS -->
-        <link href="css/bootstrap.min.css" rel="stylesheet">
-        <!-- Material Design Bootstrap -->
-        <link href="css/mdb.min.css" rel="stylesheet">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Bootstrap core CSS -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="/css/mdb.min.css" rel="stylesheet">
     <title>Cobonie 2018</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/styles.css">
+    <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Catamaran:300,400,100' rel='stylesheet' type='text/css'>
     <link href="https://fonts.googleapis.com/css?family=Pinyon+Script" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Forum" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <!--Import materialize.css-->
-    <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
-    <link rel="stylesheet" href="node_modules/material-components-web/dist/material-components-web.css">
 
-    <!--Let browser know website is optimized for mobile-->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons">
-    <link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.0.0-beta.4/dist/css/bootstrap-material-design.min.css" integrity="sha384-R80DC0KVBO4GSTw+wZ5x2zn2pu4POSErBkf8/fSFhPXHxvHJydT0CSgAP2Yo2r4I" crossorigin="anonymous">
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+
+    <!-- Scroll reveal -->
+    <script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
+    <!-- pinterest -->
+    <script async defer src="//assets.pinterest.com/js/pinit.js"></script>
 
 </head>
 
-    <body id='body'>
-    
-       <%- defineContent('header')%>
-       
+<body id='body'>
+    <%- defineContent('header')%>
+    <%- defineContent('slideshow') %>
+    <%- defineContent('hero') %>
+    <%- defineContent('body') %>
+    <footer id="footer" class="footer-copyright container-fluid" style="position: fixed">
+        Cobonie Wedding Website. © Copyright Ebonie Lumpkin 2017 & Photos: © Copyright Cody Cobb 2017.
+    </footer>
+
+    <script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
+
+    <script src="app.js"></script>
+    <script>
+        function on(expandedImageURL) {
+            document.getElementById("overlay").style.display = "block";
+            document.getElementById("expandedImg").src = expandedImageURL;
+
+        }
+
+        function on2() {
+            document.getElementById("overlay").style =
+                "display: block;background-color:rgba(130,126,124, 0);  position: absolute; width:100%";
+        }
 
 
-        <!-- Content Here -->
-        <%- defineContent('slideshow') %>
-            <%- defineContent('hero') %>
-<!-- 
-                <main id='main'>
-                    <div class="container">
-                        <div class="verticalLine"> -->
-                            
+        function off() {
+            document.getElementById("overlay").style.display = "none";
+        }
 
-                            <%- defineContent('body') %>
-
-                                <!-- <div class="jumbotron text-center" >
-               
-            </div> -->
-                <!--         </div>
-                    </div>
-                </main>
- -->
+        function off2() {
+            document.getElementById("overlay2").style.display = "none";
+            document.getElementById("hero").style.display = "block";
+            document.getElementById("body").style.height = "100%";
+        }
 
 
-                <footer>
-                    Cobonie Wedding Website. Copyright Ebonie Lumpkin 2017.
-                </footer>
-
-                <script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
-
-                <script src="app.js"></script>
-                <script>
-                    //count =0;
-                    function on(expandedImageURL) {
-                        document.getElementById("overlay").style.display = "block";
-                        document.getElementById("expandedImg").src = expandedImageURL;
-                    }
-                    function on2() {
-                        document.getElementById("overlay").style.display = "block";
-                    }
-                   
-
-                    function off() {
-                        document.getElementById("overlay").style.display = "none";
-                    }
-                    function off2() {
-                        document.getElementById("overlay2").style.display = "none";
-                        document.getElementById("hero").style.display = "block";
-                        
-                    }
-
-
-                    function getBootstrapDeviceSize() {
-                        return $('#users-device-size').find('div:visible').first().attr('id');
-                        }
-                        if (getBootstrapDeviceSize() == ("xs")){
-                            document.getElementById("mobile").style = "display:block";
-                            document.getElementById("nav").style = "display:none";
-                            document.getElementById("mag").style = "font-size: 40px";
-                            document.getElementById("headerinfo").style = "width: 100%";
-                            document.getElementById("headerh2").style = "width: 100%";
-
-
-    
-                        }else if(getBootstrapDeviceSize() == ("sm")){
-                            document.getElementById("mobile").style = "display:block";
-                            document.getElementById("nav").style = "display:none";
-                            document.getElementById("mag").style = "font-size: 45px";
-                            document.getElementById("headerinfo").style = "width: 100%";
-                            document.getElementById("headerh2").style = "width: 100%";
-    
-                        }else if(getBootstrapDeviceSize() == ("md")){
-                            document.getElementById("mobile").style = "display:block";
-                            document.getElementById("nav").style = "display:none";
-                            document.getElementById("mag").style = "font-size: 50px";
-                            document.getElementById("headerinfo").style = "width: 100%";
-                            document.getElementById("headerh2").style = "width: 100%";
-                        }else{
-                            document.getElementById("mobile").style = "display:none";
-                            document.getElementById("nav").style = "display:block";
-                            document.getElementById("mag").style = "font-size: 90px";
-                            document.getElementById("mag3").style = "display:inline";
-                            document.getElementById("mag4").style = "display:inline";
-                        }
-
-                    function indexon() {
-                        document.getElementById("indexoverlay").style.display = "block";
-
-                    }
-
-
-               /*  function indexoff() {
-                    document.getElementById("overlay").style.display = "none";
-                } */
+        function getBootstrapDeviceSize() {
+            return $('#users-device-size').find('div:visible').first().attr('id');
+        }
+        if (getBootstrapDeviceSize() == ("xs")) {
+            document.getElementById("mobile").style = "display:block";
+            document.getElementById("nav").style = "display:none";
+            document.getElementById("mag").style = "font-size: 40px";
+            document.getElementById("headerinfo").style = "width: 100%";
+            document.getElementById("headerh2").style = "width: 100%";
+            document.getElementById("hero").className = "hero-mobile";
+            document.getElementById("expandedImg").className = "expandedImg-mobile";
 
 
 
-                </script>
-                <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>
-                <script type="text/json" src="freegeoip.net/json/github.com>"></script>
-                <meta name="viewport" content="width=device-width, initial-scale=1">
-                <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
-                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+        } else if (getBootstrapDeviceSize() == ("sm")) {
+            document.getElementById("mobile").style = "display:block";
+            document.getElementById("nav").style = "display:none";
+            document.getElementById("mag").style = "font-size: 45px";
+            document.getElementById("headerinfo").style = "width: 100%";
+            document.getElementById("headerh2").style = "width: 100%";
+            document.getElementById("hero").className = "hero-mobile";
+            document.getElementById("expandedImg").className = "expandedImg-mobile";
 
 
-                <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-                <script src="node_modules/material-components-web/dist/material-components-web.js"></script>
-                <script>mdc.autoInit()</script>
-                <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-                <script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js" integrity="sha384-fA23ZRQ3G/J53mElWqVJEGJzU0sTs+SvzG8fXVWP+kJQ1lwFAOkcUOysnlKJC33U" crossorigin="anonymous"></script>
-                <script src="https://unpkg.com/bootstrap-material-design@4.0.0-beta.4/dist/js/bootstrap-material-design.js" integrity="sha384-3xciOSDAlaXneEmyOo0ME/2grfpqzhhTcM4cE32Ce9+8DW/04AGoTACzQpphYGYe" crossorigin="anonymous"></script>
-                <script>$(document).ready(function() { $('body').bootstrapMaterialDesign(); });</script>
-                  <!-- SCRIPTS -->
-                <!-- JQuery -->
-                <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
-                <!-- Bootstrap tooltips -->
-                <script type="text/javascript" src="js/popper.min.js"></script>
-                <!-- Bootstrap core JavaScript -->
-                <script type="text/javascript" src="js/bootstrap.min.js"></script>
-                <!-- MDB core JavaScript -->
-                <script type="text/javascript" src="js/mdb.min.js"></script>
-    
-            </body>
+
+        } else if (getBootstrapDeviceSize() == ("md")) {
+            document.getElementById("mobile").style = "display:block";
+            document.getElementById("nav").style = "display:none";
+            document.getElementById("mag").style = "font-size: 50px";
+            document.getElementById("headerinfo").style = "width: 100%";
+            document.getElementById("headerh2").style = "width: 100%";
+            document.getElementById("hero").className = "hero-mobile";
+            document.getElementById("expandedImg").className = "expandedImg-mobile";
+
+
+        } else {
+            document.getElementById("mobile").style = "display:none";
+            document.getElementById("nav").style = "display:block";
+            document.getElementById("mag").style = "font-size: 90px";
+            document.getElementById("mag3").style = "display:inline";
+            document.getElementById("mag4").style = "display:inline";
+
+        }
+    </script>
+    <!-- SCRIPTS -->
+    <!-- JQuery -->
+    <script type="text/javascript" src="/js/jquery-3.2.1.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="/js/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="/js/mdb.min.js"></script>
+
+</body>
 
 
 </html>

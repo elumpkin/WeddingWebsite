@@ -1,331 +1,346 @@
 <%- contentFor('header')%>
+<script>
+        $(document).ready(function () {
+            document.getElementById("footer").style = "display:block;";
 
-
+        });
+    </script>
 <header>
-        <nav class="navbar navbar-inverse navbar-fixed-top scrolling-navbar justify-content-center">
+        <nav id="navBar" class="navbar navbar-inverse navbar-fixed-top scrolling-navbar justify-content-center">
 
-            <div class="text-center" id="headerinfo"> April 29th, 2018 </div>​       
-            <h1 class="h1-responsive" id = "headerh2" >
-                Ebonie & Cody 2018
-            </h1>
-            <div id="headerinfo" class="text-center"> Jonestown, TX </div>
+                <div class="text-left  d-none d-lg-block d-xl-block" id="headerinfo"> April 29th, 2018 </div>​
+                <h1 class="h1-responsive  d-none d-lg-block d-xl-block" id="headerh2">
+                        Ebonie 
+                        &
+                        
+                        Cody 2018
+                    </h1>
+        
+                    
+                    <div id="headerinfo" class="text-right d-none d-lg-block d-xl-block"> Jonestown, TX </div>
 
-            <div  id="mobile" class="row btn-group " style="display:none" >
+                <div class="d-lg-none d-xl-none" style="width:100%">
+                        <h1 class="h1-responsive " id="headerh2" >
+                                Ebonie & Cody 2018
+                </h1>
+                </div>
+
+            <div id="mobile" class="row btn-group " style="display:none">
                 <div id="mobileDivider">
                     ________________________________
                 </div>
-            
-                    <button id= "links" class="btn btn-flat btn-block btn-md dropdown-toggle " type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                       Site Links
+                <div class="dropdown">
+                    <button id="links" class="btn btn-flat btn-block btn-md dropdown-toggle " type="button" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false">
+                        Site Links
                     </button>
-                    <div class="dropdown-menu">
-                            <a class="nav-link" href="/">Home</a>
-                            <a class="nav-link" href="/schedule">Schedule</a>
-                            <a class="nav-link" href="/hellotoyes">From Hello to Yes</a>
-                            <a class="nav-link" href="/rsvp">RSVP</a>
-                            <a class="nav-link" href="/venue">Venue</a>
-                            <a class="nav-link" href="/about">About Us</a>
-                            <a class="nav-link" href="/cobonie2018">#cobonie2018</a>
-                            <a class="nav-link" href="/aestetic">Aesthetic</a>
+                    <div class="dropdown-menu dropdown-primary">
+                        <a class="dropdown-item" href="/">
+                            <h4>Home</h4>
+                        </a>
+                        <a class="dropdown-item" href="/schedule">
+                            <h4>Schedule</h4>
+                        </a>
+                      
+                        <a class="dropdown-item" href="/rsvp">
+                            <h4>RSVP</h4>
+                        </a>
+                        <a class="dropdown-item" href="/venue">
+                            <h4>Logistics</h4>
+                        </a>
+                        <a class="dropdown-item" href="/registry">
+                            <h4>Registry</h4>
+                        </a>
+                        <a class="dropdown-item" href="/faq">
+                            <h4>FAQ</h4>
+                        </a>
+                        
+                        <a class="dropdown-item" href="/about">
+                            <h4>About Us</h4>
+                        </a>
+                        <a class="dropdown-item" href="/cobonie2018">
+                            <h4>#cobonie2018</h4>
+                        </a>
+                        <a class="dropdown-item" href="/aestetic">
+                            <h4>Aesthetic</h4>
+                        </a>
                     </div>
                 </div>
-        
-    </div>
-            <!--         <a href="/" class="navbar-brand"></a>
-    -->
-            <div id="loginFirst" class="<%= guest%>">
-                    
+            </div>
+            <div id="loginFirst" class="<%= guest%>" style="display:none">
+
                 <ul id="nav" class="nav justify-content-center">
                     <li class="navbar-text">
-                        <a class="nav-link" href="/">Home</a>
-                    </li>
-                        <li class="navbar-text">
-
-                            <a class="nav-link" href="/schedule">Schedule</a>
-                        </li>
-                        <li class="navbar-text">
-                            <a class="nav-link" href="/hellotoyes">From Hello to Yes</a>
-                        </li>
-                        <li class="navbar-text">
-                            <a class="nav-link" href="/rsvp">RSVP</a>
-                        </li>
-                        <li class="navbar-text">
-                            <a class="nav-link" href="/venue">Venue</a>
-                        </li>
-                    <li class="navbar-text">
-                        <a class="nav-link" href="/about">About Us</a>
-                    </li>
-
-                    <li class="navbar-text">
-                        <a class="nav-link" href="/cobonie2018">#cobonie2018</a>
+                        <a class="nav-link" href="/">
+                            <h3>Home</h3>
+                        </a>
                     </li>
                     <li class="navbar-text">
-                        <a class="nav-link" href="/aestetic">Aesthetic</a>
+                        <a class="nav-link" href="/schedule">
+                            <h3>Schedule</h3>
+                        </a>
+                    </li>
+                   
+                    <li class="navbar-text">
+                        <a class="nav-link" href="/rsvp">
+                            <h3>RSVP</h3>
+                        </a>
+                    </li>
+                    <li class="navbar-text">
+                        <a class="nav-link" href="/venue">
+                            <h3>Logistics</h3>
+                        </a>
+                    </li>
+                    <li class="navbar-text">
+                        <a class="nav-link" href="/registry">
+                            <h3>Registry</h3>
+                        </a>
+                    </li>
+                    <li class="navbar-text">
+                        <a class="nav-link" href="/faq">
+                            <h3>FAQ</h3>
+                        </a>
+                    </li>
+                    <li class="navbar-text">
+                        <a class="nav-link" href="/about">
+                            <h3>About Us</h3>
+                        </a>
+                    </li>
+                    <li class="navbar-text">
+                        <a class="nav-link" href="/cobonie2018">
+                            <h3>#cobonie2018</h3>
+                        </a>
+                    </li>
+                    <li class="navbar-text">
+                        <a class="nav-link" href="/aestetic">
+                            <h3>Aesthetic</h3>
+                        </a>
                     </li>
                 </ul>
-            
             </div>
         </nav>
-         <!--                 <li><a href="/schedule">Schedule</a></li>
-    -->
 
-
-    <!--                 <li><a href="/registry">Registry</a></li>
-    -->
-    <!--  <li><a href="/faq">FAQs</a></li> -->
-
-
-
-    <!--             <li><a href="/games">Games</a></li>
-    -->
-    <!-- <li><a href="/datageek">Data Geek</a></li> -->
-    <!--  <li><a href="/contact">Contact</a></li> -->
-    <!-- <li><a href="/siteinfo">Site Info</a></li> -->
-    <!--             <li><a href="/vendorpage">Vendor Access Page</a></li>
-    -->
     </header>
-     
-
-<%- contentFor('hero')%>
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>
-<!-- <script type="text/json" src="freegeoip.net/json/github.com>"></script> -->
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
-<!-- <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
-<script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script> -->
-<!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
- -->
-<script type="text/javascript">
-    // Material Select Initialization
- $(document).ready(function() {
-    $('.mdb-select').material_select();
-  });
-</script>
 
 
 
-<script  type="text/javascript">
-
-    var test;
- 
- $(window).load(function()
-{
-    getBootstrapDeviceSize();
-
-
-    test = 0;
-    document.getElementById('body').id = 'index';
-    document.getElementById('hotel').style.display = "none";
-    document.getElementById('no').checked = true;
-    
+    <%- contentFor('hero')%>
    
-    
-});
-    $(window).mousemove(function(){
-        indexon();
-    });
+        <script type="text/javascript">
+            $('#navBar').mouseenter(function () {
+                document.getElementById("loginFirst").style.display = "inline";
+            })
 
-    $(window).scroll(function() {
+            $('#navBar').mouseleave(function () {
+                document.getElementById("loginFirst").style.display = "none";
+            })
 
-        if ($(this).scrollTop()>0)
-        {
-           $('#headercontent').fadeOut();
-/*            $('#headerh2').removeClass("h1").addClass("h3");
- */        }
-       else
-        {
-         $('#headercontent').fadeIn();
-/*          $('#headerh2').removeClass("h3").addClass("h1");
- */        }
-    });
-    function formReveal(){
-        if (document.getElementById('yes').checked){
-            document.getElementById('hotel').style.display = 'block';
-        }else{
-            document.getElementById('hotel').style.display = 'none';
-            document.getElementById('roomAmount').options[0].selected = true;
-            document.getElementById('rooms').options[0].selected = true;
+            // Material Select Initialization
+            $(document).ready(function () {
+                $('.mdb-select').material_select();
+            });
+        </script>
 
-            //$('#roomAmount option:first-child').attr("selected", "selected");        
-        }
-    }
 
-  /*   function bye(){
-        if (document.getElementById("fn").innerText =="" || document.getElementById("ln").innerText =="" || document.getElementById("em").innerText ==""){
-           // //window.alert("See you soon!");
 
-        }else{
-            //window.alert("See you soon!");
-        }
-    } */
-     
-    function formcheck(check){ 
-        if (test == 0){
-            if (check){
-            //window.alert("Welcome back! \n\nWe found your information in our database. \n\nIf you would like to make change to your RSVP, please indicate you are updating your information below. \n\nThank you!");
-            test = 1;
-            }else{
-                test =1;
+        <script type="text/javascript">
+            var test;
+
+            $(window).load(function () {
+                getBootstrapDeviceSize();
+
+
+                test = 0;
+                document.getElementById('body').id = 'index';
+                document.getElementById('hotel').style.display = "none";
+                document.getElementById('no').checked = true;
+
+
+
+            });
+
+            function formReveal() {
+                if (document.getElementById('yes').checked) {
+                    document.getElementById('hotel').style.display = 'block';
+                } else {
+                    document.getElementById('hotel').style.display = 'none';
+                    document.getElementById('roomAmount').options[0].selected = true;
+                    document.getElementById('rooms').options[0].selected = true;
+                }
             }
-        }
+
+
+            function formcheck(check) {
+                if (test == 0) {
+                    if (check) {
+                        window.alert("Welcome back! \n\nWe found your information in our database. \n\nIf you would like to make change to your RSVP, please indicate you are updating your information below. \n\nThank you!");
+                        test = 1;
+                    } else {
+                        test = 1;
+                    }
+                }
+
+            }
+        </script>
+
         
-    }
 
-    
-    </script>
- 
-<section class="hero" >
-        <div id= 'headercontent'  class="hero-content">
-         <h2 id="mag">
-                <img  style ="display:none" id ="mag3" src = "../img/Background/Magnolia.png" />
-                RSVP
-                <img  style ="display:none" id ="mag4"  src = "../img/Background/Magnolia.png" />
-         </h2>
-        
-     </div>
-    </section>
- 
- <%- contentFor('body')%>
- <div id="users-device-size">
-        <div id="xs" class="visible-xs"></div>
-        <div id="sm" class="visible-sm"></div>
-        <div id="md" class="visible-md"></div>
-        <div id="lg" class="visible-lg"></div>
-      </div>
- <div id="body-content">
-        
-      
-<div onmouseover="formcheck('<%= results[0]%>')" class="jumbotron text-center" >
-<!--         <p class="h5 text-center mb-4"> RSVP</p>
- -->   <!--  <h2 >
-           
-        </h2>   -->    
-        <p class="h5 text-center mb-4" ><strong>
-            Use the form below to let us know if you are coming and what accomadations you need.
-            Even if you sent out your mailed RSVP note, feel free use the form below just in case. 
-        </strong>
-        </p>  
-        <section class="form-elegant">
-                
-                    <!--Form without header-->
-                    <div class="card">
-                
-                        <div class="card-body mx-4">
-                                   <!--  <div class='row'>
-            <div class='col-sm-6 col-sm-offset-3'>
-                
-     -->
-                <form action="/rsvp" method="POST">
-                <div class="md-form">
-                    <label  for="form3">First Name</label>
-                    <input type="text" name="firstName" class="form-control" id="fn" required>
-                </div>
-                <div class="md-form">
-                    <label>Last Name</label>
-                    <input type="text" name="lastName" class="form-control" id = "ln" required>
-                </div>
-                <div class="md-form">
-                    <label>Phone Number </label>
-                    <input type="text" name="Phone" class= "form-control" >
-                </div>
-                <div class="md-form">
-                    <label>Plus One Name</label>
-                    <input type="text" name="extraName" class="form-control">
-                </div>
-                
-                <div class="md-form">
-                    <label>Email</label>
-                    <input type="text" name="email" class="form-control" id="em" required>
-                </div>
-                <div class="md-form">
-                    <label>Do you need to be added to the hotel block?</label><br>
-                    <div class="form-group">
-                        <input type="radio" name="hotel" value="yes" id ="yes" onclick="formReveal()">                             
-                        <label for="yes">Yes</label>
-                    </div>
-                
-                    <div class="form-group">
-                            <input type="radio" name="hotel" value="no" id="no" checked = "checked"     onclick="formReveal()">
-                            <label for="no">No</label>
-                    </div>
-                   
-                </div>
-                <br>
-                <div class="md-form" id = "hotel" style= "display: none">
-
-                <select class="mdb-select colorful-select dropdown-primary" name="rooms" id="rooms">
-                        <option value="0">0</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                    </select>
-                    <label>How many rooms do you need?</label>
-
-                  <!--   <label>How many rooms do you need?</label>
-                    
-                    <select class="form-group" name="rooms" id="rooms">
-                        <option>0</option>
-                        <option>1</option>
-                        <option>2</option>
-                    </select> -->
-                    <br>
-                    <!-- <select class="mdb-select colorful-select dropdown-primary form-group"  name="roomAmount" id='roomAmount'>
-                            <option value="0">0</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                        </select>
-                        <label>What is the max number of beds needed per room?</label> -->
-
-                  <!--   <label>What is the max number of beds needed per room?</label><br>
-                    <select class="form-group" name="roomAmount" id='roomAmount'>
-                        <option>0</option>
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                      </select> -->
-                </div>
-                <!--Blue select-->
-    <select class="mdb-select colorful-select dropdown-primary">
-        <option value="1">Option 1</option>
-        <option value="2">Option 2</option>
-        <option value="3">Option 3</option>
-        <option value="4">Option 4</option>
-        <option value="5">Option 5</option>
-    </select>
-    <label>Blue select</label>
-   
-    <!--/Blue select-->
-                    
-                <div class="md-form">
-                    <label>Food Allergies and Restrictions</label>
-                    <input type="text" name="food" class="form-control">
-                </div>
-                <div class="md-form">
-                    <label>Any thing you'd like us to know or consider?</label>
-                    <input type="text" name="extra" class="form-control">
-                </div>
-             <div class="form-group">
-                 <label>Are you updating your information?</label>
-                 <input type="radio" name="update" value="yes"> Yes
-                 <input type="radio" name="update" value="no" checked="checked"> No<br>
-                 
-             </div>
-             <button type="submit" class="btn btn-unique" onclick="bye()">
-                    Submit
-                 </button>
-                </form>
+        <%- contentFor('body')%>
+            <div id="users-device-size">
+                <div id="xs" class="visible-xs"></div>
+                <div id="sm" class="visible-sm"></div>
+                <div id="md" class="visible-md"></div>
+                <div id="lg" class="visible-lg"></div>
             </div>
-        </div>
-           
-</section>
+            <div id="body-content">
+                    <div class="container">
+                            <div class="animated fadeInUp">
+                                <h2 id="magAs">
+                                    RSVP
 
+                                </h2>
+                            </div>
+                        </div>
+                <div onmouseover="formcheck('<%= results[0]%>')" class=" text-center">
+
+                    <section class="container form-elegant">
+
+                        <!--Form without header-->
+                        <div class="card">
+
+                            <div class="card-body mx-4">
+                                <br>
+                                <br>
+
+                                <p class="h3 text-center mb-4" id="AUtext">
+                                    <strong>
+                                        Use the form below to let us know if you are coming and what accomadations you need. Even if you sent out your mailed RSVP
+                                        note, feel free use the form below just in case.
+                                    </strong>
+                                </p>
+                                <br>
+
+                                <br>
+                                <div class='row'>
+                                    <div class='col-md-10 col-md-offset-1'>
+                                        <form action="/rsvp" method="POST">
+                                            <div class="md-form">
+                                                <label style="font-size: 12px; " for="form3">First Name</label>
+                                                <input  style="font-size: 20px; " type="text" name="firstName" class="form-control" id="fn" required>
+                                            </div>
+                                            <div class="md-form">
+                                                <label style="font-size: 12px; ">Last Name</label>
+                                                <input  style="font-size: 20px; " type="text" name="lastName" class="form-control" id="ln" required>
+                                            </div>
+                                            <div class="md-form">
+                                                <label style="font-size: 12px; ">Phone Number </label>
+                                                <input  style="font-size: 20px; " type="text" name="Phone" class="form-control">
+                                            </div>
+                                            <div class="md-form">
+                                                    <label style="font-size: 12px; ">Plus One Name</label>
+                                                    <input  style="font-size: 20px; " type="text" name="extraName" class="form-control">
+                                                </div>
+    
+                                                <div class="md-form">
+                                                    <label style="font-size: 12px; ">Email</label>
+                                                    <input  style="font-size: 20px; " type="text" name="email" class="form-control" id="em" required>
+                                                </div>
+                                            <div class="form-group">
+                                                    <div class="form-inline" >
+                                                <label style="font-size: 16px; ">Will you be joining us?</label>
+                                                
+                                                    <div class="form-group">
+                                                    <input   type="radio" name="attending" value="yes" id="attendyes" checked="checked" >
+                                                    <label style="font-size: 12px; " for="attendyes">Yes</label>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <input type="radio" name="attending" value="no" id="attendno"  >
+                                                    <label style="font-size: 12px; " for="attendno">No</label>
+                                                </div>
 </div>
-<div>
-        <select class="mdb-select">
-                <option value="" disabled selected>Choose your option</option>
-                <option value="1">Option 1</option>
-                <option value="2">Option 2</option>
-                <option value="3">Option 3</option>
-            </select>
-            <label>Example label</label>
-        </div>
+                                            </div>
+                                            <br>
+                                            
+                                            <div class="form-group">
+                                                    <div class="form-inline" >
+                                                <label style="font-size: 16px; ">Do you need to be added to the hotel block?</label>
+                                                
+                                                    <div class="form-group">
+                                                    <input  type="radio" name="hotel" value="yes" id="yes" onclick="formReveal()">
+                                                    <label style="font-size: 12px; " for="yes">Yes</label>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <input  type="radio" name="hotel" value="no" id="no" checked="checked" onclick="formReveal()">
+                                                    <label style="font-size: 12px; " for="no">No</label>
+                                                </div>
+</div>
+                                            </div>
+                                            <br>
+                                            <div class="md-form" id="hotel" style="display: none">
+                                                <p id="AUtext">
+                                                    We have a hotel block reserved. After submitting this form, please visit the <a href="https://cobonie2018.herokuapp.com/venue" target="_Blank" style="display:inline">Logistics </a>  tab for more information. 
+                                                </p>
+                                                <br>
+                                                <br>
+
+                                                <div  class="md-form">
+                                                <select class="mdb-select colorful-select dropdown-primary" name="rooms" id="rooms">
+                                                    <option style="font-size: 20px;" value="0">0</option>
+                                                    <option value="1"><h4>1</h4></option>
+                                                    <option value="2">2</option>
+                                                </select>
+                                                <label style="font-size: 12px; " for="rooms">How many rooms do you need?</label>
+                                            </div>
+                                                <br>
+                                                <div  class="md-form">
+                                                <select class="mdb-select colorful-select dropdown-primary"  name="roomAmount" id='roomAmount'>
+                                                        <option value="0">0</option>
+                                                        <option value="1">1</option>
+                                                        <option value="2">2</option>
+                                                </select>
+                                                <label style="font-size: 12px; " for="roomAmount">What is the max number of beds needed per room?</label>
+                                            </div>
+                                            </div>
+                                           
+                                            <div class="md-form">
+                                                <label style="font-size: 12px; ">Food Allergies and Restrictions</label>
+                                                <input  style="font-size: 20px; " type="text" name="food" class="form-control">
+                                            </div>
+                                            <div class="md-form">
+                                                <label style="font-size: 12px; ">Any thing you'd like us to know or consider?</label>
+                                                <input  style="font-size: 20px; " type="text" name="extra" class="form-control">
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="form-inline" >
+                                                        <label style="font-size: 16px; ">Are you updating your information?</label>
+
+                                                <div class="form-group ">
+                                                    <input  type="radio" name="update" value="yes" id="Updateyes" >
+                                                    <label style="font-size: 12px; " for = "Updateyes" >Yes</label>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <input  type="radio" name="update" value="no" id="Updateno" checked="checked" >
+                                                    <label style="font-size: 12px; " for= "Updateno">No</label>
+                                                </div>
+                                            </div>
+                                                <br>
+
+                                            </div>
+                                            <div class="md-form text-center">
+                                            <button style="width:100%" type="submit" class="btn btn-unique btn-lg waves-effect" onclick="bye()">
+                                                <h4>Submit</h4>
+                                            </button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </section>
+
+                </div>
+            </div>

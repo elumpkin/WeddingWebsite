@@ -1,209 +1,278 @@
 <%- contentFor('header')%>
-<header>
-        <nav class="navbar navbar-inverse navbar-fixed-top scrolling-navbar justify-content-center">
+<script>
+        $(document).ready(function () {
+            document.getElementById("footer").style = "display:block;";
 
-            <div class="text-center"  id="headerinfo"> April 29th, 2018 </div>​
-            <h1 class="h1-responsive" id = "headerh2" >
-                Ebonie & Cody 2018
-            </h1>
-            <div id="headerinfo" class="text-center"> Jonestown, TX </div>
+        });
+    </script>
+    <header>
+        <nav id="navBar" class="navbar navbar-inverse navbar-fixed-top scrolling-navbar justify-content-center">
 
-            <div  id="mobile" class="row btn-group " style="display:none" >
+
+
+                <div class="text-left  d-none d-lg-block d-xl-block" id="headerinfo"> April 29th, 2018 </div>​
+                <h1 class="h1-responsive  d-none d-lg-block d-xl-block" id="headerh2">
+                        Ebonie 
+                        &
+                        
+                        Cody 2018
+                    </h1>
+        
+                    
+                    <div id="headerinfo" class="text-right d-none d-lg-block d-xl-block"> Jonestown, TX </div>
+
+                <div class="d-lg-none d-xl-none" style="width:100%">
+                        <h1 class="h1-responsive " id="headerh2" >
+                                Ebonie & Cody 2018
+                </h1>
+                </div>
+
+            <div id="mobile" class="row btn-group " style="display:none">
                 <div id="mobileDivider">
                     ________________________________
                 </div>
-            
-                    <button id= "links" class="btn btn-flat btn-block btn-md dropdown-toggle " type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                       Site Links
+                <div class="dropdown">
+                    <button id="links" class="btn btn-flat btn-block btn-md dropdown-toggle " type="button" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false">
+                        Site Links
                     </button>
-                    <div class="dropdown-menu">
-                            <a class="nav-link" href="/">Home</a>
-                            <a class="nav-link" href="/schedule">Schedule</a>
-                            <a class="nav-link" href="/hellotoyes">From Hello to Yes</a>
-                            <a class="nav-link" href="/rsvp">RSVP</a>
-                            <a class="nav-link" href="/venue">Venue</a>
-                            <a class="nav-link" href="/about">About Us</a>
-                            <a class="nav-link" href="/cobonie2018">#cobonie2018</a>
-                            <a class="nav-link" href="/aestetic">Aesthetic</a>
+                    <div class="dropdown-menu dropdown-primary">
+                        <a class="dropdown-item" href="/">
+                            <h4>Home</h4>
+                        </a>
+                        <a class="dropdown-item" href="/schedule">
+                            <h4>Schedule</h4>
+                        </a>
+                      
+                        <a class="dropdown-item" href="/rsvp">
+                            <h4>RSVP</h4>
+                        </a>
+                        <a class="dropdown-item" href="/venue">
+                            <h4>Logistics</h4>
+                        </a>
+                        <a class="dropdown-item" href="/registry">
+                            <h4>Registry</h4>
+                        </a>
+                        <a class="dropdown-item" href="/faq">
+                            <h4>FAQ</h4>
+                        </a>
+                        <a class="dropdown-item" href="/about">
+                            <h4>About Us</h4>
+                        </a>
+                        <a class="dropdown-item" href="/cobonie2018">
+                            <h4>#cobonie2018</h4>
+                        </a>
+                        <a class="dropdown-item" href="/aestetic">
+                            <h4>Aesthetic</h4>
+                        </a>
                     </div>
                 </div>
-        
-    </div>
-            <!--         <a href="/" class="navbar-brand"></a>
-    -->
-            <div id="loginFirst" class="<%= guest%>">
-                    
+            </div>
+            <div id="loginFirst" class="<%= guest%>" style="display:none">
+
                 <ul id="nav" class="nav justify-content-center">
                     <li class="navbar-text">
-                        <a class="nav-link" href="/">Home</a>
-                    </li>
-                        <li class="navbar-text">
-
-                            <a class="nav-link" href="/schedule">Schedule</a>
-                        </li>
-                        <li class="navbar-text">
-                            <a class="nav-link" href="/hellotoyes">From Hello to Yes</a>
-                        </li>
-                        <li class="navbar-text">
-                            <a class="nav-link" href="/rsvp">RSVP</a>
-                        </li>
-                        <li class="navbar-text">
-                            <a class="nav-link" href="/venue">Venue</a>
-                        </li>
-                    <li class="navbar-text">
-                        <a class="nav-link" href="/about">About Us</a>
-                    </li>
-
-                    <li class="navbar-text">
-                        <a class="nav-link" href="/cobonie2018">#cobonie2018</a>
+                        <a class="nav-link" href="/">
+                            <h3>Home</h3>
+                        </a>
                     </li>
                     <li class="navbar-text">
-                        <a class="nav-link" href="/aestetic">Aesthetic</a>
+                        <a class="nav-link" href="/schedule">
+                            <h3>Schedule</h3>
+                        </a>
+                    </li>
+                   
+                    <li class="navbar-text">
+                        <a class="nav-link" href="/rsvp">
+                            <h3>RSVP</h3>
+                        </a>
+                    </li>
+                    <li class="navbar-text">
+                        <a class="nav-link" href="/venue">
+                            <h3>Logistics</h3>
+                        </a>
+                    </li>
+                    <li class="navbar-text">
+                        <a class="nav-link" href="/registry">
+                            <h3>Registry</h3>
+                        </a>
+                    </li>
+                    <li class="navbar-text">
+                        <a class="nav-link" href="/faq">
+                            <h3>FAQ</h3>
+                        </a>
+                    </li>
+                    <li class="navbar-text">
+                        <a class="nav-link" href="/about">
+                            <h3>About Us</h3>
+                        </a>
+                    </li>
+                    <li class="navbar-text">
+                        <a class="nav-link" href="/cobonie2018">
+                            <h3>#cobonie2018</h3>
+                        </a>
+                    </li>
+                    <li class="navbar-text">
+                        <a class="nav-link" href="/aestetic">
+                            <h3>Aesthetic</h3>
+                        </a>
                     </li>
                 </ul>
-            
             </div>
         </nav>
-         <!--                 <li><a href="/schedule">Schedule</a></li>
-    -->
 
-
-    <!--                 <li><a href="/registry">Registry</a></li>
-    -->
-    <!--  <li><a href="/faq">FAQs</a></li> -->
-
-
-
-    <!--             <li><a href="/games">Games</a></li>
-    -->
-    <!-- <li><a href="/datageek">Data Geek</a></li> -->
-    <!--  <li><a href="/contact">Contact</a></li> -->
-    <!-- <li><a href="/siteinfo">Site Info</a></li> -->
-    <!--             <li><a href="/vendorpage">Vendor Access Page</a></li>
-    -->
     </header>
-   
+
 
     <%- contentFor('hero')%>
-        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>
-        <script type="text/json" src="freegeoip.net/json/github.com>"></script>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
-        <!-- <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
-<script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script> -->
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
 
 
         <script type="text/javascript">
-            var data2;
-            var count = 0;
+
+            $('#navBar').mouseenter(function () {
+                document.getElementById("loginFirst").style.display = "inline";
+            })
+
+            $('#navBar').mouseleave(function () {
+                document.getElementById("loginFirst").style.display = "none";
+            })
+
 
             $(window).load(function () {
-
+               
                 getBootstrapDeviceSize();
 
-                /* if (document.getElementById("overlay").className == 'false') {
-                    document.getElementById("guestEyesOnly").style.display = "none";
-                } else if (document.getElementById("overlay").className == 'true') {
-                    document.getElementById("loginFirst").style.display = "block";
-                    document.getElementById("guestEyesOnly").style.display = "inline";
-                } else {
-                    document.getElementById("overlay").style.display = "block";
-
-                } */
 
 
                 if ("<%= guest%>" == 'false') {
-                    document.getElementById("loginFirst").style.display = "inline";
                     document.getElementById("guestEyesOnly").style.display = "none";
 
                 } else if ("<%= guest%>" == 'none') {
                     document.getElementById("loginFirst").style.display = "none";
                     document.getElementById("guestEyesOnly").style.display = "none";
-                    ////window.alert("<%= guest%>");
 
                 } else {
-                    document.getElementById("loginFirst").style.display = "block";
                     document.getElementById("guestEyesOnly").style.display = "inline";
-                    ////window.alert("<%= guest%>");
+                    document.getElementById("guestEyesOnly2").style.display = "block";
+
                 }
-
-
-
-
             });
-            $(window).mousemove(function () {
-                indexon();
+            new WOW().init();
 
 
-
-
-            });
-
-
-
-            $(window).scroll(function () {
-
-                if ($(this).scrollTop() > 0) {
-                    $('#headercontent').fadeOut();
-/*                     $('#headerh2').removeClass("h1").addClass("h3");
- */                } else {
-                    $('#headercontent').fadeIn();
-/*                     $('#headerh2').removeClass("h3").addClass("h1");
- */                }
-            });
         </script>
-        <!--   <section class="hero">
-
- -->
-        <!--        <div id= 'headercontentindex'   class="hero-content-index">
- -->
-
-        <!--     </div>
- -->
-        <!--    </section> -->
-        <section class="hero">
-            <div class="hero-content">
-                <h2 id="mag">
-                    <img class="img-fluid" id="mag3" src="../img/Background/Magnolia.png" />
-                    <!-- We're getting married!
-                        <img class="img-fluid" id="mag4" src="../img/Background/Magnolia.png" /> -->
-                </h2>
 
 
-            </div>
-        </section>
 
 
 
         <%- contentFor('body')%>
-        <div id="users-device-size">
+
+            <div id="users-device-size">
                 <div id="xs" class="visible-xs"></div>
                 <div id="sm" class="visible-sm"></div>
                 <div id="md" class="visible-md"></div>
                 <div id="lg" class="visible-lg"></div>
-              </div>
-            <div id="body-content" class="container-fluid">
+            </div>
+
+            <div class=" container ">
+                <section class="hero ">
+                    <div class="hero-content">
+                        <img class = "img-responsive animated fadeIn" id="mag3" src="../img/cobonie2018/monogramColor.png" />
+                    </div>
+                </section>
+                <br>
+                <br>
+                <div class="d-lg-none d-xl-none" style="margin-top:20%">
+                        <div class="card testimonial-card card-cascade" style="width: 90%; margin: auto; margin-bottom: 10%; ">
+                                <div  id="HTY2"  class="card-up " style=" background-image: url(../img/Background/rosegold.png)">
+                                    
+                                </div>
+                                <div class="avatar">
+                                    <img src="../img/cobonie2018/magnoliaFlower.png" class="rounded-circle">
+                                </div>
+                                <div class="card-body text-center  z-depth-5">
+                                        <div  class="wow fadeInUp" data-wow-delay="0.6s"  data-wow-duration="2s" id="AUtext">
+                                                Your presence is requested at
+                                            </div>
+                                            <div   class=" animated wow" data-wow-delay="0.5s"  data-wow-duration="2s" id="scheduleHder"  style="padding: 2% 0 1% 0">
+                                                Villa Antonia
+                                            </div>
+                                            <div  class="wow" data-wow-delay="0.5s" id="AUtext">
+                                                in
+                                            </div>
+                        
+                                            <div   class="wow" data-wow-delay="0.5s" id="scheduleHder" style="padding: 2% 0 1% 0">
+                                                Jonestown, Texas
+                                            </div>
+                                            <div class="wow" data-wow-delay="0.5s" id="AUtext">
+                                                on
+                                            </div>
+                        
+                                            <div class="wow" data-wow-delay="0.5s" id="scheduleHder" style="padding: 2% 0 1% 0">
+                                                April 29th, 2018
+                                            </div>
+                        
+                                            <div class="wow" data-wow-delay="0.5s" id="AUtext">
+                                                Please arrive to the terrace no later than
+                                            </div>
+                        
+                                            <div class=" animated wow" data-wow-delay="0.5s" id="scheduleHder" style="padding: 2% 0 1% 0">
+                                                6:00 PM
+                                            </div>
+                                            <div class="wow" data-wow-delay="0.5s" id="AUtext">
+                                                The ceremony will begin promtly at
+                                            </div>
+                        
+                                            <div class="wow" data-wow-delay="0.5s" id="scheduleHder">
+                                                6:15 PM
+                                            </div>
+                                </div>
+                            </div>
+                </div>
 
 
-                <div id="infocontainer" class="infocontainer2">
-                    <div id="infocontainer" class="card">
-                        <div id="section1" class="card-body">
-                            <img class="img-fluid" id="vector" src="../img/Background/rosegold-outline.png" />
-                        </div>
-                        <div id="divider">
-                            -----
-                            <img class="img-fluid" src="../img/Background/LongMagnolia.png" /> -----
-                        </div>
-                        <h2 id="mag">
-                            Ceremony
-                        </h2>
-                        <div id="section2" class="card-body">
-                            <img class="img-fluid" id="vector2" src="../img/Background/rosegold-outline.png" />
-                        </div>
-                        <div id="text" class="jumbotron text-center">
-                            <p class="card-body">
+                <div id="scheduleContainer" class=" d-none d-lg-block d-xl-block" >
+                    <div  class="wow fadeInUp" data-wow-delay="0.6s"  data-wow-duration="2s" id="AUtext" style="padding: 25% 0 0 0">
+                        Your presence is requested at
+                    </div>
+                    <div   class=" animated wow" data-wow-delay="0.5s"  data-wow-duration="2s" id="scheduleHder"  style="padding: 2% 0 1% 0">
+                        Villa Antonia
+                    </div>
+                    <div  class="wow" data-wow-delay="0.5s" id="AUtext">
+                        in
+                    </div>
+
+                    <div   class="wow" data-wow-delay="0.5s" id="scheduleHder" style="padding: 2% 0 1% 0">
+                        Jonestown, Texas
+                    </div>
+                    <div class="wow" data-wow-delay="0.5s" id="AUtext">
+                        on
+                    </div>
+
+                    <div class="wow" data-wow-delay="0.5s" id="scheduleHder" style="padding: 2% 0 1% 0">
+                        April 29th, 2018
+                    </div>
+
+                    <div class="wow" data-wow-delay="0.5s" id="AUtext">
+                        Please arrive to the terrace no later than
+                    </div>
+
+                    <div class=" animated wow" data-wow-delay="0.5s" id="scheduleHder" style="padding: 2% 0 1% 0">
+                        6:00 PM
+                    </div>
+                    <div class="wow" data-wow-delay="0.5s" id="AUtext">
+                        The ceremony will begin promtly at
+                    </div>
+
+                    <div class="wow" data-wow-delay="0.5s" id="scheduleHder" style="padding: 2% 0 25% 0;">
+                        6:15 PM
+                    </div>
+                </div>
+                <div class=" z-depth-5 " style="width:100%">
+                    <div class="card" style=" background-color:#4d292c">
+                        <div class="card-body wow" data-wow-delay="0.5s">
+                            <p id="Stext">
                                 This ceremony will be "unplugged".
                                 </br>
                                 </br>
@@ -211,179 +280,174 @@
                                 you. Professional pictures and video will be provided to the attendees as they become available.
                                 </br>
                                 </br>
+                                There will be a phone check in.
+                                </br>
+                                </br>
                                 Late arrivals and those unwilling to part with their phones for a moment will be ushered to the chapel until the ceremony
                                 has ceased.
                             </p>
                         </div>
-                        <div id="divider">
-                            -----
-                            <img class="img-fluid" src="../img/Background/LongMagnolia.png" /> -----
-                        </div>
-                        <div>
-                            <h2 id="mag">
-                                Reception
-                            </h2>
-                        </div>
-                        <div id="section3" class="card-body">
-                            <img class="img-fluid" id="vector2" src="../img/Background/rosegold-outline.png" />
-                        </div>
-                        <div id="text" class="jumbotron text-center">
-                            <p class="card-body">
-                                Please enjoy the cocktail hour mingling with the other guest and enjoying hors d'oeuvres.
-                            </p>
-                        </div>
                     </div>
-                    <div id="infocontainer">
-                        <!--     <img class="img-fluid" id = "vector" src = "../img/Background/rosegold-outline.png" />
- -->
-                        <div id="info1">
-                            <div id="sectiona">
-                                <div id="text">
+                </div>
 
-                                    Your presence is requested at
-                                </div>
 
-                                <div id="info">
-                                    Villa Antonia
-                                </div>
-                                <div id="text">
-                                    in
-                                </div>
 
-                                <div id="info">
-                                    Jonestown, Texas
+                <div class="d-lg-none d-xl-none" style="margin-bottom: 10%">
+                        <div class="card testimonial-card card-cascade" style="width: 90%; margin: auto; margin-bottom: 10%; margin-top: 10%">
+                                <div  id="HTY2"  class="card-up " style=" background-image: url(../img/Background/rosegold.png)">
+                                    
                                 </div>
-                                <div id="text">
-                                    on
+                                <div class="avatar">
+                                    <img src="../img/cobonie2018/magnoliaFlower.png" class="rounded-circle">
                                 </div>
-
-                                <div id="info">
-                                    April 29th, 2018
+                                <div class="card-body text-center  z-depth-5">
+                                        <div class="container"  >
+                                                <h1 class="h1-responsive" id="scheduleHder">
+                                                        Schedule
+                                                    </h1>
+                                                    <div style="margin: 5% 15%"> 
+                                            <div class="row" >
+                                                <div class="col-md-3" id="AUtext"> 5:30 PM</div>
+                                                <div class="col-md-9" id="AUtext"> Your arrival at Villa Antonia </div>
+                                            </div>
+                                            <br>
+                                            <div class="row">
+                                                <div class="col-md-3" id="AUtext"> 5:45 PM </div>
+                                                <div class="col-md-9" id="AUtext"> Have you checked in your phone? </div>
+                                            </div>
+                                            <br>
+                                            <div class="row">
+                                                <div class="col-md-3" id="AUtext"> 6:00 PM </div>
+                                                <div class="col-md-9" id="AUtext"> Please find a seat on either side, we love you all </div>
+                                            </div>
+                                            <br>
+                                            <div class="row">
+                                                <div class="col-md-3" id="AUtext"> 6:15 PM </div>
+                                                <div class="col-md-9" id="AUtext"> Ceremony begins </div>
+                                            </div>
+                                            <br>
+                                            <div class="row">
+                                                <div class="col-md-3" id="AUtext"> 6:45 PM </div>
+                                                <div class="col-md-9" id="AUtext"> Please mingle in courtyard for hors d'oeuvres during the cocktail hour </div>
+                                            </div>
+                                            <br>
+                                            <div class="row">
+                                                <div class="col-md-3" id="AUtext"> 7:45 PM </div>
+                                                <div class="col-md-9" id="AUtext"> Hello Mr. and Mrs. Cobb </div>
+                                            </div>
+                                            <br>
+                                            <div class="row">
+                                                <div class="col-md-3" id="AUtext"> 7:50 PM </div>
+                                                <div class="col-md-9" id="AUtext"> We've prepared a beautiful first dance to share with you </div>
+                                            </div>
+                                            <br>
+                                            <div class="row">
+                                                <div class="col-md-3" id="AUtext"> 8:00 PM </div>
+                                                <div class="col-md-9" id="AUtext"> Please join us in the wine cellar for dinner </div>
+                                            </div>
+                                            <br>
+                                            <div class="row">
+                                                <div class="col-md-3" id="AUtext"> 8:35 PM </div>
+                                                <div class="col-md-9" id="AUtext"> Let's dance! </div>
+                                            </div>
+                                            <br>
+                                            <div class="row">
+                                                <div class="col-md-3" id="AUtext"> 9:00 PM </div>
+                                                <div class="col-md-9" id="AUtext"> How about some cake? </div>
+                                            </div>
+                                            <br>
+                                            <div class="row">
+                                                <div class="col-md-3" id="AUtext"> 10:00 PM </div>
+                                                <div class="col-md-9" id="AUtext"> Ladies, who's next? </div>
+                                            </div>
+                                            <br>
+                                            <div class="row">
+                                                <div class="col-md-3" id="AUtext"> 10:05 PM </div>
+                                                <div class="col-md-9" id="AUtext"> Men, are you the next groom to be? </div>
+                                            </div>
+                                            <br>
+                                            <div class="row">
+                                                <div class="col-md-3" id="AUtext"> 11:00 PM </div>
+                                                <div class="col-md-9" id="AUtext"> Sendoff </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-
                             </div>
+                </div>
+
+
+                <div id="scheduleContainer" class=" d-none d-lg-block d-xl-block" >
+                      
+                    <div class="container" style="padding: 20% 0 0 0" >
+                            <h1 class="h1-responsive" id="scheduleHder">
+                                    Schedule
+                                </h1>
+                                <div style="margin: 5% 15%"> 
+                        <div class="row" >
+                            <div class="col-md-3" id="AUtext"> 5:30 PM</div>
+                            <div class="col-md-9" id="AUtext"> Your arrival at Villa Antonia </div>
                         </div>
-                        <!--     <div id ="infocontainer" class="infocontainer2"  >
- -->
-                        <div id="info1">
-                            <div id="sectionb">
-
-                                <div id="text">
-                                    Please arrive to the terrace no later than
-                                </div>
-
-                                <div id="info">
-                                    6:00 PM
-                                </div>
-                                <div id="text">
-                                    The ceremony will begin promtly at
-                                </div>
-
-                                <div id="info">
-                                    6:15 PM
-                                </div>
-
-                            </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-md-3" id="AUtext"> 5:45 PM </div>
+                            <div class="col-md-9" id="AUtext"> Have you checked in your phone? </div>
                         </div>
-
-                        <!--             <div id ="infocontainer2">
- -->
-                        <div id="info1">
-                            <div id="sectionc">
-                                <div id="text">
-                                    Will begin at
-                                </div>
-
-                                <div id="info">
-                                    7:30 PM
-                                </div>
-                                <div id="text">
-                                    in the
-                                </div>
-                                <div id="info">
-                                    Wine Cellar
-                                </div>
-                            </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-md-3" id="AUtext"> 6:00 PM </div>
+                            <div class="col-md-9" id="AUtext"> Please find a seat on either side, we love you all </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-md-3" id="AUtext"> 6:15 PM </div>
+                            <div class="col-md-9" id="AUtext"> Ceremony begins </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-md-3" id="AUtext"> 6:45 PM </div>
+                            <div class="col-md-9" id="AUtext"> Please mingle in courtyard for hors d'oeuvres during the cocktail hour </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-md-3" id="AUtext"> 7:45 PM </div>
+                            <div class="col-md-9" id="AUtext"> Hello Mr. and Mrs. Cobb </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-md-3" id="AUtext"> 7:50 PM </div>
+                            <div class="col-md-9" id="AUtext"> We've prepared a beautiful first dance to share with you </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-md-3" id="AUtext"> 8:00 PM </div>
+                            <div class="col-md-9" id="AUtext"> Please join us in the wine cellar for dinner </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-md-3" id="AUtext"> 8:35 PM </div>
+                            <div class="col-md-9" id="AUtext"> Let's dance! </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-md-3" id="AUtext"> 9:00 PM </div>
+                            <div class="col-md-9" id="AUtext"> How about some cake? </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-md-3" id="AUtext"> 10:00 PM </div>
+                            <div class="col-md-9" id="AUtext"> Ladies, who's next? </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-md-3" id="AUtext"> 10:05 PM </div>
+                            <div class="col-md-9" id="AUtext"> Men, are you the next groom to be? </div>
+                        </div>
+                        <br>
+                        <div class="row" style="padding:0 0 45% 0;">
+                            <div class="col-md-3" id="AUtext"> 11:00 PM </div>
+                            <div class="col-md-9" id="AUtext"> Sendoff </div>
                         </div>
                     </div>
                 </div>
             </div>
-
-
-            <!-- <div id ="divider">
-        -----
-        <img class="img-fluid" src = "../img/Background/LongMagnolia.png" />
-        -----
-    </div> -->
-
-
-
-
-
-            <!-- 
-    <div id="indexoverlay" >
-        <div class='row'>
-            <div id = "locationform" class = "jumbotron text-center">
-<!--                 <div class='col-sm-6 col-sm-offset-3'>
- --                   
-                    <form id="form" action="/" method="POST">
-                        
-                            <p>
-                                Hi! Welcome to our wedding website! We created a map of all of our visitors and we'd love to add you to it!
-                            </p>
-                            <p>
-                                Do you mind sharing your location with us?
-                            </p>
-                            <p>
-                                We don't collect any other information about you, just where you're coming from. :)                                        
-                            </p>
-                            <input type="hidden" id="location"  name="data" value="1" >
-                            <div class="row">
-    <!--                        <div class="form-group text-right">
-    --                             <button id='yeslocation'value='YES' name="button" type="button" class="btn btn-primary btn-lg" onclick="indexoff('yes')">
-                                        Sure!
-                                        
-                                    </button>
-                        <!--    </div>
-                                <div class="form-group text-left"> --
-                                    <button value = 'NO' name = "button" type="submit" class="btn btn-primary btn-lg" onclick="indexoff('no')">
-                                        No, thanks!
-                                    </button>
-            <!--                </div>
-                   
-                        </div>
-                    </form>
-<!--                 </div>
-           </div>
-        </div>
-    </div> -->
-            <script>
-                function indexoff(response) {
-                    var x = document.getElementById("location");
-                    var v;
-
-                    function getLocation() {
-                        if (navigator.geolocation) {
-                            navigator.geolocation.getCurrentPosition(showLocation);
-                        } else {
-                            x.innerHTML = "Geolocation is not supported by this browser.";
-                        }
-                    }
-
-                    function showLocation(position) {
-                        var latitude = position.coords.latitude;
-                        var longitude = position.coords.longitude;
-                        // alert("Latitude : " + latitude + " Longitude: " + longitude);
-
-                        x.value = [latitude, longitude];
-                        //  alert("value: " + x.value);
-                        document.getElementById("form").submit();
-                    }
-
-                    //  x.value = v;
-                    getLocation();
-                    // alert(v );
-                    // alert('thanks');
-                    document.getElementById("indexoverlay").style.display = "none";
-                }
-            </script>

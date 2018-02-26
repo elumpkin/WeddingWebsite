@@ -37,6 +37,8 @@ app.use('/',utilities);
 //set static files
 app.use(express.static(__dirname + '/public'));
 
+
+
 //start the server
 app.listen(port, function(){
     console.log('app started');

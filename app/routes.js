@@ -3,18 +3,16 @@ var express = require('express');
 var path = require('path');
 const sql = require('mssql');
 var fs = require('fs');
-//var navigator = new Navigator();
 var results=[];
 var guest = 'none';
 var count = 0;
 
-//create out router object
+//create our router object
 var router = express.Router();
 
 //export our router
 module.exports = router;
 
-//route our homepg
 
 router.post('/notGuest', function(req,res){
     count = req.body.count;
@@ -23,7 +21,6 @@ router.post('/notGuest', function(req,res){
 })
 router.get('/', function(req,res){
     
-
     res.render('pages/', {guest: guest, count:count});
     });
 
@@ -38,10 +35,10 @@ router.post('/', function(req, res){
     if (sql.close){
         try{
             var config = {
-                user: 'cobonie',
-                password: 'codyisabutthole',
-                server: 'weddingwebsitedb.civzgj8bgpoz.us-east-2.rds.amazonaws.com', 
-                database: 'WeddingDB'
+                user: '',
+                password: '',
+                server: '', 
+                database: ''
               };
 
 
@@ -59,18 +56,14 @@ router.post('/', function(req, res){
                     request.query(sqlQuery) // or request.execute(procedure)
                     request.on('row', row => {
                         guestResult.push((row)); // Emitted for each row in a recordset
-                    //  res.render('pages/cobonie2018',{images:images});
                     })
                     request.on('done',  recordset => {
-                       // images = images.replace('undefined',"");
                         console.log("guestResult " + JSON.stringify(guestResult[0]));
-                     //   res.render('pages/rsvp', {results:results});
                        sql.close();
                     
                         if (guestResult[0]){
                                 
                                 guest = 'true';
-                                   /// request.query(sqlQuery).then(sql.close);
                                    console.log("A Guest!");
                                     res.render('pages/', {guest: guest, count:count});
 
@@ -92,65 +85,101 @@ router.post('/', function(req, res){
         res.render('pages/', {guest:guest, count:count});
         
     }  
-   // res.render('pages/');
-       // }
      });
   
 
   router.get('/hellotoyes', function(req,res){
-    
+    if (guest!= "none"){
         res.render('pages/hellotoyes', {guest:guest});
+        
+    }else{
+        res.render('pages/', {guest: guest, count:count});
+    }
     });
 
 
 
 
 router.get('/siteinfo', function(req,res){
-    
-        res.render('pages/siteinfo');
+    if (guest!= "none"){
+        res.render('pages/siteinfo');        
+    }else{
+        res.render('pages/', {guest: guest, count:count});
+    }
+        
     
         
     });
 
 //route for our about page
 router.get('/about', function(req,res){
-    var users =[
-        {name: 'Ebonie', email:'ebonie.b.lumpkin@gmail.com'}
-    ]
-
-    res.render('pages/about', {users: users, guest:guest});
+    if (guest!= "none"){
+        res.render('pages/about', {guest:guest});
+    }else{
+        res.render('pages/', {guest: guest, count:count});
+    } 
 });
 
 
 
 router.get('/venue', function(req,res){
-    res.render('pages/venue', {guest:guest} );
+    if (guest!= "none"){
+        res.render('pages/venue', {guest:guest} );
+    }else{
+        res.render('pages/', {guest: guest, count:count});
+    }
+    
 });
 router.get('/registry', function(req,res){
-    res.render('pages/registry',{guest:guest});
+    if (guest!= "none"){
+        res.render('pages/registry',{guest:guest});
+    }else{
+        res.render('pages/', {guest: guest, count:count});
+    }  
 });
 
 router.get('/aestetic', function(req,res){
-    if (guest== 'true'){
-        res.render('pages/aestetic',{guest:"true"});
-    }else if (guest== 'false'){
-        res.render('pages/aestetic',{guest:"false"});
+    if (guest!= "none"){
+        res.render('pages/aestetic',{guest:guest});
+    }else{
+        res.render('pages/', {guest: guest, count:count});
     }
    
 });
 
 router.get('/games', function(req,res){
-    res.render('pages/games');
+    if (guest!= "none"){
+        res.render('pages/games');
+    }else{
+        res.render('pages/', {guest: guest, count:count});
+    }
 });
 
 router.get('/schedule', function(req,res){
-    res.render('pages/schedule', {guest:guest});
+    if (guest!= "none"){
+        res.render('pages/schedule', {guest:guest});
+    }else{
+        res.render('pages/', {guest: guest, count:count});
+    }
+    
 });
 router.get('/faq', function(req,res){
-    res.render('pages/faq');
+    if (guest!= "none"){
+        res.render('pages/faq', {guest:guest});
+    }else{
+        res.render('pages/', {guest: guest, count:count});
+    }
+    
 });
 router.get('/rsvp', function(req,res){
-    res.render('pages/rsvp',{results:results, guest:guest});
+
+
+    if (guest!= "none"){
+        res.render('pages/rsvp',{results:results, guest:guest});
+    }else{
+        res.render('pages/', {guest: guest, count:count});
+    }
+   
 });
 
 
@@ -168,15 +197,17 @@ router.post('/rsvp', function(req,res){
         var pn = JSON.stringify(req.body.Phone||"NA").replace(/'/gi,"''");
         var ra = req.body.roomAmount||0;
         var rm = req.body.rooms||0;
+        var at = req.body.attending||0;
+
     }
         
     if (sql.close){
         try{
             var config = {
-                user: 'cobonie',
-                password: 'codyisabutthole',
-                server: 'weddingwebsitedb.civzgj8bgpoz.us-east-2.rds.amazonaws.com', 
-                database: 'WeddingDB'
+                user: '',
+                password: '',
+                server: '', 
+                database: ''
               };
 
 
@@ -187,20 +218,15 @@ router.post('/rsvp', function(req,res){
                 UPPER(email) = '` + em + `'`;
         
                 sql.connect(config, err => {
-                    // ... error checks
                  
                     const request = new sql.Request()
-                    request.stream = true // You can set streaming differently for each request
-                    request.query(sqlQuery) // or request.execute(procedure)
+                    request.stream = true 
+                    request.query(sqlQuery) 
                     request.on('row', row => {
                         results.push((row)); // Emitted for each row in a recordset
-                    //  res.render('pages/cobonie2018',{images:images});
                     })
                     request.on('done',  recordset => {
-                       // images = images.replace('undefined',"");
                         console.log(JSON.stringify(results[0]));
-                     //   res.render('pages/rsvp', {results:results});
-                       /// sql.close();
                         
                         if (results[0]){
                             if (req.body.update == "yes"){
@@ -219,6 +245,8 @@ router.post('/rsvp', function(req,res){
                                 Hotel = '` + ht + `',
                                 HotelAmount = '` + ra + `',
                                 Rooms = '` + rm + `',
+                                Attending = '` + at + `',
+                                RSVP = 'yes',
                                 Phone = '` + pn + `',
                                 Date = getDate()
                                 WHERE 
@@ -231,10 +259,11 @@ router.post('/rsvp', function(req,res){
                           
                                     request.query(sqlQuery).then(sql.close);
                                // })
-                                
+                               res.render('pages/rsvp', {results:results, guest:"guest"});
+
                             }
                             else{
-                                res.render('pages/rsvp', {results:results, guest:guest});
+                                res.render('pages/rsvp', {results:results, guest:"guest"});
                                 
                                 results = [];
                                 sql.close();
@@ -244,7 +273,7 @@ router.post('/rsvp', function(req,res){
                             
                         }else{
                      
-                                res.render('pages/rsvp', {results:results, guest:guest});
+                                res.render('pages/rsvp', {results:results, guest:"guest"});
                                 
                             console.log("Here!");
                             var sqlQuery = 
@@ -282,34 +311,32 @@ router.post('/rsvp', function(req,res){
         }
     }else{
         sql.close();
+        res.render('pages/rsvp', {results:results, guest:"guest"});
+
     }
     
 });
 router.get('/cobonie2018', function(req,res){
     var images=[];
     var config = {
-        user: 'cobonie',
-        password: 'codyisabutthole',
-        server: 'weddingwebsitedb.civzgj8bgpoz.us-east-2.rds.amazonaws.com', 
-        database: 'WeddingDB'
+        user: '',
+                password: '',
+                server: '', 
+                database: ''
       };
   
     
         var sqlQuery = 'select URL, ExpandedURL from WeddingDB.dbo.Photos';
       if (sql.close){
         sql.connect(config, err => {
-            // ... error checks
          
             const request = new sql.Request()
-            request.stream = true // You can set streaming differently for each request
-            request.query(sqlQuery) // or request.execute(procedure)
+            request.stream = true 
+            request.query(sqlQuery) 
             request.on('row', row => {
                images.push((row)); // Emitted for each row in a recordset
-            //   res.render('pages/cobonie2018',{images:images});
             })
-            request.on('done',  recordset => {
-               // images = images.replace('undefined',"");
-                
+            request.on('done',  recordset => {                
                 res.render('pages/cobonie2018',{images:images, guest:guest});
                 sql.close();
             })
@@ -325,10 +352,10 @@ router.get('/cobonie2018', function(req,res){
 router.get('/datageek', function(req,res){
     //watch the last video on getting data
     /* var config = {
-        user: 'cobonie',
-        password: 'codyisabutthole',
-        server: 'weddingwebsitedb.civzgj8bgpoz.us-east-2.rds.amazonaws.com', 
-        database: 'WeddingDB'
+         user: '',
+                password: '',
+                server: '', 
+                database: ''
       };
 
 
@@ -344,17 +371,35 @@ router.get('/datageek', function(req,res){
           sql.close();
       })
     }); */
+    
+    if (guest!= "none"){
+        res.render('pages/datageek');
+    }else{
+        res.render('pages/', {guest: guest, count:count});
+    }
+   
 
-    res.render('pages/datageek');
+    
 });
 
 router.get('/vendorpage', function(req,res){
-    res.render('pages/vendorpage');
+    if (guest!= "none"){
+        res.render('pages/vendorpage');
+    }else{
+        res.render('pages/', {guest: guest, count:count});
+    }
+   
 });
 
 router.get('/contact', function(req,res){
-    res.render('pages/contact');
+    if (guest!= "none"){
+        res.render('pages/contact');
+   }else{
+        res.render('pages/', {guest: guest, count:count});
+    }
+   
 });
 router.post('/contact', function(req, res){
-res.send('Thanks for contacting us, ' +req.body.name +'! We will respond shortly')});
+res.send('Thanks for contacting us, ' +req.body.name +'! We will respond shortly')
+});
 

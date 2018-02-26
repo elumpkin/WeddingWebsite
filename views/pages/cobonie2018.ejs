@@ -1,110 +1,152 @@
 <%- contentFor('header')%>
 <header>
-        <nav class="navbar navbar-inverse navbar-fixed-top scrolling-navbar justify-content-center">
+        <script>
+                $(document).ready(function () {
+                    document.getElementById("footer").style = "display:block;";
+                });
+    
+            </script>
+        <nav id = "navBar"  class="navbar navbar-inverse navbar-fixed-top scrolling-navbar justify-content-center">
 
-            <div class="text-center" id="headerinfo"> April 29th, 2018 </div>​
-            <h1 class="h1-responsive" id = "headerh2" >
-                Ebonie & Cody 2018
-            </h1>
-            <div id="headerinfo" class="text-center"> Jonestown, TX </div>
+           
+                <div class="text-left  d-none d-lg-block d-xl-block" id="headerinfo"> April 29th, 2018 </div>​
+                <h1 class="h1-responsive  d-none d-lg-block d-xl-block" id="headerh2">
+                        Ebonie 
+                        &
+                        
+                        Cody 2018
+                    </h1>
+        
+                    
+                    <div id="headerinfo" class="text-right d-none d-lg-block d-xl-block"> Jonestown, TX </div>
+
+                <div class="d-lg-none d-xl-none" style="width:100%">
+                        <h1 class="h1-responsive " id="headerh2" >
+                                Ebonie & Cody 2018
+                </h1>
+                </div>
 
             <div  id="mobile" class="row btn-group " style="display:none" >
                 <div id="mobileDivider">
                     ________________________________
                 </div>
-            
-                    <button id= "links" class="btn btn-flat btn-block btn-md dropdown-toggle " type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                       Site Links
+                <div class="dropdown">
+                    <button id="links" class="btn btn-flat btn-block btn-md dropdown-toggle " type="button" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false">
+                        Site Links
                     </button>
-                    <div class="dropdown-menu">
-                            <a class="nav-link" href="/">Home</a>
-                            <div id="guestEyesOnly2" style="display:none">
-                            <a class="nav-link" href="/schedule">Schedule</a>
-                            <a class="nav-link" href="/hellotoyes">From Hello to Yes</a>
-                            <a class="nav-link" href="/rsvp">RSVP</a>
-                            <a class="nav-link" href="/venue">Venue</a>
-                            </div>
-                            <a class="nav-link" href="/about">About Us</a>
-                            <a class="nav-link" href="/cobonie2018">#cobonie2018</a>
-                            <a class="nav-link" href="/aestetic">Aesthetic</a>
+                    <div class="dropdown-menu dropdown-primary">
+                        <a class="dropdown-item" href="/">
+                            <h4>Home</h4>
+                        </a>
+                        <div id="guestEyesOnly2" style="display:none">
+                            <a class="dropdown-item" href="/schedule">
+                                <h4>Schedule</h4>
+                            </a>
+                          
+                            <a class="dropdown-item" href="/rsvp">
+                                <h4>RSVP</h4>
+                            </a>
+                            <a class="dropdown-item" href="/venue">
+                                <h4>Logistics</h4>
+                            </a>
+                            <a class="dropdown-item" href="/registry">
+                                <h4>Registry</h4>
+                            </a>
+                            <a class="dropdown-item" href="/FAQ">
+                                <h4>FAQ</h4>
+                            </a>
+                        </div>
+                        <a class="dropdown-item" href="/about">
+                            <h4>About Us</h4>
+                        </a>
+                        <a class="dropdown-item" href="/cobonie2018">
+                            <h4>#cobonie2018</h4>
+                        </a>
+                        <a class="dropdown-item" href="/aestetic">
+                            <h4>Aesthetic</h4>
+                        </a>
                     </div>
                 </div>
         
     </div>
-            <!--         <a href="/" class="navbar-brand"></a>
-    -->
-            <div id="loginFirst" class="<%= guest%>">
+        
+            <div id="loginFirst" class="<%= guest%>" style="display:none">
                     
-                <ul id="nav" class="nav justify-content-center">
-                    <li class="navbar-text">
-                        <a class="nav-link" href="/">Home</a>
-                    </li>
-                    <div id="guestEyesOnly" style="display:none">
-                        <li class="navbar-text">
-
-                            <a class="nav-link" href="/schedule">Schedule</a>
-                        </li>
-                        <li class="navbar-text">
-                            <a class="nav-link" href="/hellotoyes">From Hello to Yes</a>
-                        </li>
-                        <li class="navbar-text">
-                            <a class="nav-link" href="/rsvp">RSVP</a>
-                        </li>
-                        <li class="navbar-text">
-                            <a class="nav-link" href="/venue">Venue</a>
-                        </li>
-                    </div>
-                    <li class="navbar-text">
-                        <a class="nav-link" href="/about">About Us</a>
-                    </li>
-
-                    <li class="navbar-text">
-                        <a class="nav-link" href="/cobonie2018">#cobonie2018</a>
-                    </li>
-                    <li class="navbar-text">
-                        <a class="nav-link" href="/aestetic">Aesthetic</a>
-                    </li>
-                </ul>
-            
+                    <ul id="nav" class="nav justify-content-center">
+                            <li class="navbar-text">
+                                <a class="nav-link" href="/">
+                                    <h3>Home</h3>
+                                </a>
+                            </li>
+                            <div id="guestEyesOnly" style="display:none">
+                                <li class="navbar-text">
+        
+                                    <a class="nav-link" href="/schedule">
+                                        <h3>Schedule</h3>
+                                    </a>
+                                </li>
+                                
+                                <li class="navbar-text">
+                                    <a class="nav-link" href="/rsvp">
+                                        <h3>RSVP</h3>
+                                    </a>
+                                </li>
+                                <li class="navbar-text">
+                                    <a class="nav-link" href="/venue">
+                                        <h3>Logistics</h3>
+                                    </a>
+                                </li>
+                                <li class="navbar-text">
+                                    <a class="nav-link" href="/registry">
+                                        <h3>Registry</h3>
+                                    </a>
+                                </li>
+                                <li class="navbar-text">
+                                    <a class="nav-link" href="/faq">
+                                        <h3>FAQ</h3>
+                                    </a>
+                                </li>
+                            </div>
+                            <li class="navbar-text">
+                                <a class="nav-link" href="/about">
+                                    <h3>About Us</h3>
+                                </a>
+                            </li>
+        
+                            <li class="navbar-text">
+                                <a class="nav-link" href="/cobonie2018">
+                                    <h3>#cobonie2018</h3>
+                                </a>
+                            </li>
+                            <li class="navbar-text">
+                                <a class="nav-link" href="/aestetic">
+                                    <h3>Aesthetic</h3>
+                                </a>
+                            </li>
+                        </ul>
             </div>
         </nav>
-         <!--                 <li><a href="/schedule">Schedule</a></li>
-    -->
-
-
-    <!--                 <li><a href="/registry">Registry</a></li>
-    -->
-    <!--  <li><a href="/faq">FAQs</a></li> -->
-
-
-
-    <!--             <li><a href="/games">Games</a></li>
-    -->
-    <!-- <li><a href="/datageek">Data Geek</a></li> -->
-    <!--  <li><a href="/contact">Contact</a></li> -->
-    <!-- <li><a href="/siteinfo">Site Info</a></li> -->
-    <!--             <li><a href="/vendorpage">Vendor Access Page</a></li>
-    -->
     </header>
              
       
 <%- contentFor('hero')%>
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>
-<script type="text/json" src="freegeoip.net/json/github.com>"></script>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
-<!-- <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
-<script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script> -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 <script type="text/javascript">
-    
+     $('#navBar').mouseenter(function(){
+                document.getElementById("loginFirst").style.display = "inline";
+            })
+
+            $('#navBar').mouseleave(function(){
+                document.getElementById("loginFirst").style.display = "none";
+            })
+
 
     $(window).load(function () {
 
-        console.log("<%= guest%>");
-        console.log(document.getElementById("loginFirst").className);
+ document.getElementById('body').id = 'index';
 
+  getBootstrapDeviceSize();
 
           if ("<%= guest%>" == 'false') {
             document.getElementById("guestEyesOnly").style.display = "none";
@@ -118,94 +160,61 @@
             document.getElementById("guestEyesOnly").style.display = "inline";
             document.getElementById("guestEyesOnly2").style.display = "block";
         }
- 
-
-
-       
     });
    
 
 </script>
 
-<section class="hero">
-    <div id = 'headercontent' class="hero-content-index">
-        <h1 id="mag">
-<!--             <img style ="display:none" id ="mag3" src = "../img/Background/Magnolia.png" />
- -->            #cobonie2018
-<!--         <img  style ="display:none" id ="mag4"  src = "../img/Background/Magnolia.png" />
- -->      </h1>
-      <div id ="text">
-      </br>
-          <p id ="coboniep">Go to Instagram, 
-            </br>
-            add a public image with the hashtag "#cobonie2018", 
-          </br>
-          wait a few mintues, then check it out below.
-            </br>
-              Click the image for a larger view.
-            </p>
-      </div>
-           
-    
- </div>
-</section>
+
 
 <%- contentFor('body')%>
 <div id="users-device-size">
-        <div id="xs" class="visible-xs"></div>
-        <div id="sm" class="visible-sm"></div>
-        <div id="md" class="visible-md"></div>
-        <div id="lg" class="visible-lg"></div>
-      </div>
+    <div id="xs" class="visible-xs"></div>
+    <div id="sm" class="visible-sm"></div>
+    <div id="md" class="visible-md"></div>
+    <div id="lg" class="visible-lg"></div>
+</div>
+    <section class="hero" id="hero">
+        <div class="hero-content-index">
+            <h1 id="mag">
+                #cobonie2018
+            </h1>
+            <div id ="text">
+                Go to Instagram, 
+                <br>
+                add a <strong> public </strong> image with the hashtag "<strong>#cobonie2018</strong>", 
+                <br>
+                wait a few mintues, then check it out below.
+                <br>
+                    Click the image for a larger view.
+            </div>
+        </div>
+    </section>
 <div id="cobonie-body-content">
-<section >
-    
-    <div class="hero-vendors" >
-      <div id="overlay" onclick="off()"><img id ="expandedImg" > 
+    <section >
+        <div class="hero-vendors" >
+            <div id="overlay"  onclick="off()">
+                <div class="expandedImg" >
+                    <img  id ="expandedImg" > 
+                </div >
+            </div>
         </div>
-      
-
-      <div class="foo" >
-          
-      <% for (images of images) { %>
-                    <img id ="foo" 
-                    onclick= "on('<%= images.ExpandedURL%>')"
-                    src = <%= images.URL%> >  
-                     <% } %>
+        <div class="imageReveal" >  
+            <% for (images of images) { %>
+                <img id ="imageRevealImgs" 
+                onclick= "on('<%= images.ExpandedURL%>')"
+                src = <%= images.URL%> >  
+                <% } %>
         </div>
-    </div >
-</section>
-            </div>      
-  <script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
+    </section>
+</div>      
   <script>
+      //setting for scroll reveal
        window.sr = ScrollReveal({ reset: true });
        
        // Customizing a reveal set
-       sr.reveal('#foo', { duration: 500 });
+       sr.reveal('#imageRevealImgs', { duration: 500 });
   </script>
-  
- 
- <script src="app.js"></script>
- <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>
- <script  type="text/javascript">
- $(window).load(function()
-{
-  document.getElementById('body').id = 'index';
-   getBootstrapDeviceSize();
 
-});
-
-        $(window).scroll(function() {
- 
-          if ($(this).scrollTop()>0)
-          {
-             $('#headercontent').fadeOut();
-        }
-         else
-          {
-           $('#headercontent').fadeIn();
-          }
-  });
-     </script>
  
 

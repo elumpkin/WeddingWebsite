@@ -1,187 +1,342 @@
 <%- contentFor('header')%>
-<header>
-        <nav class="navbar navbar-inverse navbar-fixed-top scrolling-navbar justify-content-center">
+    <header>
+        <script>
+            //changing the footer to stay at the very bottom on the page, removes sticky footer
+            $(document).ready(function () {
+                document.getElementById("footer").style = "display:block;";
+            });
+        </script>
 
-            <div class="text-center" id="headerinfo"> April 29th, 2018 </div>​
- 
-            
-            <h1 class="h1-responsive"  id = "headerh2" >
-                Ebonie & Cody 2018
-            </h1>
-            <div id="headerinfo" class="text-center"> Jonestown, TX </div>
+        <nav id="navBar" class="navbar navbar-inverse navbar-fixed-top scrolling-navbar justify-content-center">
 
-            <div  id="mobile" class="row btn-group " style="display:none" >
+                <div class="text-left  d-none d-lg-block d-xl-block" id="headerinfo"> April 29th, 2018 </div>​
+                <h1 class="h1-responsive  d-none d-lg-block d-xl-block" id="headerh2">
+                        Ebonie 
+                        &
+                        
+                        Cody 2018
+                    </h1>
+        
+                    
+                    <div id="headerinfo" class="text-right d-none d-lg-block d-xl-block"> Jonestown, TX </div>
+
+                <div class="d-lg-none d-xl-none" style="width:100%">
+                        <h1 class="h1-responsive " id="headerh2" >
+                                Ebonie & Cody 2018
+                </h1>
+                </div>
+
+            <div id="mobile" class="row btn-group " style="display:none">
                 <div id="mobileDivider">
                     ________________________________
                 </div>
-            
-                    <button id= "links" class="btn btn-flat btn-block btn-md dropdown-toggle " type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                       Site Links
+
+                <div class="dropdown">
+                    <button id="links" class="btn btn-flat btn-block btn-md dropdown-toggle " type="button" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false">
+                        Site Links
                     </button>
-                    <div class="dropdown-menu">
-                            <a class="nav-link" href="/">Home</a>
-                            <a class="nav-link" href="/schedule">Schedule</a>
-                            <a class="nav-link" href="/hellotoyes">From Hello to Yes</a>
-                            <a class="nav-link" href="/rsvp">RSVP</a>
-                            <a class="nav-link" href="/venue">Venue</a>
-                            <a class="nav-link" href="/about">About Us</a>
-                            <a class="nav-link" href="/cobonie2018">#cobonie2018</a>
-                            <a class="nav-link" href="/aestetic">Aesthetic</a>
+                    <div class="dropdown-menu dropdown-primary">
+                        <a class="dropdown-item" href="/">
+                            <h4>Home</h4>
+                        </a>
+                        <a class="dropdown-item" href="/schedule">
+                            <h4>Schedule</h4>
+                        </a>
+                       
+                        <a class="dropdown-item" href="/rsvp">
+                            <h4>RSVP</h4>
+                        </a>
+                        <a class="dropdown-item" href="/venue">
+                            <h4>Logistics</h4>
+                        </a>
+                        <a class="dropdown-item" href="/registry">
+                            <h4>Registry</h4>
+                        </a>
+                        <a class="dropdown-item" href="/faq">
+                            <h4>FAQ</h4>
+                        </a>
+                        <a class="dropdown-item" href="/about">
+                            <h4>About Us</h4>
+                        </a>
+                        <a class="dropdown-item" href="/cobonie2018">
+                            <h4>#cobonie2018</h4>
+                        </a>
+                        <a class="dropdown-item" href="/aestetic">
+                            <h4>Aesthetic</h4>
+                        </a>
                     </div>
                 </div>
-        
-    </div>
-            <!--         <a href="/" class="navbar-brand"></a>
-    -->
-            <div id="loginFirst" class="<%= guest%>">
-                    
+            </div>
+
+            <div id="loginFirst" class="<%= guest%>" style="display:none">
+
                 <ul id="nav" class="nav justify-content-center">
                     <li class="navbar-text">
-                        <a class="nav-link" href="/">Home</a>
+                        <a class="nav-link" href="/">
+                            <h3> Home</h3>
+                        </a>
                     </li>
-                        <li class="navbar-text">
+                    <li class="navbar-text">
 
-                            <a class="nav-link" href="/schedule">Schedule</a>
-                        </li>
-                        <li class="navbar-text">
-                            <a class="nav-link" href="/hellotoyes">From Hello to Yes</a>
-                        </li>
-                        <li class="navbar-text">
-                            <a class="nav-link" href="/rsvp">RSVP</a>
-                        </li>
-                        <li class="navbar-text">
-                            <a class="nav-link" href="/venue">Venue</a>
-                        </li>
+                        <a class="nav-link" href="/schedule">
+                            <h3>Schedule</h3>
+                        </a>
+                    </li>
+                    
                     <li class="navbar-text">
-                        <a class="nav-link" href="/about">About Us</a>
+                        <a class="nav-link" href="/rsvp">
+                            <h3> RSVP</h3>
+                        </a>
+                    </li>
+                    <li class="navbar-text">
+                        <a class="nav-link" href="/venue">
+                            <h3>Logistics</h3>
+                        </a>
+                    </li>
+                    <li class="navbar-text">
+                        <a class="nav-link" href="/registry">
+                            <h3>Registry</h3>
+                        </a>
+                    </li>
+                    <li class="navbar-text">
+                        <a class="nav-link" href="/faq">
+                            <h3>FAQ</h3>
+                        </a>
+                    </li>
+                    <li class="navbar-text">
+                        <a class="nav-link" href="/about">
+                            <h3> About Us</h3>
+                        </a>
                     </li>
 
                     <li class="navbar-text">
-                        <a class="nav-link" href="/cobonie2018">#cobonie2018</a>
+                        <a class="nav-link" href="/cobonie2018">
+                            <h3>#cobonie2018</h3>
+                        </a>
                     </li>
                     <li class="navbar-text">
-                        <a class="nav-link" href="/aestetic">Aesthetic</a>
+                        <a class="nav-link" href="/aestetic">
+                            <h3>Aesthetic</h3>
+                        </a>
                     </li>
                 </ul>
-            
+
             </div>
         </nav>
-         <!--                 <li><a href="/schedule">Schedule</a></li>
-    -->
 
-
-    <!--                 <li><a href="/registry">Registry</a></li>
-    -->
-    <!--  <li><a href="/faq">FAQs</a></li> -->
-
-
-
-    <!--             <li><a href="/games">Games</a></li>
-    -->
-    <!-- <li><a href="/datageek">Data Geek</a></li> -->
-    <!--  <li><a href="/contact">Contact</a></li> -->
-    <!-- <li><a href="/siteinfo">Site Info</a></li> -->
-    <!--             <li><a href="/vendorpage">Vendor Access Page</a></li>
-    -->
     </header>
-   
-<%- contentFor('hero')%>
 
-<section class="hero">
-    <div id = 'headercontent' class="hero-content">
-            <h2 id="mag">
-                    <img  style ="display:none" id ="mag3" src = "../img/Background/Magnolia.png" />
-                Villa Antonia
-                <img  style ="display:none" id ="mag4"  src = "../img/Background/Magnolia.png" />
-            </h2>
-           
-    
- </div>
-</section>
 
-<%- contentFor('body')%>
-<div id="users-device-size">
-    <div id="xs" class="visible-xs"></div>
-    <div id="sm" class="visible-sm"></div>
-    <div id="md" class="visible-md"></div>
-    <div id="lg" class="visible-lg"></div>
-  </div>
+    <%- contentFor('hero')%>
 
-<div id="body-content">
-<section >
-        <div id ="text" class="jumbotron text-center" >
-            <h2>
-               The Villa
-            </h2>
-            <p>
-                We are beginning our next chapter at a breathtaking venue that sits on a hill in the midst of 
-                Texas Hill Country, surrounded by 
-                ornate foliage. It's beautiful architecture overlooking the incredible view of
-                 rolling hills, transforms the villa into a castle-esque fantasy. 
-         
-            </p>
+        <script type="text/javascript">
+            $(window).load(function () {
+                document.getElementById('body').id = 'index';
+
+                getBootstrapDeviceSize();
+
+            });
+            //toggling nav bar on desktop to save header space
+            $('#navBar').mouseenter(function () {
+                document.getElementById("loginFirst").style.display = "inline";
+            })
+
+            $('#navBar').mouseleave(function () {
+                document.getElementById("loginFirst").style.display = "none";
+            })
+        </script>
+
+
+
+        <%- contentFor('body')%>
+            <div id="users-device-size">
+                <div id="xs" class="visible-xs"></div>
+                <div id="sm" class="visible-sm"></div>
+                <div id="md" class="visible-md"></div>
+                <div id="lg" class="visible-lg"></div>
+            </div>
+            <section class="hero" style="padding: 0 0 20% 0">
+                <div id='headercontent' class="hero-content">
+                    <h2 class="animated fadeIn" id="mag">
+                        From Here to Where?
+
+                    </h2>
+
+
+                </div>
+            </section>
+            <div class="view intro  jarallax" data-jarallax='{"speed": 0.2}' id = "venueJ"  style="background-image: url(../img/VillaAntonia.jpg);">
+                <div class="full-bg-img" > 
+                    <div class="container">
+                        <div class="d-flex align-items-center d-flex justify-content-center"   id = "venueJ" style="height: 700px" >
+                            <div class="row mt-5">
+                                <div class="col-md-12 wow fadeIn mb-3">
+                                    <div class="intro-info-content text-center" style="margin: auto">
+                                        <h1 class="display-1 mb-2 wow fadeInDown white-text" data-wow-delay="0.3s" id="venueTitle">VENUE</h1>
+                                        <br>
+                                        <br>
+                                        <h1 class=" font-up mb-3 mt-1 font-bold wow fadeIn white-text" data-wow-delay="0.4s" id="venueSubTitle">Villa Antonia</h1>
+                                        <br>
+                                        <h2 class=" font-up mb-3 mt-1  wow fadeIn white-text" data-wow-delay="0.4s" id="venueTitle">Jonestown, Texas</h2>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container">
+
+                <!--Grid row-->
+                <div class="row">
+
+                    <!--Grid column-->
+                    <div class="col-md-12 text-center mb-3">
+                        <br>
+                        <h1 class="font-bold my-3" id="scheduleHder">Villa Antonia</h1>
+                        <br>
+                        <p align="justify" id="text">
+                            We are beginning our next chapter at a breathtaking venue that sits on a hill in the midst of Texas Hill Country, surrounded
+                            by ornate foliage. It's beautiful architecture overlooking the incredible view of rolling hills,
+                            transforms the villa into a castle-esque fantasy.
+                        </p>
+                        <br>
+                        <p id="text">
+                            <strong>Address:</strong> 19039 Adrian Way, Jonestown, TX 78645
+                        </p>
+                        <br>
+
+                        <div class=" d-none d-lg-block d-xl-block">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3438.9092657165193!2d-97.95432768470378!3d30.467007981730596!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x865b300249c5f4a1%3A0xb5f55fc3132a0fee!2sVilla+Antonia!5e0!3m2!1sen!2sus!4v1518675385587"
+                                width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+                        </div>
+                        <div class="d-lg-none d-xl-none">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3438.9092657165193!2d-97.95432768470378!3d30.467007981730596!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x865b300249c5f4a1%3A0xb5f55fc3132a0fee!2sVilla+Antonia!5e0!3m2!1sen!2sus!4v1518675385587"
+                                    width="300" height="350" frameborder="0" style="border:0" allowfullscreen></iframe>
+                         </div>
+                        <br>
+
+                    </div>
+                    <!--Grid column-->
+
+                </div>
+                <!--Grid row-->
 
             </div>
- <div id ="text" class="jumbotron text-center" >
-        <h2>
-                Chris Spady
-            </h2>
-        
-                      <p>
-                          Our venue coordinator and safe keeper of our sanity is Chris. She will be leading the 
-                          coordinaton of the vendors and ensuring that the tight schedule of the wedding is kept. 
-                          
-                          With her care, our wedding is sure to be seamless.
-                      </p>
-                
-               
-    
+
+            <div class="view intro  jarallax" data-jarallax='{"speed": 0.2}' style="background-image: url(../img/Hotel.jpg);">
+                <div class="full-bg-img">
+                    <div class="container">
+                        <div class="d-flex align-items-center d-flex justify-content-center" id = "venueJ" style="height: 700px">
+                            <div class="row mt-5">
+                                <div class="col-md-12 wow fadeIn mb-3">
+                                    <div class="intro-info-content text-center">
+                                        <h1 class="display-1 mb-2 wow fadeInDown white-text" data-wow-delay="0.3s" id="venueTitle">HOTEL ACCOMODATIONS</h1>
+                                        <br>
+                                        <br>
+                                        <h2 class="font-up mb-3 mt-1 font-bold wow fadeIn white-text" data-wow-delay="0.4s" id="venueSubTitle">Townplace Suites Austin North/Tech Ridge</h2>
+                                        <br>
+                                        <h3 class="font-up mb-3 mt-1 wow fadeIn white-text" data-wow-delay="0.4s" id="venueTitle">Austin, Texas</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
 
+            <div class="container">
 
-</div>
- <!-- <div class="jumbotron text-center" >
-    <h2>Map
-        </h2>
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3438.909265716523!2d-97.9543276848749!3d30.467007981730493!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x865b300249c5f4a1%3A0xb5f55fc3132a0fee!2sVilla+Antonia!5e0!3m2!1sen!2sus!4v1510169024060"
-     width="800"
-     height="600" 
-     frameborder="0" 
-     style="border:0" 
-     allowfullscreen>
-    </iframe>
-</div>
-<div class="jumbotron text-center" >
-    Photo Gallery
-</div> -->
-</section>
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>
-<script type="text/json" src="freegeoip.net/json/github.com>"></script>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script  type="text/javascript">
-$(window).load(function()
-{
-    getBootstrapDeviceSize();
+                <!--Grid row-->
+                <div class="row">
 
-    document.getElementById('body').id = 'index';
-    
-});
-       $(window).scroll(function() {
+                    <!--Grid column-->
+                    <div class="col-md-12 text-center mb-3">
+                        <br>
+                        <h1 class="font-bold my-3" id="scheduleHder">Townplace Suites</h1>
+                        <br>
+                        <p align="justify" id="text">
+                            We've secured a special group rate for our guests who need overnight accommodations for the weekend. Come in either Saturday
+                            or Sunday and checkout Monday.
 
-        if ($(this).scrollTop()>0)
-        {
-           $('#headercontent').fadeOut();
-/*            $('#headerh2').removeClass("h1").addClass("h3");
- */        }
-       else
-        {
-         $('#headercontent').fadeIn();
-/*          $('#headerh2').removeClass("h3").addClass("h1");
- */        } 
+                            <br>
+                            <br> For those who are unable to supply their own transportations to and from the wedding, there
+                            will be a courtesy shuttle for a limited amount of guest.
+                        </p>
 
- });
-    </script>
 
- 
+                    </div>
+                    <!--Grid column-->
+
+                </div>
+                <!--Grid row-->
+                <div style="padding: 5% 0 5% 0">
+                    <div class="row">
+                        <div class="col-md-12" id="AUtext">
+                            <h1>
+                                Map
+                            </h1>
+                        </div>
+                    </div>
+
+                    <div class='row' style="margin:auto">
+                        <div class="col-md-12 d-none d-lg-block d-xl-block" id="AUtext">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3441.3384260744087!2d-97.6690805847053!3d30.398138681755118!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8644cecd9ec2f16d%3A0x2fb3f94f1fd6192d!2s12427+Tech+Ridge+Blvd%2C+Austin%2C+TX+78753!5e0!3m2!1sen!2sus!4v1518674860879"
+                                width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+                        </div>
+                        <div class="col-md-12 d-lg-none d-xl-none" id="AUtext">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3441.3384260744087!2d-97.6690805847053!3d30.398138681755118!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8644cecd9ec2f16d%3A0x2fb3f94f1fd6192d!2s12427+Tech+Ridge+Blvd%2C+Austin%2C+TX+78753!5e0!3m2!1sen!2sus!4v1518674860879"
+                                    width="300" height="350" frameborder="0" style="border:0" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-md-6" id="AUtext">
+                            <strong>Address </strong>
+                        </div>
+                        <div class="col-md-6" id="AUtext"> 12427 Tech Ridge Blvd, Austin, TX 78753 </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-md-6" id="AUtext">
+                            <strong> Room Info</strong>
+                        </div>
+                        <div class="col-md-6" id="AUtext"> King suite with a sofa bed </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-md-6" id="AUtext">
+                            <strong>Group Rate </strong>
+                        </div>
+                        <div class="col-md-6" id="AUtext"> $99 before tax and fees</div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-md-6" id="AUtext">
+                            <strong>Link </strong>
+                        </div>
+                        <div class="col-md-6" id="AUtext">
+                            <a target="_blank" href="http://www.marriott.com/meeting-event-hotels/group-corporate-travel/groupCorp.mi?resLinkData=%20Cobonie%20Wedding%5EAUSTS%60COBCOBA%6099%60USD%60false%604%604/28/18%604/30/18%604/7/18&app=resvlink&stop_mobi=yes">
+                            Cobonie Wedding Block</a>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-md-6" id="AUtext">
+                            <strong>Dates </strong>
+                        </div>
+                        <div class="col-md-6" id="AUtext"> 4/28/18 - 4/30/18 </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-md-6" id="AUtext">
+                            <strong>Last Day to Book </strong>
+                        </div>
+                        <div class="col-md-6" id="AUtext"> 4/7/18 </div>
+                    </div>
+                    <br>
+
+                </div>
+            </div>

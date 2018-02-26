@@ -943,7 +943,7 @@
   background-color: #0099CC !important; }
 
 .default-color {
-  background-color: #2BBBAD !important; }
+  background-color: #4d292c !important; }
 
 .default-color-dark {
   background-color: #00695c !important; }
@@ -1156,7 +1156,7 @@
   background-color: #33b5e5 !important; }
 
 .bg-default {
-  background-color: #2BBBAD !important; }
+  background-color: #4d292c !important; }
 
 .bg-secondary {
   background-color: #aa66cc !important; }
@@ -5580,14 +5580,14 @@ button:focus {
     border-color: #33b5e5 !important; }
 
 .btn-default {
-  background-color: #2BBBAD !important;
+  background-color: #4d292c !important;
   color: #fff !important; }
   .btn-default:hover {
     background-color: #30cfc0; }
   .btn-default:focus, .btn-default:active, .btn-default.active {
     background-color: #1f857b; }
   .btn-default.dropdown-toggle {
-    background-color: #2BBBAD !important; }
+    background-color: #4d292c !important; }
     .btn-default.dropdown-toggle:hover, .btn-default.dropdown-toggle:focus {
       background-color: #30cfc0 !important; }
   .btn-default:not([disabled]):not(.disabled):active, .btn-default:not([disabled]):not(.disabled).active,
@@ -5595,17 +5595,17 @@ button:focus {
     background-color: #1f857b !important; }
 
 .btn-outline-default {
-  border: 2px solid #2BBBAD;
-  color: #2BBBAD !important;
+  border: 2px solid #4d292c;
+  color: #4d292c !important;
   background-color: transparent; }
   .btn-outline-default:hover, .btn-outline-default:focus, .btn-outline-default:active, .btn-outline-default:active:focus, .btn-outline-default.active {
     background-color: transparent;
-    color: #2BBBAD;
-    border-color: #2BBBAD; }
+    color: #4d292c;
+    border-color: #4d292c; }
   .btn-outline-default:not([disabled]):not(.disabled):active, .btn-outline-default:not([disabled]):not(.disabled).active,
   .show > .btn-outline-default.dropdown-toggle {
     background-color: transparent !important;
-    border-color: #2BBBAD !important; }
+    border-color: #4d292c !important; }
 
 .btn-secondary {
   background-color: #aa66cc !important;
@@ -6651,7 +6651,7 @@ button:focus {
   background-color: #ff3547; }
 
 .pagination.pg-teal .active .page-link {
-  background-color: #2BBBAD; }
+  background-color: #4d292c; }
 
 .pagination.pg-darkgrey .active .page-link {
   background-color: #37474F; }
@@ -6687,7 +6687,7 @@ button:focus {
   background-color: #33b5e5; }
 
 .badge-default {
-  background-color: #2BBBAD; }
+  background-color: #4d292c; }
 
 .badge-secondary {
   background-color: #aa66cc; }
@@ -8781,7 +8781,7 @@ button, html [type="button"], [type="reset"], [type="submit"] {
   margin-left: 1rem;
   margin-right: 1rem;
   margin-bottom: -20px;
-  background-color: #2BBBAD;
+  background-color: #4d292c;
   z-index: 2;
   position: relative;
   border-radius: 2px; }
@@ -8801,7 +8801,7 @@ button, html [type="button"], [type="reset"], [type="submit"] {
 
 .nav-tabs .nav-link.dropdown-toggle,
 .nav-tabs .nav-item.show .nav-link {
-  background-color: #2BBBAD;
+  background-color: #4d292c;
   color: #fff;
   -webkit-transition: all 1s;
   transition: all 1s;
@@ -8821,7 +8821,7 @@ button, html [type="button"], [type="reset"], [type="submit"] {
       background-color: rgba(158, 158, 158, 0.3); }
     .md-pills .nav-link.active {
       color: #fff;
-      background-color: #2BBBAD; }
+      background-color: #4d292c; }
 
 .pills-primary .nav-item .nav-link.active {
   background-color: #4285F4; }
@@ -8854,10 +8854,10 @@ button, html [type="button"], [type="reset"], [type="submit"] {
   background-color: #33b5e5; }
 
 .pills-default .nav-item .nav-link.active {
-  background-color: #2BBBAD; }
+  background-color: #4d292c; }
 
 .tabs-default {
-  background-color: #2BBBAD; }
+  background-color: #4d292c; }
 
 .pills-secondary .nav-item .nav-link.active {
   background-color: #aa66cc; }
@@ -9421,7 +9421,7 @@ button, html [type="button"], [type="reset"], [type="submit"] {
   .dropdown .dropdown-menu.dropdown-danger .dropdown-item:hover, .dropdown .dropdown-menu.dropdown-danger .dropdown-item:active {
     background-color: #CC0000; }
   .dropdown .dropdown-menu.dropdown-default .dropdown-item:hover, .dropdown .dropdown-menu.dropdown-default .dropdown-item:active {
-    background-color: #2BBBAD; }
+    background-color: #4d292c; }
   .dropdown .dropdown-menu.dropdown-secondary .dropdown-item:hover, .dropdown .dropdown-menu.dropdown-secondary .dropdown-item:active {
     background-color: #aa66cc; }
   .dropdown .dropdown-menu.dropdown-success .dropdown-item:hover, .dropdown .dropdown-menu.dropdown-success .dropdown-item:active {
@@ -9523,11 +9523,11 @@ button, html [type="button"], [type="reset"], [type="submit"] {
   box-shadow: 0 1px 0 0 #CC0000; }
 
 .dropdown-default .dropdown-content li.active, .dropdown-default .dropdown-content li a, .dropdown-default .dropdown-content li span:hover {
-  background-color: #2BBBAD; }
+  background-color: #4d292c; }
 
 .dropdown-default .search-wrap input:focus {
-  border-bottom: 1px solid #2BBBAD;
-  box-shadow: 0 1px 0 0 #2BBBAD; }
+  border-bottom: 1px solid #4d292c;
+  box-shadow: 0 1px 0 0 #4d292c; }
 
 .dropdown-secondary .dropdown-content li.active, .dropdown-secondary .dropdown-content li a, .dropdown-secondary .dropdown-content li span:hover {
   background-color: #aa66cc; }

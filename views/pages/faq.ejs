@@ -1,76 +1,533 @@
-<div class="jumbotron text-center" >
-    <h2>
-                Words of Advice
-    </h2>
-    <p>
-      Zyrtec, Zyrtec, Zyrtec!
+<%- contentFor('header')%>
 
-      Our venue is stunning, breathtaking, dreamy, and also located in the dead center of Texas Hill Country.
-    </br>
-    </br>
-      Meaning, dead center in the most irritable pollen in Texas. 
-    </br>
-     </br>
-Even if you don't have bad allergies
-      or allergies at all, I HIGHLY suggest you get a bottle of allergy 
-      medication and take a few BEFORE you arrive and take some more throughout 
-    the day.
+    <header>
+        <nav id="navBar" class="navbar navbar-inverse navbar-fixed-top scrolling-navbar justify-content-center">
 
-    Trust me, I learn the hard way with each vendor visit in Austin.
-    </p>        
-</div>
-<div class="jumbotron text-center" >
-    <h2>
-                Dress Code
-    </h2>
-</br>
-    <p>
-        Yes, there is a dress code.
-    </br>
-</br>
+            <div class="text-left  d-none d-lg-block d-xl-block" id="headerinfo"> April 29th, 2018 </div>​
+            <h1 class="h1-responsive  d-none d-lg-block d-xl-block" id="headerh2">
+                Ebonie & Cody 2018
+            </h1>
 
-        We will be celebrating our nuptual as a sleek, formal, and fun affair. Please
-        dress in your best Black Tie Creative. This dress code is closely related to the traditional Black
-        Tie dress code but allows for more fun, infusion of personality, and show of creativity. 
+
+            <div id="headerinfo" class="text-right d-none d-lg-block d-xl-block"> Jonestown, TX </div>
+
+            <div class="d-lg-none d-xl-none" style="width:100%">
+                <h1 class="h1-responsive " id="headerh2">
+                    Ebonie & Cody 2018
+                </h1>
+            </div>
+
+            <div id="mobile" class="row btn-group " style="display:none">
+                <div id="mobileDivider">
+                    ________________________________
+                </div>
+                <div class="dropdown">
+                    <button id="links" class="btn btn-flat btn-block btn-md dropdown-toggle " type="button" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false">
+                        Site Links
+                    </button>
+                    <div class="dropdown-menu dropdown-primary">
+                        <a class="dropdown-item" href="/">
+                            <h4>Home</h4>
+                        </a>
+                        <a class="dropdown-item" href="/schedule">
+                            <h4>Schedule</h4>
+                        </a>
+                       
+                        <a class="dropdown-item" href="/venue">
+                            <h4>Logistics</h4>
+                        </a>
+                        <a class="dropdown-item" href="/registry">
+                            <h4>Registry</h4>
+                        </a>
+                        <a class="dropdown-item" href="/faq">
+                            <h4>FAQ</h4>
+                        </a>
+                        
+                        <a class="dropdown-item" href="/about">
+                            <h4>About Us</h4>
+                        </a>
+                        <a class="dropdown-item" href="/cobonie2018">
+                            <h4>#cobonie2018</h4>
+                        </a>
+                        <a class="dropdown-item" href="/aestetic">
+                            <h4>Aesthetic</h4>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div id="loginFirst" class="<%= guest%>" style="display:none">
+
+                <ul id="nav" class="nav justify-content-center">
+                    <li class="navbar-text">
+                        <a class="nav-link" href="/">
+                            <h3>Home</h3>
+                        </a>
+                    </li>
+                    <li class="navbar-text">
+                        <a class="nav-link" href="/schedule">
+                            <h3>Schedule</h3>
+                        </a>
+                    </li>
+                   
+                    <li class="navbar-text">
+                        <a class="nav-link" href="/rsvp">
+                            <h3>RSVP</h3>
+                        </a>
+                    </li>
+                    <li class="navbar-text">
+                        <a class="nav-link" href="/venue">
+                            <h3>Logistics</h3>
+                        </a>
+                    </li>
+                    <li class="navbar-text">
+                        <a class="nav-link" href="/registry">
+                            <h3>Registry</h3>
+                        </a>
+                    </li>
+                    <li class="navbar-text">
+                        <a class="nav-link" href="/faq">
+                            <h3>FAQ</h3>
+                        </a>
+                    </li>
+                    <li class="navbar-text">
+                        <a class="nav-link" href="/about">
+                            <h3>About Us</h3>
+                        </a>
+                    </li>
+                    <li class="navbar-text">
+                        <a class="nav-link" href="/cobonie2018">
+                            <h3>#cobonie2018</h3>
+                        </a>
+                    </li>
+                    <li class="navbar-text">
+                        <a class="nav-link" href="/aestetic">
+                            <h3>Aesthetic</h3>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+    </header>
+
+    <%- contentFor('hero')%>
+
+        <script type="text/javascript">
+            $('#navBar').mouseenter(function () {
+                document.getElementById("loginFirst").style.display = "inline";
+            })
+
+            $('#navBar').mouseleave(function () {
+                document.getElementById("loginFirst").style.display = "none";
+            })
+
+
+            $(window).load(function () {
+
+                getBootstrapDeviceSize();
+
+
+
+                if ("<%= guest%>" == 'false') {
+                    document.getElementById("guestEyesOnly").style.display = "none";
+
+                } else if ("<%= guest%>" == 'none') {
+                    document.getElementById("loginFirst").style.display = "none";
+                    document.getElementById("guestEyesOnly").style.display = "none";
+
+                } else {
+                    document.getElementById("guestEyesOnly").style.display = "inline";
+                    document.getElementById("guestEyesOnly2").style.display = "block";
+
+                }
+            });
+        </script>
+
+
+
+        <script type="text/javascript">
+            var test;
+
+            $(window).load(function () {
+                getBootstrapDeviceSize();
+
+
+                test = 0;
+                document.getElementById('body').id = 'index';
+
+
+
+            });
+        </script>
+
+
+
+        <%- contentFor('body')%>
+            <div id="users-device-size">
+                <div id="xs" class="visible-xs"></div>
+                <div id="sm" class="visible-sm"></div>
+                <div id="md" class="visible-md"></div>
+                <div id="lg" class="visible-lg"></div>
+            </div>
+
+            <div id="body-content">
+                <div class="container">
+                    <div class="animated fadeInUp">
+                        <h2 id="magAs">
+                            Q & A
+                        </h2>
+                    </div>
+                </div>
+                <ul class="nav md-pills nav-justified pills-primary" style="margin: 10% 0 0 0">
+                    <li class="nav-item">
+                        <a class="nav-link active" data-toggle="tab" href="#panel1" role="tab"> Words of Advice?</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="#panel2" role="tab"> Dress Code?</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="#panel3" role="tab">Phone check? Really?</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="#panel5" role="tab">What is the story?</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="#panel4" role="tab">I have a question!</a>
+                    </li>
+                </ul>
+
+                <!-- Tab panels -->
+                <div class="tab-content">
+
+                    <!--Panel 1-->
+                    <div class="tab-pane fade in show active" id="panel1" role="tabpanel">
+                        <br>
+
+                        <p id="text">
+                            Zyrtec, Zyrtec, Zyrtec! Our venue is stunning, breathtaking, dreamy, and also located in the dead center of Texas Hill Country.
+                            </br>
+                            </br>
+                            Meaning, dead center of the most irritable pollen in Texas.
+                            </br>
+                            </br>
+                            Even if you don't have bad allergies or allergies at all, I HIGHLY suggest you get a bottle of allergy medication and take
+                            a few BEFORE you arrive and take some more throughout the day. Trust me, I learn the hard way
+                            with each vendor visit in Austin.
+                        </p>
+                    </div>
+                    <!--/.Panel 1-->
+
+                    <!--Panel 2-->
+                    <div class="tab-pane fade" id="panel2" role="tabpanel">
+                        <br>
+                        <p id="text">
+                            Yes, there is a dress code.
+                            </br>
+                            </br>
+
+                            We will be celebrating our nuptual as a sleek, formal, and fun affair. Please dress in your best Black Tie Creative. This
+                            dress code is closely related to the traditional Black Tie dress code but allows for more fun,
+                            infusion of personality, and show of creativity. I have a deep love for fashion as an artistic
+                            outlet and this is my way to share that love with all of my guest. Be sleek, suave, and expressive!
+                            I can't wait to see how you tie together class and your own personal sytle!
+                            </br>
+                            </br>
+                            If you need a bit of help to guide your tux or dress choice, check out the links below.
+                        </p>
+                        <p id="text">
+                            <br>
+                            <h3 id="text">
+                                <strong>Masculine: </strong>
+                            </h3>
+
+                            <br>
+                            <a id="text" href="https://www.articlesofstyle.com/articles/post/wtf-is-black-tie-creative" target="_blank">
+                                Articles of Style
+                            </a>
+                            </br>
+                            <a id="text" href="http://hespokestyle.com/creative-formal-attire/" target="_blank">
+                                He Spoke Style
+                            </a>
+                            </br>
+                            <a id="text" href="https://www.ties.com/blog/formal-dress-codes-for-men" target="_blank">
+                                Ties.com
+                            </a>
+                            </br>
+                            <a id="text" href="https://theblacktux.com/groomsguide/style-guide/dress-codes" target="_blank">
+                                The Black Tux
+                            </a>
+                            </br>
+                            <a id="text" href="http://emilypost.com/advice/attire-guide-dress-codes-from-casual-to-white-tie/" target="_blank">
+                                Emily Post
+                            </a>
+                            <br>
+                            <br>
+                            <br>
+                            <h3 id="text">
+                                <strong>Feminine: </strong>
+                            </h3>
+
+                            <br>
+                            <div>
+                                <a id="text" href="http://stylecaster.com/dress-code/#slide-5" target="_blank">
+                                    Sytlecaster
+                                </a>
+                                </br>
+                                <a id="text" href="https://www.liveabout.com/dress-codes-for-special-occasions-4125842" target="_blank">
+                                    Live About
+                                </a>
+                                </br>
+                                <a id="text" href="http://emilypost.com/advice/attire-guide-dress-codes-from-casual-to-white-tie/" target="_blank">
+                                    Emily Post
+                                </a>
+
+                            </div>
+
+                        </p>
+
+
+                    </div>
+                    <!--/.Panel 2-->
+
+                    <!--Panel 3-->
+                    <div class="tab-pane fade" id="panel3" role="tabpanel">
+                        <br>
+                        <div class="card " style="background-color:#4d292c">
+                            <h2 id="text" class="white-text">
+                                Ebonie...Are you really making us drop off our phone at a check in before the ceremony?
+                            </h2>
+                        </div>
+
+                        <br>
+                        <br>
+                        <p id="text">
+                            Yes, I am. Fight me.
+                            <br>
+                            <br> Ok, fine... We don't have to fight, but hear me out.
+                            <br>
+                            <br> Check out the photos below and tell me if you would want to remember YOUR exchanging of vows,
+                            I dos, and first kiss through precious photos of your relatives' and friends' phones and tablets.
+                            <br>
+                            <br> I promise, we'll look better live than through your device's screen.
+                            <br>
+                            <br> And, since we love you so much, we will make the professional photos and video available to
+                            our attendees as soon as possible.
+                            <br>
+                            <br> We ask that if you are not the professional photographer or videographer we hired, please stay
+                            in your seat and be present in the moment with us.
+                            <br>
+                            <br> XOXO
+                            <br>
+                            <br>
+                        </p>
+                        <!-- Grid row -->
+                        <div class="row">
+
+                            <!-- Grid column -->
+                            <div class="col-lg-4 col-md-12 mb-3">
+
+                                <img src="../img/Background/selfie-wedding.jpg" class="img-fluid z-depth-1" alt="Responsive image">
+
+                            </div>
+                            <!-- Grid column -->
+
+                            <!-- Grid column -->
+                            <div class="col-lg-4 col-md-6 mb-3">
+
+                                <img src="../img/Background/unplugged-wedding-1.jpg" class="img-fluid z-depth-1" alt="Responsive image">
+
+                            </div>
+                            <!-- Grid column -->
+
+                            <!-- Grid column -->
+                            <div class="col-lg-4 col-md-6 mb-3">
+
+                                <img src="../img/Background/unplugged.jpg" class="img-fluid z-depth-1" alt="Responsive image">
+
+                            </div>
+                            <!-- Grid column -->
+
+                        </div>
+                        <!-- Grid row -->
+
+                        <!-- Grid row -->
+                        <div class="row">
+
+                            <!-- Grid column -->
+                            <div class="col-md-6 mb-3">
+
+                                <img src="../img/Background/wedding-unplugged.jpg" class="img-fluid z-depth-1" alt="Responsive image">
+
+                            </div>
+                            <!-- Grid column -->
+
+                            <!-- Grid column -->
+                            <div class="col-md-6 mb-3">
+
+                                <img src="../img/Background/heidiryder..jpg" class="img-fluid z-depth-1" alt="Responsive image">
+
+                            </div>
+                            <!-- Grid column -->
+
+                        </div>
+                        <div class="row">
+
+                            <!-- Grid column -->
+                            <div class="col-lg-4 col-md-12 mb-3">
+
+                                <img src="../img/Background/blocked-wedding-photo.jpg" class="img-fluid z-depth-1" alt="Responsive image">
+
+                            </div>
+                            <!-- Grid column -->
+
+                            <!-- Grid column -->
+                            <div class="col-lg-4 col-md-6 mb-3">
+
+                                <img src="../img/Background/cameraphones.jpg" class="img-fluid z-depth-1" alt="Responsive image">
+
+                            </div>
+                            <!-- Grid column -->
+
+                            <!-- Grid column -->
+                            <div class="col-lg-4 col-md-6 mb-3">
+
+                                <img src="../img/Background/Cellphone-Free-Wedding.jpg" class="img-fluid z-depth-1" alt="Responsive image">
+
+                            </div>
+                            <!-- Grid column -->
+
+                        </div>
+                        <!-- Grid row -->
+
+
+
+                    </div>
+                    <!--/.Panel 3-->
+
+                    <!--Panel 4-->
+                    <div class="tab-pane fade" id="panel4" role="tabpanel">
+                        <br>
+
+                        <p id="text"> If you have a question specific to the wedding that is not answered on this website, please feel
+                            free to send us an email at
+                            <a href="mailto:Cobonie@gmail.com">Cobonie@gmail.com.</a>
+                        </p>
+
+                    </div>
+                    <!--/.Panel 4-->
+                    <div class="tab-pane fade" id="panel5" role="tabpanel">
+                            <br>
+                            <div class="container">
+                                <div class="animated fadeInUp">
+                                    <h2 id="magAs">
+                                        "Hello"
+                                    </h2>
+                                </div>
+                            </div>
+                            <div class="card testimonial-card card-cascade" style="width: 80%; margin:0 10%">
+                                <div id="HTY2" class="card-up indigo lighten-1" style=" padding: 0% 0 0% 0;  background-color: #F6D8D1;">
         
-        I have a deep love for fashion as an artistic outlet and this is my way to share that love with all of my
-        guest. Be sleek, suave, and expressive! I can't wait to see how you tie together class and your own personal sytle!
-    </br>
-</br>
-        If you need a bit of help to guide your tux or dress choice, check out the links below.
-    </p>     
-    <p>
-        <h3>
-            Masculine
-        </h3>
-        <a  href="https://www.articlesofstyle.com/articles/post/wtf-is-black-tie-creative">
-            Articles of Style
-        </a></br>
-        <a href="http://hespokestyle.com/creative-formal-attire/">
-            He Spoke Style
-        </a></br>
-        <a href="https://www.ties.com/blog/formal-dress-codes-for-men">
-             Ties.com
-        </a></br>
-        <a href="https://theblacktux.com/groomsguide/style-guide/dress-codes">
-            The Black Tux
-        </a></br>
-        <a href="http://emilypost.com/advice/attire-guide-dress-codes-from-casual-to-white-tie/">
-            Emily Post
-        </a>
+                                    <h2 id="HTY">
+                                        November 12th, 2014
+                                    </h2>
+                                </div>
+                                <div class="avatar">
+                                    <img src="../img/cobonie2018/magnoliaFlower.png" class="rounded-circle">
+                                </div>
+                                <div class="card-body text-center  z-depth-5" style="padding: 2% 2%;">
+                                    <p id="AUtext">
+                                        "...I saw on your profile that you liked Community. That's a pretty great show, I found the fourth season was a bit slow
+                                        for my taste though."
+                                        </br>
+                                        </br>
+                                        "There is no fourth season of Community."
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="card" style="padding: 5% 2%; margin:auto;  margin-top: 5%; margin-bottom: 10%; width:90% ; background-color:#4d292c; box-shadow: 0 0 200px rgba(0, 0, 0, 0.9) inset;">
+                             
+                                    <div id="text" class="text-center white-text" style=" margin-top: 5%;">
+        
+                                        We've been fluttering around each other for a good portion of our lives. Growing up on opposite sides of the highway, going
+                                        to the same movie theaters, shopping at the same stores, and driving down the same roads.
+                                        </br>
+                                        </br>
+                                        We lived just two miles away from each other at that point. I just started my senior year of undergrad at Texas A&M's business
+                                        school and he started his first year at the med school. No doubt, we passed each other dozens
+                                        of times in our nearest HEB surveying produce.
+                                        </br>
+                                        </br>
+        
+                                        But, ultimately, it took a finely tuned algorithm marking us 96% compatible, a misguided implication that the fourth season
+                                        of Community wasn't worth forgetting about completely, and an encouraging roommate to bring
+                                        us together.
+                                    </div>
+                            </div>
+        
+        
+        
+                            <div class="card testimonial-card card-cascade" style="width: 80%; margin:0 10%;">
+                                <div class="card-up indigo lighten-1" style=" padding: 0% 0 0% 0;">
+                                    <h2 id="HTY">
+                                        July 12th, 2017
+                                    </h2>
+                                </div>
+                                <div class="avatar">
+                                    <img src="../img/cobonie2018/magnoliaFlower.png" class="rounded-circle">
+                                </div>
+                                <div class="card-body text-center  z-depth-5" style="padding: 2% 2%;">
+                                    <p id="AUtext">
+                                        "Let's stop at Cartier for a tour of the mansion while we're in town. We have some time before dinner."
+                                    </p>
+                                </div>
+                            </div>
+                            <div id="text" class=" white-text" style="padding: 5% 2%; margin:auto;  margin-top: 5%; margin-bottom: 10%; width:90% ; background-color:#4d292c;   box-shadow: 0 0 200px rgba(0, 0, 0, 0.9) inset;">
+        
+                                After two and a half years of being together, two of which long distance, we took a trip to New York to catch Broadway shows,
+                                stare directly into brightly lit billboards, and gorge ourselves on culinary delights.
+                                </br>
+                                </br>
+                                He told me that he managed to snag a table at the only Michelin Star rated vegetarian restaurant. Deciding to be casual that
+                                night, I bought a dress and heels, had my makeup professionally done, and made a wish to any divine
+                                entity for my hair. But before dinner, he wanted to take a tour of the Cartier Mansion since we missed
+                                our chance on our previous visit.
+                                </br>
+                                </br>
+                                We were guided through three floors, each with large rooms dedicated to specific jewelry and people. One room, watches, dedicated
+                                to Andy Warhol due to his obsession with his Cartier Tank. Next, the fine diamonds room, dedicated
+                                to Elizabeth Taylor due to her iconic ruby and diamond necklace. Finally, the Princess Salon, which
+                                housed all of the engagement and wedding rings, dedicated to the Princess of Monaco, Grace Kelly,
+                                due to her love of her engagement ring.
+                                </br>
+                                </br>
+                                Each picture and office inspiration within the salon was explained to us with great historical detail.
+                                </br>
+                                </br>
+                                Never in my life had I been more regretful that I'd worn five-inch stilettos.
+                                </br>
+                                </br>
+                                Luckily for me, the salon was the last stop on our tour. The final room was closed off with Cartier red velvet curtains.
+                                Our guide smiled and led us into the room with two seats and two glasses of wine awaiting us.
+                                </br>
+                                </br>
+                                At last, this was it! A place to sit, with wine at that!
+                                </br>
+                                </br>
+                                We took our seats, he took my hands, he took a knee, then he took my breath.
+                                </br>
+                                </br>
+                                <div >
+                                    <h1 class="white-text" id="mag">
+                                        Yes
+        
+                                    </h1>
+        
+                                </div>
+                            </div>
+        
+                        </div>
+                </div>
 
-        <h3>
-            Feminine
-        </h3>
-        <a  href="http://stylecaster.com/dress-code/#slide-5">
-            Sytlecaster
-        </a></br>
-        <a href="https://www.liveabout.com/dress-codes-for-special-occasions-4125842">
-            Live About
-        </a></br>
-        <a href="http://emilypost.com/advice/attire-guide-dress-codes-from-casual-to-white-tie/">
-            Emily Post
-        </a>
-    </p>
-    
-</div>
+              
+            </div>
